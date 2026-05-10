@@ -3,9 +3,9 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 import os
 from langchain_chroma import Chroma
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.output_parsers import StrOutputParser
+from thefuzz import fuzz
 
 load_dotenv()
 class Question(BaseModel):
@@ -15,12 +15,8 @@ app=FastAPI()
 llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key=os.getenv("GEMMA_API_KEY"))
 parser = StrOutputParser()                           
 chain = llm|parser
-embeddings = GoogleGenerativeAIEmbeddings(
-     model="models/gemini-embedding-001",
-    google_api_key=os.getenv("GEMMA_API_KEY")
-    )
-vectorstore = (Chroma(persist_directory="./chroma_db", 
-                      embedding_function=embeddings))
+
+vectorstore = (Chroma(persist_directory="./chroma_db"))
 @app.post("/ask") 
 async def handle_message(message: Question):
     results = vectorstore.similarity_search(message.question, k=10)
@@ -31,8 +27,9 @@ async def handle_message(message: Question):
                      "Ιόνια Νησιά", "Δυτική Ελλάδα", "Στερεά Ελλάδα",
                      "Πελοπόννησος", "Νότιο Αιγαίο", "Ανατολική Μακεδονία και Θράκη"]
     question_lower = message.question.lower()
-    for region in greek_regions:  
-        if region.lower() in question_lower and region not in found_regions:
+    for region in greek_regions:
+        ratio = fuzz.partial_ratio(region.lower(), question_lower)
+        if ratio > 80 and region not in found_regions:  
             extra = vectorstore.similarity_search(
             message.question, k=5,
             filter={"region": region}
