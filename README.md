@@ -1,6 +1,6 @@
-# Greek Regional Economic Resilience RAG
+##Greek Regional Resilience RAG
 
-A RAG system for querying and analyzing Greek regional economic indicators using AI.
+RAG system for querying and analyzing Greek regional economic and social resilience indicators using FastAPI, ChromaDB, LangChain and Gemini AI
 
 ## What it does
 Answers questions about Greek regional economic data (2005-2023) using AI. Supports comparisons between regions across three periods: Expansion, Crisis, and Recovery.
