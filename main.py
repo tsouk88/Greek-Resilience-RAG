@@ -6,6 +6,8 @@ from langchain_chroma import Chroma
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.output_parsers import StrOutputParser
 from thefuzz import fuzz
+from agent import agent
+from thefuzz import process
 
 load_dotenv()
 class Question(BaseModel):
@@ -43,3 +45,11 @@ async def handle_message(message: Question):
     Question: {message.question}"""
     response = chain.invoke(full_prompt)
     return {"answer": response}
+
+@app.post("/agent")
+async def handle_agent(message: Question):
+    result = agent.invoke({"messages": [{"role": "user", "content": message.question}]})
+    answer = result["messages"][-1].content
+    if isinstance(answer, list):
+        answer = answer[0]["text"]
+    return {"answer": answer}
