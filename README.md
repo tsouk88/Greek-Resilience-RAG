@@ -36,3 +36,9 @@ POST `/agent` — research agent with tools:
 ```json
 {"question": "Ποσοστό μεταβολής απασχόλησης Βόρειο vs Νότιο Αιγαίο 2005-2022"}
 ```
+
+## Testing
+Run the test suite:
+`pytest test_loader.py`
+
+Tests cover the data loader: chunk count validation, metadata integrity, and invalid path handling.
