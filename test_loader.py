@@ -6,6 +6,17 @@ def file():
     file_path = "C:/Users/tsouk/Desktop/python-practice/PhD-Rag/data/stats.xlsx"
     sheet = "Normal Οικον Βάση"
     return load_excel_data(file_path , sheet)
+
+@pytest.mark.parametrize( "sheet" , ["Normal Οικον Βάση",
+    "Normal Οικον Βάση - Crisis", 
+    "Normal Οικον Βάση - COVID",
+    "Normal Κοινων Βάση",
+    "Normal Κοινων Βάση - Crisis",
+    "Normal Κοινων Βάση - COVID"] )
+def test_all(sheet):
+    docs = load_excel_data("C:/Users/tsouk/Desktop/python-practice/PhD-Rag/data/stats.xlsx" , sheet)
+    assert len(docs)>0 
+
                     
 def test_load(file):
     assert len(file) == 234
