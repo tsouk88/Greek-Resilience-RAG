@@ -45,6 +45,7 @@ def calculate_percent_change(region : str, indicator : str, start_year: int, end
     """percentage searchs the raw data and counts it"""
     df = pd.read_excel("C:/Users/tsouk/Desktop/python-practice/PhD-Rag/data/stats.xlsx", 
                    sheet_name="Normal Οικον Βάση")
+    df.columns = [' '.join(c.split()) for c in df.columns]
     available_regions = df[df.columns[0]].tolist()
     match, score = process.extractOne(region, available_regions)
     if score > 70:
@@ -60,4 +61,10 @@ def calculate_percent_change(region : str, indicator : str, start_year: int, end
     return round(percentage, 2)
 
 
-agent = create_agent(llm, tools=[search_regions, compare_regions, calculate_percent_change]) 
+system_prompt = """You are a regional economic resilience analyst for Greek regions.
+You have tools available - USE THEM immediately without asking for clarification.
+When asked to compare two regions, call calculate_percent_change for EACH region separately, then compare the results.
+Always show the numbers and your reasoning.
+Never ask the user to clarify - make reasonable assumptions and proceed."""
+
+agent = create_agent(llm, tools=[search_regions, compare_regions, calculate_percent_change], system_prompt=system_prompt)

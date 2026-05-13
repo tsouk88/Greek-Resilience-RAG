@@ -7,6 +7,7 @@ import pandas as pd
 def load_excel_data(file_path, sheet_label):
     df = pd.read_excel(file_path, sheet_name=sheet_label)
     df.columns = [c.strip() for c in df.columns]
+    df.columns = [' '.join(c.split()) for c in df.columns]
     national_row = df[df[df.columns[0]] == "Ελλάδα"].iloc[0]
     
     docs = []
