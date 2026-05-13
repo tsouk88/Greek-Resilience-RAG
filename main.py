@@ -48,7 +48,10 @@ async def handle_message(message: Question):
 
 @app.post("/agent")
 async def handle_agent(message: Question):
-    result = agent.invoke({"messages": [{"role": "user", "content": message.question}]})
+    result = agent.invoke(
+    {"messages": [{"role": "user", "content": message.question}]},
+    config={"configurable": {"thread_id": "research-session-1"}}
+    )
     answer = result["messages"][-1].content
     if isinstance(answer, list):
         answer = answer[0]["text"]

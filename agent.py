@@ -2,12 +2,14 @@ from langchain.agents import create_agent
 from langchain_core.tools import tool
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_chroma import Chroma
+from langgraph.checkpoint.memory import MemorySaver
 import pandas as pd
 from dotenv import load_dotenv
 import os
 from thefuzz import process
 
 load_dotenv()
+memory = MemorySaver()
 llm =  ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key=os.getenv("GEMMA_API_KEY"))
 vectorstore = (Chroma(persist_directory="./chroma_db"))
 @tool
@@ -67,4 +69,4 @@ When asked to compare two regions, call calculate_percent_change for EACH region
 Always show the numbers and your reasoning.
 Never ask the user to clarify - make reasonable assumptions and proceed."""
 
-agent = create_agent(llm, tools=[search_regions, compare_regions, calculate_percent_change], system_prompt=system_prompt)
+agent = create_agent(llm, tools=[search_regions, compare_regions, calculate_percent_change], system_prompt=system_prompt , checkpointer=memory)
