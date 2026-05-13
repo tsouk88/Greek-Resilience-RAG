@@ -62,11 +62,44 @@ def calculate_percent_change(region : str, indicator : str, start_year: int, end
     percentage = (end - start) / start *100
     return round(percentage, 2)
 
+@tool
+def calculate_resilience_score(region: str, indicator_type: str = "economic", crisis_type: str = "financial") -> str:
+    """Calculate resilience score and classification for a Greek region based on crisis resistance and recovery data."""
+    sheet_map = {
+    ("economic", "financial"): ("Normal Οικον Βάση - Crisis", "Resistance (2008-2013)", "Recovery (2013-2019)"),
+    ("economic", "covid"): ("Normal Οικον Βάση - COVID", "Resistance (2019-2020)", "Recovery (2020-2022)"),
+    ("social", "financial"): ("Normal Κοινων Βάση - Crisis", "Resistance (2008-2013)", "Recovery (2013-2019)"),
+    ("social", "covid"): ("Normal Κοινων Βάση - COVID", "Resistance (2019-2020)", "Recovery (2020-2022)"),
+    }
+    sheet_name, res_col, rec_col, nat_res_col, nat_rec_col = sheet_map[(indicator_type.lower(), crisis_type.lower())]
+    df = pd.read_excel("C:/Users/tsouk/Desktop/python-practice/PhD-Rag/data/stats.xlsx",sheet_name=sheet_name)
+    df.columns = [' '.join(c.split()) for c in df.columns]
+    available_regions = df[df.columns[0]].tolist()
+    match, score = process.extractOne(region, available_regions)
+    if score > 70:
+     region = match
+    national_row = df[df[df.columns[0]] == "Ελλάδα"].iloc[0]
+    data = df[df[df.columns[0]] == region].iloc[0]
+    res=data[res_col]
+    rec=data[rec_col]
+    resilience_score = res + rec
+    nat_res = national_row[nat_res_col]
+    nat_rec = national_row[nat_rec_col]
+    nat_score = nat_res + nat_rec
+    if res > nat_res and rec > nat_rec:
+        classification = "Transformative"
+    elif res > nat_res or rec > nat_rec:
+        classification = "Adaptive"
+    else:
+        classification = "Vulnerable"
+    return f"{resilience_score}\n{nat_score}\n{classification}" 
+
 
 system_prompt = """You are a regional economic resilience analyst for Greek regions.
+Always use Greek region names when calling tools (e.g. Αττική not Attica, Κρήτη not Crete)
 You have tools available - USE THEM immediately without asking for clarification.
 When asked to compare two regions, call calculate_percent_change for EACH region separately, then compare the results.
 Always show the numbers and your reasoning.
 Never ask the user to clarify - make reasonable assumptions and proceed."""
 
-agent = create_agent(llm, tools=[search_regions, compare_regions, calculate_percent_change], system_prompt=system_prompt , checkpointer=memory)
+agent = create_agent(llm, tools=[search_regions, compare_regions, calculate_percent_change , calculate_resilience_score ], system_prompt=system_prompt , checkpointer=memory)
