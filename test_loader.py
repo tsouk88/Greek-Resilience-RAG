@@ -1,5 +1,8 @@
 import pytest
 from loader import load_excel_data
+import os
+
+file_path = os.getenv("FILE_PATH", "data/stats.xlsx")
 
 @pytest.fixture
 def file():
@@ -14,7 +17,7 @@ def file():
     "Normal Κοινων Βάση - Crisis",
     "Normal Κοινων Βάση - COVID"] )
 def test_all(sheet):
-    docs = load_excel_data("C:/Users/tsouk/Desktop/python-practice/PhD-Rag/data/stats.xlsx" , sheet)
+    docs = load_excel_data(file_path , sheet)
     assert len(docs)>0 
 
                     
