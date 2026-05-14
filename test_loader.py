@@ -2,7 +2,7 @@ import pytest
 from loader import load_excel_data
 import os
 
-CI = os.getenv("CI", False)
+CI = os.getenv("CI") == "true"
 
 file_path = os.getenv("FILE_PATH", "data/stats.xlsx")
 
