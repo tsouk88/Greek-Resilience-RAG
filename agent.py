@@ -8,8 +8,10 @@ from dotenv import load_dotenv
 import os
 from thefuzz import process
 
+
 load_dotenv()
 memory = MemorySaver()
+file_path = os.getenv("FILE_PATH", "data/stats.xlsx")
 llm =  ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key=os.getenv("GEMMA_API_KEY"))
 vectorstore = (Chroma(persist_directory="./chroma_db"))
 @tool
@@ -45,7 +47,7 @@ def compare_regions(region1:str , region2:str , indicator : str , era : str)-> s
 @tool
 def calculate_percent_change(region : str, indicator : str, start_year: int, end_year: int) -> float:
     """percentage searchs the raw data and counts it"""
-    df = pd.read_excel("C:/Users/tsouk/Desktop/python-practice/PhD-Rag/data/stats.xlsx", 
+    df = pd.read_excel(file_path, 
                    sheet_name="Normal Οικον Βάση")
     df.columns = [' '.join(c.split()) for c in df.columns]
     available_regions = df[df.columns[0]].tolist()
@@ -66,13 +68,13 @@ def calculate_percent_change(region : str, indicator : str, start_year: int, end
 def calculate_resilience_score(region: str, indicator_type: str = "economic", crisis_type: str = "financial") -> str:
     """Calculate resilience score and classification for a Greek region based on crisis resistance and recovery data."""
     sheet_map = {
-    ("economic", "financial"): ("Normal Οικον Βάση - Crisis", "Resistance (2008-2013)", "Recovery (2013-2019)"),
-    ("economic", "covid"): ("Normal Οικον Βάση - COVID", "Resistance (2019-2020)", "Recovery (2020-2022)"),
-    ("social", "financial"): ("Normal Κοινων Βάση - Crisis", "Resistance (2008-2013)", "Recovery (2013-2019)"),
-    ("social", "covid"): ("Normal Κοινων Βάση - COVID", "Resistance (2019-2020)", "Recovery (2020-2022)"),
+    ("economic", "financial"): ("Normal Οικον Βάση - Crisis", "Resistance (2008-2013)", "Recovery (2013-2019)", "% National Change 2008-2013", "% National Change 2013-2019"),
+    ("economic", "covid"): ("Normal Οικον Βάση - COVID", "Resistance (2019-2020)", "Recovery (2020-2022)", "% National Change 2019-2020", "% National Change 2020-2021"),
+    ("social", "financial"): ("Normal Κοινων Βάση - Crisis", "Resistance (2008-2013)", "Recovery (2013-2019)", "% National Change 2008-2013", "% National Change 2013-2019"),
+    ("social", "covid"): ("Normal Κοινων Βάση - COVID", "Resistance (2019-2020)", "Recovery (2020-2022)", "% National Change 2019-2020", "% National Change 2020-2021"),
     }
     sheet_name, res_col, rec_col, nat_res_col, nat_rec_col = sheet_map[(indicator_type.lower(), crisis_type.lower())]
-    df = pd.read_excel("C:/Users/tsouk/Desktop/python-practice/PhD-Rag/data/stats.xlsx",sheet_name=sheet_name)
+    df = pd.read_excel(file_path,sheet_name=sheet_name)
     df.columns = [' '.join(c.split()) for c in df.columns]
     available_regions = df[df.columns[0]].tolist()
     match, score = process.extractOne(region, available_regions)

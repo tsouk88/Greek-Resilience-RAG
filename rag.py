@@ -1,7 +1,9 @@
 
 from langchain_chroma import Chroma
 from loader import load_excel_data
+import os
 
+file_path = os.getenv("FILE_PATH", "data/stats.xlsx")
 
 sheets = [
     "Normal Οικον Βάση",
@@ -13,7 +15,7 @@ sheets = [
 ]
 all_docs = []
 for sheet in sheets:
-    docs = load_excel_data("C:/Users/tsouk/Desktop/python-practice/PhD-Rag/data/stats.xlsx", sheet)
+    docs = load_excel_data(file_path, sheet)
     all_docs += docs
     print(f"Loaded {len(docs)} chunks from {sheet}")
 
