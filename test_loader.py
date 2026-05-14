@@ -6,7 +6,6 @@ file_path = os.getenv("FILE_PATH", "data/stats.xlsx")
 
 @pytest.fixture
 def file():
-    file_path = "C:/Users/tsouk/Desktop/python-practice/PhD-Rag/data/stats.xlsx"
     sheet = "Normal Οικον Βάση"
     return load_excel_data(file_path , sheet)
 
@@ -30,4 +29,4 @@ def test_meta(file):
 
 def test_wrongpath():
     with pytest.raises( FileNotFoundError):
-        load_excel_data("C:/Users/tsouk/Desktop/python-practice/PhD-Rag/stats.xlsx" , "Normal Οικον Βάση" )
+        load_excel_data(file_path , "Normal Οικον Βάση" )
