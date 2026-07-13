@@ -8,6 +8,7 @@ from langchain_core.output_parsers import StrOutputParser
 from thefuzz import fuzz
 from agent import agent
 from thefuzz import process
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 class Question(BaseModel):
@@ -18,6 +19,12 @@ llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key=os.getenv(
 parser = StrOutputParser()                           
 chain = llm|parser
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 vectorstore = (Chroma(persist_directory="./chroma_db"))
 @app.post("/ask") 
 async def handle_message(message: Question):
@@ -50,7 +57,7 @@ async def handle_message(message: Question):
 async def handle_agent(message: Question):
     result = agent.invoke(
     {"messages": [{"role": "user", "content": message.question}]},
-    config={"configurable": {"thread_id": "research-session-1"}}
+    config={"configurable": {"thread_id": "research-session-3"}}
     )
     answer = result["messages"][-1].content
     if isinstance(answer, list):

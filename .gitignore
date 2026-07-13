@@ -4,3 +4,6 @@ venv/
 chroma_db/
 data/
 __pycache__/
+*.docx
+findings.md
+literature_synthesis.md
