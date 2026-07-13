@@ -7,3 +7,7 @@ __pycache__/
 *.docx
 findings.md
 literature_synthesis.md
+cluster_radar.png
+cluster_scatter.png
+deepresearch.py
+test_loader.py
