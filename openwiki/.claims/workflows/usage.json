@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:9b86b4abcde4339b4d98a69cb1097d13a3edb857bb829999c8aae65f6c0d8e55",
+  "claims": [
+    {
+      "id": "claim_1e5fa614f2be4c56a1ec74d10b9e02e3",
+      "statement": "The offline indexing workflow is implemented in rag.py, which reads the workbook from the FILE_PATH env var (defaulting to data/stats.xlsx), iterates six fixed sheet labels through loader.load_excel_data, and persists all resulting Document chunks to ./chroma_db via Chroma.from_documents.",
+      "evidence": [
+        {
+          "resource": "repo://loader.py#L7-L62",
+          "version": "repo-lines-v1:sha256:d7caeb0941076209b38387edd656eaf887f1bc5fc8367cd510edb11781ffab35:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlM2JlN2UyMTNkNjMxZmUwYjQzOWRjNDIyMzU0OTI1ZTkzY2MyMmNhOWNlZGRmYTgyN2QyOGI0ZTZjYzZhMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzMmQ5ZTBhZjBhMGRhNjA4ZTE3MjJhZWYwYjQ3NjRiMjhkNGQ4MThlZDU4Yjg5Njc1N2I0NzJkNzJhZDdkNmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://rag.py#L1-L29",
+          "version": "repo-lines-v1:sha256:09e4b4a837c3aed47bb95735da613df4334b054f27fa238729e558f9ba5b90c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2Yzg5ODIxOGRkOTAyYzY0YWU4NGFhNDdkM2ZlNWNjNGE2MTJjMTA3OWNhMzM4YjI4NzNjYmI5Mzk5NjQ4OWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cf150d9750724f7c8921c66f5b213915",
+      "statement": "rag.py indexes exactly six sheet labels: Normal Οικον Βάση, Normal Οικον Βάση - Crisis, Normal Οικον Βάση - COVID, Normal Κοινων Βάση, Normal Κοινων Βάση - Crisis, and Normal Κοινων Βάση - COVID.",
+      "evidence": [
+        {
+          "resource": "repo://rag.py#L8-L15",
+          "version": "repo-lines-v1:sha256:f1ae06baff61812bad67f47107ab69936fe0898e5371afe8951f7f8960df9fdb:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDVjYjVjZDdjZTExMmIyMWJmNjM4ZTFkMjE4Yjk2NzRhOTk1MjAyMzA2NWJkZDJhYjFiNDEyZDk0MTVkYTU2MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjk0MTZlMDlmNzhiYTMxNmMwMzI1NjgyMTNiODU1ZWU3NTZlNDE1NjVkOTE4ZjA5NTE5YzgxZmQ2MjBmNDA2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODA4MjFmMWVlYzQ3OGYzYWM5ZDJiNTZhZWQ4MGMxZjc1MDdiYmE0YzE4OGRlZDdiYTliYmQ2NGFmZGYzNjI3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYThkOGRlOWJlZDAyYTZjN2E5MjMxZjBiZGVkNDQ2MjNkZjI2ODc5MDZjYzRkNjY3ZDRjZGZiN2M5MzdjZmUwNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e4c7d8fc82fa497bbc1ef818d506f266",
+      "statement": "loader.load_excel_data converts one workbook sheet into Document objects, one per region x indicator x era, carrying region/indicator/era/source metadata. Eras are Expansion (Προ Κρίσης) 2005-2008, Crisis (Κρίση) 2009-2013, and Recovery (Ανάκαμψη) 2014-2023, and each chunk's page_content pairs regional values with the national (Ελλάδα) values.",
+      "evidence": [
+        {
+          "resource": "repo://loader.py#L11-L59",
+          "version": "repo-lines-v1:sha256:ec2fdca15fcf228c67c8b21c22718d877661beb0140b6a0cb63e7058ced2b2cd:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0OTQ3NzI2YzYxYTJlYTQ3OTdkZGUzMTlhMjAwNzI1ZDJkOGYzOTU3NTI1MzAxMjU4ZmQxYTA4YmE4Nzk0NWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZGMzNjA0ZjkyYzU3MDQ5MTBiZGJmNGRiNjBlYzViN2RiNjg5NjE1Yzg2MmFmZDJjMmFjY2NiNWRkMGZiOGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3ZDExYTY4OWQ1NDUxOGQxMzBhMjRjM2I0NDRmNDVjZGE4MzQwZTllMjlhZTE0MzQwNjZlZTVmNzNlZjUwYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkNjIxYTc5YjU5Yzg3YWI3NGU1NmI2ZGZhMWI4ZDg5ZmM2ZTQ3NDU2ZTZlMmFiYjFmZWVmYjBhOTA3ZGQwOTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a02a9b01c43445aae4c11f30cb5c04a",
+      "statement": "POST /ask in main.py is the quick RAG path using gemini-2.5-flash and the llm|StrOutputParser chain. It runs vectorstore.similarity_search(question, k=10), collects region metadata from the results, fuzzy-matches the question against a hardcoded list of 13 Greek regions using thefuzz.fuzz.partial_ratio, and for each region where partial_ratio > 80 and the region is not already in the result set runs a second similarity_search with k=5 and a region filter to pull extra chunks. It never reads the workbook directly.",
+      "evidence": [
+        {
+          "resource": "repo://main.py#L29-L54",
+          "version": "repo-lines-v1:sha256:f278a8343c0706ea29854fcf9ecba840742da03b349e38e4b4aedf7e104e3a2d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlYmEyNTRkZmY0YTAyMmJlY2M1NjEzNzk3Yjk4OWEwNTRkNWMxYzIyZGUzMTFhNWEwMTFlMTIwMTBlZjkyZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjMTM5ZjUyNzIzZmI1MDY0MDhmYzdmY2Q1MTY2YmI3ODgwMWFhM2MwYmM0ZmFhOTM3YTAzMDY0NDMwNjY2OTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwYjZmMGI3OGY2MTYzZWM1YmQ5NmVhYTQwNmZkZTllNWVjZGU5N2VjMzAwNGFjMDdiN2Y1OTc0YmIxMTk1NWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJmODc1YjdjODNlYzA0NTgzYzU2MjU2NDcyNWM5NmI1ZjQ1ODdiOGExZDAwYWI5MmZlYTVlMzFlYjEyMThlYTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_30e505a1994d4b88a9ea19d0f4ff413f",
+      "statement": "The /ask fuzzy region-expansion uses a hardcoded list of 13 Greek regions (Αττική, Θεσσαλία, Κρήτη, Βόρειο Αιγαίο, Κεντρική Μακεδονία, Δυτική Μακεδονία, Ήπειρος, Ιόνια Νησιά, Δυτική Ελλάδα, Στερεά Ελλάδα, Πελοπόννησος, Νότιο Αιγαίο, Ανατολική Μακεδονία και Θράκη) with a partial_ratio threshold strictly greater than 80.",
+      "evidence": [
+        {
+          "resource": "repo://main.py#L34-L46",
+          "version": "repo-lines-v1:sha256:936e46b48f3577497f22ae09926a7711b030d139c73fc7794c40e6ea96a6f517:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2ODg3NGVmZGM0ZWI2YTQ4OWUwOWI2YzE1N2ZiNWYxMDM3YmU0NmE5MTQyYWE5YjZlZmEyYzc4ZjcwMTRlNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwNjFmYWUyZDM4NGJkNWYwODI2Yjc2ODg1MGE5ODViN2Y4NjNjY2UxZGNkMDQ2ZDZhNThlZjkzNjliYTcwMTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5ZmQyMDZkMWRlYmZjYTg0OWNiZDA4NGY4OTFjOTA0ODc1Y2QwYzVlYjRkNTNiOGZlYjk4NzMwNDkwODg1Y2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlZjFiZWEzYWM0Zjc2YTI5NTE0NWNkODQ1ODhiMGU3YmM3M2E0NDlhNTQwZjFmZDVlYmNhNTI3ZDA0YWRmYTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4ca09e933a0d4888a9d27f750101f487",
+      "statement": "POST /agent in main.py delegates to the LangChain agent from agent.py by calling agent.invoke with a user message and config thread_id research-session-3, returning the last message content as the answer; thread_id is hardcoded so all requests in one process share conversational memory.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L441-L441",
+          "version": "repo-lines-v1:sha256:9299f1d9a2c65301e5b6dd1f80eb9873445320b0f0e5e3391968763344b9441b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTI5OWYxZDlhMmM2NTMwMWU1YjZkZDFmODBlYjk4NzM0NDUzMjBiMGYwZTVlMzM5MTk2ODc2MzM0NGI5NDQxYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTI5OWYxZDlhMmM2NTMwMWU1YjZkZDFmODBlYjk4NzM0NDUzMjBiMGYwZTVlMzM5MTk2ODc2MzM0NGI5NDQxYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGU4N2M1MzI0YjQzODNiYTFkYmE4OWVlNmRkNDliYzQ3MjJlYWRhNTAyMjgwZDc0YmQ5YjNlYmFkMjljMTM5NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiJ9"
+        },
+        {
+          "resource": "repo://main.py#L56-L65",
+          "version": "repo-lines-v1:sha256:e70e001491a4e99bc306bacc5b1835793f6ead9f73879bafa7d63c7a0a050989:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNGM2NWQxMmFkYmZkOGY4MmJjYTk5NzU4OWNmMzU3MDk1N2ZhODA4NTg4OWY1M2EyMWY0ZWVkNDFjYTJiMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhNjk4NTU2MWE0M2FkMzRmODM0NjRlOTNiMDJjMjYyNGIyOTJmNjk3N2Y4NGNjMmJjMDMzMTBhMzcwYjEzNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5MGYxMGYxMDg3NDg1MjZmYjg5NjBiZGFiZjEwNjFiZjMxZDQ5ZTkzMmJhNjkxYjdlYjllYmNmOGRkMDE5OTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bcacdc3ac87a4b368ec5ba78f8e6482b",
+      "statement": "The agent is built with create_agent(llm, tools=available_tools, system_prompt=system_prompt, checkpointer=memory) where llm is gemini-2.5-pro and memory is a LangGraph MemorySaver (in-process, not persisted across restarts).",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L14-L17",
+          "version": "repo-lines-v1:sha256:123424c843ab0db2801aee8d5ec7c89ebf6feb5499f50bc683e65a6d24ef0947:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTU4ZTY0ZThiY2Y4ZWI0MDg0ZTVkODQzMWI3MDI3ZDcwZjcwM2JjOWJjMWEyMzAwNjM2ZmI5YjdhYjQ2ODQ5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWJkY2RkZGFmMGU4Zjc5ZmI0ZmZkOWMwOTY0N2U1OWU2MTA5Y2JjODg5YWYxZjZlYzQ0ZGUwYjBlNWI3OWVmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzgxN2UzMzc3ZGY5YjllZjBjZmU5ODZiZTQzYTc2ODM5YzI3NzlkN2FjYmFhYWQ4ZjRjMDBkNDUwZThkYmRhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGMxOGI2NGExZTUzMGI4MTgwMTM2MjU0MDY2ZWRkNDkxMDE4NGVhMTBlODJhNmY3NjE1MmI5Njg5NmIzYTI0YSJ9"
+        },
+        {
+          "resource": "repo://agent.py#L440-L441",
+          "version": "repo-lines-v1:sha256:db0fecebfafe1328a57f4d4213b5e21d196c53f49a276b9f4108f898a815e245:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzUzZTAwZmJlNjM0NWU4ZjhlYWM1YzE1ZTY4NDJhMDNmYmMyM2RkNDYwMzdkOTQ1MWI4YTBlOGIyYTY0MTRlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTI5OWYxZDlhMmM2NTMwMWU1YjZkZDFmODBlYjk4NzM0NDUzMjBiMGYwZTVlMzM5MTk2ODc2MzM0NGI5NDQxYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWM4MmNjMjVhYTM3NmRhMDAyMzBmYzMzNzFhY2I3YjkwZDg2ZThhZWU5ZmYxMTYzY2E0YTU3ZjEwNDJhZTA1YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f66faafacb124b6f8c0d63b8c72ed337",
+      "statement": "The system_prompt mandates a three-phase research protocol: EXPLORATORY (search_regions, calculate_rti_score, calculate_crisis_comparison; prioritize Learning Delta when significant), DIAGNOSTIC (calculate_recovery_speed, calculate_structural_shift, and calculate_vulnerability_index when values exceed +/-15), and SYNTHESIS (analyze_socioeconomic_coupling and calculate_rtix_score for both economic and social). It requires Greek region names, never asking for clarification, and archiving the verdict with save_finding.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L410-L438",
+          "version": "repo-lines-v1:sha256:29b9171ea2ba83987528a4a185d234a98f52aba088423eb5015c8fd22d5cb9c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3NTIxYzNhYmM1YmFiMzFkZmJmYzRiMzgyNWEyYjVlNmQ4MDI0MDNhMGM0YTE4NjFhZTMxMjI5NTkyYzliZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiNzcwZmI0NWE0MjVlZTM0MjE2M2M3ZTM3MzI4MDM1NTdlNTc3ODVjYTliNWExZTMwZWY4ZWRkNTNiZWEwZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZhNzQ0ODI1ZDg2Zjg0NTFiZjEwMDNiNDY4OWJiMDY4NjZiMTE5MzM5ZjUzNTgyMTkyNTViYzJiYWUwMWEyNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjNWI5OTYyMjIzOWRjYjUyYWYwZjI4ZDJmMmIzODJiYzkxNWYwMmM3ZWRiMTVkYWQ0MDU1NWRiNzIxYzg2N2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6d4ee8f10af9476489c1a6c8613f666e",
+      "statement": "available_tools exposes 13 tools: search_regions, compare_regions, calculate_percent_change, calculate_resilience_score, calculate_rti_score, calculate_recovery_speed, analyze_socioeconomic_coupling, calculate_structural_shift, save_finding, read_findings, calculate_rtix_score, calculate_crisis_comparison, and calculate_vulnerability_index.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L440-L440",
+          "version": "repo-lines-v1:sha256:353e00fbe6345e8f8eac5c15e6842a03fbc23dd46037d9451b8a0e8b2a6414ea:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzUzZTAwZmJlNjM0NWU4ZjhlYWM1YzE1ZTY4NDJhMDNmYmMyM2RkNDYwMzdkOTQ1MWI4YTBlOGIyYTY0MTRlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzUzZTAwZmJlNjM0NWU4ZjhlYWM1YzE1ZTY4NDJhMDNmYmMyM2RkNDYwMzdkOTQ1MWI4YTBlOGIyYTY0MTRlYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWM4MmNjMjVhYTM3NmRhMDAyMzBmYzMzNzFhY2I3YjkwZDg2ZThhZWU5ZmYxMTYzY2E0YTU3ZjEwNDJhZTA1YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTZjOGFiZGI3NDkxMDQ0NTc2OWY1MjMxMmNlOGNmZGZlMzc4YjRkNTdhYWFjYjMzY2FhZTAwMzNiNTcxMDExYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_096e32daff9c4b198a637373e7696a26",
+      "statement": "The agent tools split across two data sources: search_regions and compare_regions run ChromaDB similarity_search with a $and metadata filter on region/indicator/era (mapping user era terms to canonical era names), while calculate_percent_change, calculate_resilience_score, calculate_rti_score, calculate_recovery_speed, analyze_socioeconomic_coupling, calculate_structural_shift, calculate_rtix_score, calculate_crisis_comparison, and calculate_vulnerability_index read the workbook directly with pd.read_excel on fixed sheet/column labels.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L27-L47",
+          "version": "repo-lines-v1:sha256:9879298f31714d38971ff15c0d60f409a1166256ce7f8151c185d8623febefaa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNGU1OWQ3ZWFkY2E4YTkyOWEyNWZhNjBiYjU0ZmY2YjhhZmIwZmFkOTQwOTljZDFjODg5OGRjZDViZTk2OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkZmJiNDQ3MWIwNTI5ZmRiZDFlOWQ3ZGMzYTYyNDA3ZDVhN2M5YzBkNWFhNjhkZjA5OGNmZTlkMzJiN2Q4OTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxNjM5MDVhY2NhMzg3ODM3NGU5MTA0OWQyM2U0ZGQ1ZjhlNGFlNDZkOWY1ZjFiZTBjYzY0ZWM0MDZkMTQ1YWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0MGE1NjViNzNhNTk2N2VlNjYyMTM3MGMyOWYzNWI4NjkyN2M1MWUxMDJhZWYxNGRmNTYzMjA1NmY2YThiYzUifQ"
+        },
+        {
+          "resource": "repo://agent.py#L57-L408",
+          "version": "repo-lines-v1:sha256:724af0fcddfb77a4b481a880b39785e95b0d304c147233a71f8924d1f340e1c9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxMzRlNTlkN2VhZGNhOGE5MjlhMjVmYTYwYmI1NGZmNmI4YWZiMGZhZDk0MDk5Y2QxYzg4OThkY2Q1YmU5NjhjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiYzE5YjQwZjcwYzQzNjJhNDJiZjAyMDA3YzRiMTYyN2IxNzkxMDIxNjZjMDcwNmUwMjNhNTgyMzY0OTZmYWI0IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIwZDUyNDczOWU1MWUwYjIyNDY1MDNlMmViODZhNjEwMWJlZmIwM2RiYmFiODdjYWU2MWNjNzc1MDIxM2Y5NGUwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2YTgwZmVkOTZkM2JhN2UwMjU5ZDljZTAxMDYwMWUzYWNlYzY2ZjljOGQzN2ZmM2RlODZkZjYxNWQ2YTFlMGIyIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_c52a26e9242c4e7ab42eaad16a2b3eac",
+      "statement": "All region-facing agent tools map user phrasing onto exact workbook region names using thefuzz.process.extractOne with a score threshold strictly greater than 70.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L131-L134",
+          "version": "repo-lines-v1:sha256:91dc18a81dfb4e8a3fe18ae84a3311d5fe4d0a7ec8ed99e1bb3540d59f965016:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2UxM2JiMTVmYTUwN2M5MTU3ZjA1NzU2MTcyMDJlNDBmZjZiYmQxMjg4OGU5YjJkM2Y0ZDdjZjlhZGUwMWQ4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcwNGFkYzlhNWMxODcwM2ZjN2YxOTNjODgzNTdkODk4OGE1MzJiODQ0NzJlMGFkMzFmZTI5YWVhZGI2YzAyOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzUyZDY2OTY4ZGQ1NWVhMzk2YTcyYzgwNTJiMGU3OGU5MjM4MjAxNWE0ZDBlZjI1Yjk3Y2I4MjRkZDk5NmFhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWZjNTk0MjY3MzdiMWRiNDc5MjIyNGQ0MjMyZGZhZTg3Y2ExMWFkNGRiNzIxMTA5YWFjODMxNjkzZDhkOTVhZiJ9"
+        },
+        {
+          "resource": "repo://agent.py#L63-L66",
+          "version": "repo-lines-v1:sha256:91dc18a81dfb4e8a3fe18ae84a3311d5fe4d0a7ec8ed99e1bb3540d59f965016:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2UxM2JiMTVmYTUwN2M5MTU3ZjA1NzU2MTcyMDJlNDBmZjZiYmQxMjg4OGU5YjJkM2Y0ZDdjZjlhZGUwMWQ4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcwNGFkYzlhNWMxODcwM2ZjN2YxOTNjODgzNTdkODk4OGE1MzJiODQ0NzJlMGFkMzFmZTI5YWVhZGI2YzAyOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWZmNzIyYjA0ZGY2ODU4OWE4MDI5ZGQzMWNjYzY3OTE4OTQ3ZmRhMGJiMjRmMTU4NmIyNGY2NWI2MDI0NWMzNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTU0ODM1YzA1NmE5M2VmMGZiMDZlNzZjZTM3YWVhOTM4OGY3ZmY3NmVmZTIxZjcxYzBjMzlkOGY2ZjVhOWRhZiJ9"
+        },
+        {
+          "resource": "repo://agent.py#L98-L101",
+          "version": "repo-lines-v1:sha256:91dc18a81dfb4e8a3fe18ae84a3311d5fe4d0a7ec8ed99e1bb3540d59f965016:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2UxM2JiMTVmYTUwN2M5MTU3ZjA1NzU2MTcyMDJlNDBmZjZiYmQxMjg4OGU5YjJkM2Y0ZDdjZjlhZGUwMWQ4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcwNGFkYzlhNWMxODcwM2ZjN2YxOTNjODgzNTdkODk4OGE1MzJiODQ0NzJlMGFkMzFmZTI5YWVhZGI2YzAyOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjA3M2Y4MTYxZDg4NmNmZDBmM2Y4MDQ4YjQyZjE2ZTFiZDliZmUxZDZkMjRkYmUzZTE4YzNiMzE1MDU4YTE0NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjNmNDFmNjkzM2ExZjYzOTYxMGExMWE3NGQyN2ZlM2Y5Y2I2ODM3ZWZlODAzMjA0MGVhMDA4MTk4MDBjMmVkMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c87ee0823916464d8532602d08cf48e6",
+      "statement": "save_finding appends a timestamped markdown record (region header, optional scores, full insight) to findings.md in the working directory; read_findings returns its contents or 'No findings saved yet.' if absent. findings.md is a local, gitignored research artifact, not tracked in version control.",
+      "evidence": [
+        {
+          "resource": "repo://.gitignore#L8-L8",
+          "version": "repo-lines-v1:sha256:7609dca0d7c03a7b7ccb816faabcbba77f91bfd1ddff737110284b57e8b24eca:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzYwOWRjYTBkN2MwM2E3YjdjY2I4MTZmYWFiY2JiYTc3ZjkxYmZkMWRkZmY3MzcxMTAyODRiNTdlOGIyNGVjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzYwOWRjYTBkN2MwM2E3YjdjY2I4MTZmYWFiY2JiYTc3ZjkxYmZkMWRkZmY3MzcxMTAyODRiNTdlOGIyNGVjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjg2YjBiMWJhZDg4MGJhODM1ZTA2NmZjYmQ4ZDMyNGIzODVhYWFhMGVmZTdlNWQ5ZGYyZTlkZGFhMGMyNDM2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTkyZDEyZWUwZjIyODFhYTljMGJlMjIxZjU4YWFkZTNjMTI5YzQ4OTYwODExN2RmZWQzNTY5M2FiMzhkYmRhMSJ9"
+        },
+        {
+          "resource": "repo://agent.py#L276-L302",
+          "version": "repo-lines-v1:sha256:f716ebfbb3b286e4df0f54cad632c3ca46bcac6c153b73e4a762477cd458e235:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNGU1OWQ3ZWFkY2E4YTkyOWEyNWZhNjBiYjU0ZmY2YjhhZmIwZmFkOTQwOTljZDFjODg5OGRjZDViZTk2OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3ZTliYzMwYzE2MTM2NTQ5NjcxYTA1YmM5NmQ0NmViOTZmZjE0NDQ2NTRkNDc3ZTM3YTY4ZWM0ZmI1YTAxMWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxMmM4NGM1M2I3M2ZiODg1NTUxZjUwYTRhOTUzODk0MzQ1MmI2MGNmMDJmNjBmMGNkOWNjMzUzMjUwOTFlYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4OTdiZjg3MmY2YzcyNGU4N2UzNjA1YjYzYjAzNDM2Njk4MDRjZmIxMWQyMDcyYjM2N2UyMjVhYzkyYTk4MjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_abbf5d203887458483d301e59c9d47ff",
+      "statement": "cluster_analysis.py is a standalone offline KMeans clustering of hardcoded region score data (copied from findings.md). It scales averaged Rs/Rc/D features with StandardScaler, uses k=4, and writes the gitignored PNGs cluster_scatter.png and cluster_radar.png; it is not part of the runtime.",
+      "evidence": [
+        {
+          "resource": "repo://.gitignore#L10-L11",
+          "version": "repo-lines-v1:sha256:6d17f058170ee7df2ea34d0147ae931d51dcd9fc24303b964fc3502b45f07eef:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTJmYzhiZWI3YzUyMDE0OWYyOGQ5Y2VjZGQwZjUzMWEwNTY0ZTA1MjFmMzA0OTk4MmUwZGQyNDY5NTk0MTg2MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDM3ZjA4NTJiMWRjMjg3YzFjYmZkNmQ2MjRiYTQ5OTYxZWIxZTU2MTRkNDRjMzdhZmY4ZGRlNzM3ZDZiN2M1OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODZkODRjZTY0YTdjY2Q1YzJkMDIwYjcxNDM4ODhmNTg2MTQ3ZWE3MjlkNDA2MWI1ZTRlOWY0MDkwNDAyOGZiZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2I3ZmNmOGFhMDQ2NTMzZjE2N2ZmNWMyZjQ5YzZmNjgxZjRkOWZiMDY3MjhjYWM5NDZkMTc4MDZhNjM3ZTJkOCJ9"
+        },
+        {
+          "resource": "repo://cluster_analysis.py#L1-L49",
+          "version": "repo-lines-v1:sha256:b40bb14f5e5ac08bad5799d85b127281758ad19b228f3e702908ca1bfbf9040c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3YTExZDVlZGMwZjA2MjhiNGE4ZDY2NWE3OGRiNmRkMTA2MmQ4ODA2NWQzMTZiNDI5M2M0NTBlZGY3NjAzMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlYmY2N2Y1MzVkZjlmODc3YTE0YjIyYzg4MDFkMGU4NzQ4MGVmYTM0YmZhNzYwN2VjZjNjZTNkODlkYjg1ZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwNDJhNzIzNjAxMmMyODNmMDM4NWZjMWVmY2FkODQ0ZTg0ZTk5MGQxNGY1MTQ3MzhmZDdjMWU5MzA3OWE3NzgifQ"
+        },
+        {
+          "resource": "repo://cluster_analysis.py#L129-L191",
+          "version": "repo-lines-v1:sha256:09a399040ca53c5a96a6cb08ed094b7389108aaad094db3f649b42bf91b51900:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4YmJmOGU2YjI5YzRkYjgyMTdkYzE3Zjk5N2Q0MWZkMWNmMzNiOTEwYWQ0ZDQwYmU5ZDY1MmQwNzkxMTBmYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiM2NmZWU0NmQzODM3Njg4NWMzOTAyNDY3MDZhMjY4ODdjZmJhYTIxM2Y2YTNiZDE5YjVkYTZmOTQxMzNlNmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1ZGYyYTBkMjZiZjU3NWFkOGQ1NDE1NzE5ZmUyNGIzYWE1YWFjMTliZGFhNmY1NjRlNzY4ZGZjM2RmYWRlNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyYjFhMmRmMTU3Mzg3ZGRjNmQxOThiMTc4YTkwNDE3NGJmZGVmMDAzMjFmY2MzNTI3Mjc3ZmY1YmI4MzY2ZjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b3c4bb46c35b47a9aaff7538167d1382",
+      "statement": "The Next.js chat page (greek_resilient_rag/app/page.tsx) is a client component that posts { question: input } to http://localhost:8000/agent only (never /ask), appends data.answer to the conversation, and holds no retrieval, LLM, or tool logic. Cross-origin calls from localhost:3000 to localhost:8000 are enabled by FastAPI CORS middleware allowing the single origin http://localhost:3000 with all methods and headers.",
+      "evidence": [
+        {
+          "resource": "repo://greek_resilient_rag/app/page.tsx#L15-L36",
+          "version": "repo-lines-v1:sha256:09658aeb0c977f1c97e8ca81278ee954c4267f393a23f8abf0137fe0e0ae091f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmNDE4OTQ1MDI3ZWQwNDAyMDAzMmE2OTZmMGY3OTBkMzUzODY2YjljMzdlMWZiOTViZGMzODA4NTNiN2NkMWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhZTdjOGRhYzE3OTZkM2UwNDAzNTY5YjdiYTU1ZDgxMjEzNDljNjc2OWQzZDgxY2IzYzE4ODQ1Nzc1Y2ZlZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwOTc3YWJkZDE0OTQyNWU2ODk4NzQ0OTgxYmJhZmNjZmJiYjE1NzYxZWVmODI2YTFlZmY1YTU3ZTgxODE1MDYifQ"
+        },
+        {
+          "resource": "repo://main.py#L22-L27",
+          "version": "repo-lines-v1:sha256:4ea157d0b84a813257785b97e48de3de4f3ae28ecd5bea24c719c1af5c0db94c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzJmOTA3ZGVjNmZiMjUxZmU5N2RhYjhhNWViYmIyYmViMjc5N2FmNDAxNmVmOGY1NWU0NDQ2MmRkYjg2YjE0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzY4ZGEwNDhmODkzOTljMWU4MjA0MWI4MzJmZDM4Y2VhZmUxZDVjODdiNDI2ZTY2NDkwZGE4MjkxMTk2MDY0MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjllYmU1NTA4YTEwZjMxN2YxMDgyMWU2ZTQ3YWEzMmE0OGRkYmM2ZmEyMDIwMjI5MDhhMzllNzg2ZTViMjcxYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_788559a8f3fd4b3589df1accd7ae1d1f",
+      "statement": "/ask uses gemini-2.5-flash and /agent uses gemini-2.5-pro; both read the GEMMA_API_KEY from the environment.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L16-L16",
+          "version": "repo-lines-v1:sha256:4104cc518b8ce7779a9dc8597e2cd853b3cf2db387647104a3c7f56db609d6e9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEwNGNjNTE4YjhjZTc3NzlhOWRjODU5N2UyY2Q4NTNiM2NmMmRiMzg3NjQ3MTA0YTNjN2Y1NmRiNjA5ZDZlOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEwNGNjNTE4YjhjZTc3NzlhOWRjODU5N2UyY2Q4NTNiM2NmMmRiMzg3NjQ3MTA0YTNjN2Y1NmRiNjA5ZDZlOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjNjMmQ3YTZkNzQwMWEwMzcwODc0MTY1ZGQwYTc4NGFiN2QyZGFkMGMwMTgxMzZkOWVkMzU3N2Y1ZjE1ZTAzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWZiMWZhZmExZDBhNzA5MTIyZWViZmI0OWRhNzc5MjM3OGIyMGEwYWFkZmY2OGZhYjAwZGJmOTJhYWI0ZjZjZiJ9"
+        },
+        {
+          "resource": "repo://main.py#L13-L13",
+          "version": "repo-lines-v1:sha256:eab3960e88c50c67f23dca0dd310ce2b15400df7bf166330db312da4920be644:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFiMzk2MGU4OGM1MGM2N2YyM2RjYTBkZDMxMGNlMmIxNTQwMGRmN2JmMTY2MzMwZGIzMTJkYTQ5MjBiZTY0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFiMzk2MGU4OGM1MGM2N2YyM2RjYTBkZDMxMGNlMmIxNTQwMGRmN2JmMTY2MzMwZGIzMTJkYTQ5MjBiZTY0NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjQ3ZTk0NDRkNTM3ODI2OTA1ODg5MTI5ZmM5NDM3NjYwZDQwMWZjNmNlNzc2NzNhMmIyYjk1ZDNjODEwOTQ2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjU5NzlhNWJmYThhYTVlMTQ5MjkwNDAxN2UyZGRhNDAxNGZkNjg2YmIyMWNmZDk3MzVjM2RkNDJmZjdhOTQwZiJ9"
+        },
+        {
+          "resource": "repo://main.py#L18-L18",
+          "version": "repo-lines-v1:sha256:5631dbfbdfabedf29841acee2f58919afdb35fc7b4e313a7318baf53a2a2d124:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYzMWRiZmJkZmFiZWRmMjk4NDFhY2VlMmY1ODkxOWFmZGIzNWZjN2I0ZTMxM2E3MzE4YmFmNTNhMmEyZDEyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYzMWRiZmJkZmFiZWRmMjk4NDFhY2VlMmY1ODkxOWFmZGIzNWZjN2I0ZTMxM2E3MzE4YmFmNTNhMmEyZDEyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDhlYTBhMzU1OGI5ZTNjMjg2MjQ2ZTk4ZDM4YTJkZDk4ZWRlNjM0NDYxNWVmYTAxMjhmZmFmOThkYzNmNzE5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzY4ZGEwNDhmODkzOTljMWU4MjA0MWI4MzJmZDM4Y2VhZmUxZDVjODdiNDI2ZTY2NDkwZGE4MjkxMTk2MDY0MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_60a2c5d4c5fa491c9e46d266dcc31e73",
+      "statement": "ChromaDB is a local rebuild artifact: main.py loads the existing index with Chroma(persist_directory='./chroma_db') at startup and there is no runtime embedding step, so python rag.py must be rerun to rebuild ./chroma_db whenever the workbook changes.",
+      "evidence": [
+        {
+          "resource": "repo://.gitignore#L4-L4",
+          "version": "repo-lines-v1:sha256:b0a0fb1008076de659bc4714b4b90f993c196f19df5ba3e5d1124a6471bf5600:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjBhMGZiMTAwODA3NmRlNjU5YmM0NzE0YjRiOTBmOTkzYzE5NmYxOWRmNWJhM2U1ZDExMjRhNjQ3MWJmNTYwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjBhMGZiMTAwODA3NmRlNjU5YmM0NzE0YjRiOTBmOTkzYzE5NmYxOWRmNWJhM2U1ZDExMjRhNjQ3MWJmNTYwMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmIxODllOWZkYjlkYTEzMTdkNDgzZGQzYjRlNmMzYzdmNmY4OTMwZDdhYjBjZjlkZmQ0MTQ2MDgyNDI5MDgyNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjg2YjBiMWJhZDg4MGJhODM1ZTA2NmZjYmQ4ZDMyNGIzODVhYWFhMGVmZTdlNWQ5ZGYyZTlkZGFhMGMyNDM2ZSJ9"
+        },
+        {
+          "resource": "repo://main.py#L28-L28",
+          "version": "repo-lines-v1:sha256:1bdcdddaf0e8f79fb4ffd9c09647e59e6109cbc889af1f6ec44de0b0e5b79efb:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWJkY2RkZGFmMGU4Zjc5ZmI0ZmZkOWMwOTY0N2U1OWU2MTA5Y2JjODg5YWYxZjZlYzQ0ZGUwYjBlNWI3OWVmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWJkY2RkZGFmMGU4Zjc5ZmI0ZmZkOWMwOTY0N2U1OWU2MTA5Y2JjODg5YWYxZjZlYzQ0ZGUwYjBlNWI3OWVmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmU2NTE0NTM5ZDliNmM3MmE4YjIxOGZiYzg1NGEzZGE3MDU3YzYxNWVkMWNjODg4ZmNjN2EzZDQ5MzVjY2QzMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTM3NzM5NWM2Yjc2ZmViZDRkOTE3NjQxMDg3ZGY2OWVmZGZkZGM1ZjcxZjBiYWVjZmE1Y2U0YzA3Mzk2MGQ5MSJ9"
+        },
+        {
+          "resource": "repo://rag.py#L22-L25",
+          "version": "repo-lines-v1:sha256:5425f66e3b55da90c5bf9ef5a678d5fceec5197cde715c356fb019ede3633176:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGMxY2NjZDVhYmYxNzZiNTFhMWM0MzlhMzE3MjBmYzY1MGU4MDFlMWYzMmQ4MmI5MzFlYzc2Y2FhNjQzZDY2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTQ5ZDIwZTZmZTlmNWViYjgzNWJkMjlkMmE0OTBkNDgzZDg5OWZhYWQ4OWMyMTUwYzdjMTFjNjEzYzQxM2I0MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmEzY2Y1MTkyMzU0ZjcxNjE1YWM1MTAzNGIzZTk3YzIwZWRhOTk2NDNmY2FmNWJiZTZkNDFhZDU5YmQxMjE2NyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.4.3",
+    "at": "2026-09-01T11:19:44.752Z"
+  }
+}

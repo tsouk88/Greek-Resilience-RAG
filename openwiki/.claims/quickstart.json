@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d34ac74c989ce7295e58959e9e1d932a2d20dc97c01546e1f2a8281369f64dae",
+  "claims": [
+    {
+      "id": "claim_5989b562979d4b70ab21985759fb4f37",
+      "statement": "The repository is two cooperating subsystems: a Python FastAPI backend (main.py) and a Next.js frontend living under greek_resilient_rag/.",
+      "evidence": [
+        {
+          "resource": "repo://greek_resilient_rag/app/page.tsx#L1-L36",
+          "version": "repo-lines-v1:sha256:d58027fb905b947620af91ae795bee669c0d927783e3bca6e01de1e0993d21bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmMzdkYjFiOGRiM2ZiZWEzNmE1ZDJhNmZmZDVmMzM5M2E1M2VmMDUwNDdlMGI1ZTZlMTRhNDM0ZTQwNmZkZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwOTc3YWJkZDE0OTQyNWU2ODk4NzQ0OTgxYmJhZmNjZmJiYjE1NzYxZWVmODI2YTFlZmY1YTU3ZTgxODE1MDYifQ"
+        },
+        {
+          "resource": "repo://greek_resilient_rag/package.json#L11-L25",
+          "version": "repo-lines-v1:sha256:e83abeb12a0cc0b3a2e6a1948d98bbfc8e31f0972451f60b2518b1691dbed9fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhM2I0NjlkOWUwOTc1NzIyNDY2NjczNGM5ZWY3YjI1NGQ4ODUzNGY1ZDViYjcwOTg5NjA4MDVjNTUzZGMzMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzM2I3YjhhYWQwZjIyZmUzZGNiM2JjYTE4MDQ5YmZkMWEyZTYyY2IzNjFiY2ZhNzJhODg2OGFiZWM3NTMxMTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://main.py#L17-L20",
+          "version": "repo-lines-v1:sha256:699acb3cb44be9543aa6e1c2f6b372d0d934ce13fdc39529f7878b4aa58b2b4a:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTI4YzYzODNkYTM3ZTM4MzgwMTI2YzUzZWUwYzUwODViMjU5ZjEwNDE3ZDFiN2I1MjExNTBkYjU4ZTQwMjEzYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDA5Mjg4OWZhZWZkZDAyM2E3MGNkMGZlZDM5NjQwNGRiMGJiMmIzMWRiZWRlMzE1NTI4YzFhZTg3OTEwZjk4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjU5NzlhNWJmYThhYTVlMTQ5MjkwNDAxN2UyZGRhNDAxNGZkNjg2YmIyMWNmZDk3MzVjM2RkNDJmZjdhOTQwZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2M5YjA3YzlkOGY0NWU2NDgxYzc5OGE5ODIyMDg4ZDRkNzQ4MDgzM2Y5MzgxNWU2ZTc4NDdhYzU0YjFmNDQzZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_85cb38202eca4bedacb21d4372fbc4de",
+      "statement": "The backend exposes two API paths: POST /ask for fast retrieval-augmented answers and POST /agent for tool-driven research analysis; both accept a JSON body {\"question\": \"...\"} and return {\"answer\": ...}.",
+      "evidence": [
+        {
+          "resource": "repo://main.py#L29-L65",
+          "version": "repo-lines-v1:sha256:e5a8a7baf084449e0b5c5768cc0af7421b6f7d6c93fabf017820efb9e35c1200:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlYmEyNTRkZmY0YTAyMmJlY2M1NjEzNzk3Yjk4OWEwNTRkNWMxYzIyZGUzMTFhNWEwMTFlMTIwMTBlZjkyZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhNjk4NTU2MWE0M2FkMzRmODM0NjRlOTNiMDJjMjYyNGIyOTJmNjk3N2Y4NGNjMmJjMDMzMTBhMzcwYjEzNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwYjZmMGI3OGY2MTYzZWM1YmQ5NmVhYTQwNmZkZTllNWVjZGU5N2VjMzAwNGFjMDdiN2Y1OTc0YmIxMTk1NWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0ecc9ff2c1544274874774f2f4f95e41",
+      "statement": "The data source of truth is an Excel workbook; the path defaults to data/stats.xlsx and can be overridden with the FILE_PATH environment variable.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L15-L16",
+          "version": "repo-lines-v1:sha256:4e6a4e30d8f3e33d814ebe60b7936ccf407d4d513693b11aa327346914b9b015:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNlYWIwMTAxMzliNzA5MTIyNzRkZWIyY2U4OWE1ODc1MjRlODcxYTFiNDE0MDUyNDNmM2QyNjM1NzU4MDRkNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEwNGNjNTE4YjhjZTc3NzlhOWRjODU5N2UyY2Q4NTNiM2NmMmRiMzg3NjQ3MTA0YTNjN2Y1NmRiNjA5ZDZlOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODk0NGFhODA3OTNjNjg5YWVjZmNlYTMwNDA4ZmFhMTBmMWY1OTE4OTNhYWZjZGQ1MzQyOGEyNDlkMjU4NTQ2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWZiMWZhZmExZDBhNzA5MTIyZWViZmI0OWRhNzc5MjM3OGIyMGEwYWFkZmY2OGZhYjAwZGJmOTJhYWI0ZjZjZiJ9"
+        },
+        {
+          "resource": "repo://rag.py#L6-L7",
+          "version": "repo-lines-v1:sha256:5e726035a482db582d7cab121be8c3686ea0e43437032f46add921a4d8162be9:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNlYWIwMTAxMzliNzA5MTIyNzRkZWIyY2U4OWE1ODc1MjRlODcxYTFiNDE0MDUyNDNmM2QyNjM1NzU4MDRkNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmJmMmJhN2FiMGNlYTBlY2MyMjVkMDJmZjIyOWVjNjAxMmI1YzQ0MDQwMTg5OTQwOTgxOGZkYWIzODgxZjM4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWQ3MzE0NDlkYmZhNjIyMTQzY2E5ZTI4ZjBhNTdlMTQ4N2Y1YmZjNzNlYTQyMDMwMjYyYzE0Y2VlZmJiMmI2OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3b717cb699d34a9490cbbd471a1863b3",
+      "statement": "The offline indexing pipeline is loader.py chunking six workbook sheets into LangChain Documents carrying region/indicator/era/source metadata, and rag.py persisting those documents into the local ./chroma_db Chroma store.",
+      "evidence": [
+        {
+          "resource": "repo://loader.py#L7-L59",
+          "version": "repo-lines-v1:sha256:dd39127658d017e8f860a6149160d9cce85b1b2762663effafff02f7a9005f45:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlM2JlN2UyMTNkNjMxZmUwYjQzOWRjNDIyMzU0OTI1ZTkzY2MyMmNhOWNlZGRmYTgyN2QyOGI0ZTZjYzZhMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZGMzNjA0ZjkyYzU3MDQ5MTBiZGJmNGRiNjBlYzViN2RiNjg5NjE1Yzg2MmFmZDJjMmFjY2NiNWRkMGZiOGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkNjIxYTc5YjU5Yzg3YWI3NGU1NmI2ZGZhMWI4ZDg5ZmM2ZTQ3NDU2ZTZlMmFiYjFmZWVmYjBhOTA3ZGQwOTUifQ"
+        },
+        {
+          "resource": "repo://rag.py#L8-L25",
+          "version": "repo-lines-v1:sha256:37283d0303f1d9e7598dc0b1e7e7da930a0f01741ad8746369478357163ada5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1Y2I1Y2Q3Y2UxMTJiMjFiZjYzOGUxZDIxOGI5Njc0YTk5NTIwMjMwNjViZGQyYWIxYjQxMmQ5NDE1ZGE1NjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgwODIxZjFlZWM0NzhmM2FjOWQyYjU2YWVkODBjMWY3NTA3YmJhNGMxODhkZWQ3YmE5YmJkNjRhZmRmMzYyN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2cffb49327cb4986894d2035ef94b2d7",
+      "statement": "/ask runs a Chroma similarity_search (k=10), expands the result set using thefuzz fuzzy matching against the 13 Greek regions, and answers with gemini-2.5-flash grounded on the joined context.",
+      "evidence": [
+        {
+          "resource": "repo://main.py#L28-L54",
+          "version": "repo-lines-v1:sha256:feb8aa6dd64346bb482dfb9d41ca39e628af40ff78ca83e77ad838fea0393c97:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiZGNkZGRhZjBlOGY3OWZiNGZmZDljMDk2NDdlNTllNjEwOWNiYzg4OWFmMWY2ZWM0NGRlMGIwZTViNzllZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjMTM5ZjUyNzIzZmI1MDY0MDhmYzdmY2Q1MTY2YmI3ODgwMWFhM2MwYmM0ZmFhOTM3YTAzMDY0NDMwNjY2OTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlNjUxNDUzOWQ5YjZjNzJhOGIyMThmYmM4NTRhM2RhNzA1N2M2MTVlZDFjYzg4OGZjYzdhM2Q0OTM1Y2NkMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJmODc1YjdjODNlYzA0NTgzYzU2MjU2NDcyNWM5NmI1ZjQ1ODdiOGExZDAwYWI5MmZlYTVlMzFlYjEyMThlYTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6384a1a103714eb79d8314207bdd1932",
+      "statement": "/agent delegates the question to the agent built in agent.py: a LangChain create_agent using gemini-2.5-pro and a MemorySaver checkpointer, equipped with tools for region search, comparison, resilience/RTIx scoring, recovery speed, socioeconomic coupling, structural shift, vulnerability indexing, crisis comparison, and saving/reading findings.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L14-L17",
+          "version": "repo-lines-v1:sha256:123424c843ab0db2801aee8d5ec7c89ebf6feb5499f50bc683e65a6d24ef0947:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTU4ZTY0ZThiY2Y4ZWI0MDg0ZTVkODQzMWI3MDI3ZDcwZjcwM2JjOWJjMWEyMzAwNjM2ZmI5YjdhYjQ2ODQ5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWJkY2RkZGFmMGU4Zjc5ZmI0ZmZkOWMwOTY0N2U1OWU2MTA5Y2JjODg5YWYxZjZlYzQ0ZGUwYjBlNWI3OWVmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzgxN2UzMzc3ZGY5YjllZjBjZmU5ODZiZTQzYTc2ODM5YzI3NzlkN2FjYmFhYWQ4ZjRjMDBkNDUwZThkYmRhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGMxOGI2NGExZTUzMGI4MTgwMTM2MjU0MDY2ZWRkNDkxMDE4NGVhMTBlODJhNmY3NjE1MmI5Njg5NmIzYTI0YSJ9"
+        },
+        {
+          "resource": "repo://agent.py#L27-L441",
+          "version": "repo-lines-v1:sha256:7e7a3daf0487e68408c44eca1512ae6cb664d03298970ba79a0139160addc35b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDE1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxMzRlNTlkN2VhZGNhOGE5MjlhMjVmYTYwYmI1NGZmNmI4YWZiMGZhZDk0MDk5Y2QxYzg4OThkY2Q1YmU5NjhjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI5Mjk5ZjFkOWEyYzY1MzAxZTViNmRkMWY4MGViOTg3MzQ0NTMyMGIwZjBlNWUzMzkxOTY4NzYzMzQ0Yjk0NDFiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI5MTYzOTA1YWNjYTM4NzgzNzRlOTEwNDlkMjNlNGRkNWY4ZTRhZTQ2ZDlmNWYxYmUwY2M2NGVjNDA2ZDE0NWFiIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MSwiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIn0"
+        },
+        {
+          "resource": "repo://main.py#L56-L65",
+          "version": "repo-lines-v1:sha256:e70e001491a4e99bc306bacc5b1835793f6ead9f73879bafa7d63c7a0a050989:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNGM2NWQxMmFkYmZkOGY4MmJjYTk5NzU4OWNmMzU3MDk1N2ZhODA4NTg4OWY1M2EyMWY0ZWVkNDFjYTJiMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhNjk4NTU2MWE0M2FkMzRmODM0NjRlOTNiMDJjMjYyNGIyOTJmNjk3N2Y4NGNjMmJjMDMzMTBhMzcwYjEzNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5MGYxMGYxMDg3NDg1MjZmYjg5NjBiZGFiZjEwNjFiZjMxZDQ5ZTkzMmJhNjkxYjdlYjllYmNmOGRkMDE5OTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c10dde8bfa704a26b366b092673eb4ad",
+      "statement": "GEMMA_API_KEY is the required Google Gemini API key (read via os.getenv and normally supplied through a local .env file); FILE_PATH is an optional override for the Excel workbook path.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L15-L16",
+          "version": "repo-lines-v1:sha256:4e6a4e30d8f3e33d814ebe60b7936ccf407d4d513693b11aa327346914b9b015:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNlYWIwMTAxMzliNzA5MTIyNzRkZWIyY2U4OWE1ODc1MjRlODcxYTFiNDE0MDUyNDNmM2QyNjM1NzU4MDRkNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEwNGNjNTE4YjhjZTc3NzlhOWRjODU5N2UyY2Q4NTNiM2NmMmRiMzg3NjQ3MTA0YTNjN2Y1NmRiNjA5ZDZlOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODk0NGFhODA3OTNjNjg5YWVjZmNlYTMwNDA4ZmFhMTBmMWY1OTE4OTNhYWZjZGQ1MzQyOGEyNDlkMjU4NTQ2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWZiMWZhZmExZDBhNzA5MTIyZWViZmI0OWRhNzc5MjM3OGIyMGEwYWFkZmY2OGZhYjAwZGJmOTJhYWI0ZjZjZiJ9"
+        },
+        {
+          "resource": "repo://main.py#L18-L18",
+          "version": "repo-lines-v1:sha256:5631dbfbdfabedf29841acee2f58919afdb35fc7b4e313a7318baf53a2a2d124:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYzMWRiZmJkZmFiZWRmMjk4NDFhY2VlMmY1ODkxOWFmZGIzNWZjN2I0ZTMxM2E3MzE4YmFmNTNhMmEyZDEyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYzMWRiZmJkZmFiZWRmMjk4NDFhY2VlMmY1ODkxOWFmZGIzNWZjN2I0ZTMxM2E3MzE4YmFmNTNhMmEyZDEyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDhlYTBhMzU1OGI5ZTNjMjg2MjQ2ZTk4ZDM4YTJkZDk4ZWRlNjM0NDYxNWVmYTAxMjhmZmFmOThkYzNmNzE5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzY4ZGEwNDhmODkzOTljMWU4MjA0MWI4MzJmZDM4Y2VhZmUxZDVjODdiNDI2ZTY2NDkwZGE4MjkxMTk2MDY0MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_64110d84db0c41268ce49c3e3b8370f0",
+      "statement": "data/ (including data/stats.xlsx) and chroma_db/ are gitignored local artifacts that must be supplied or rebuilt locally rather than checked in; ./chroma_db is rebuilt by running rag.py.",
+      "evidence": [
+        {
+          "resource": "repo://.gitignore#L4-L6",
+          "version": "repo-lines-v1:sha256:e890f481157b5911495030a4e5bde8f791183035291386f77503b189d3dcb683:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjBhMGZiMTAwODA3NmRlNjU5YmM0NzE0YjRiOTBmOTkzYzE5NmYxOWRmNWJhM2U1ZDExMjRhNjQ3MWJmNTYwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJkYWUzMDUyZjMzMWVlMzRkNjI4ZWY1MzU3MDliMzAxMjU5YTQ1ZGY3Yzc1MjJjNGQzNWRjZjQ5ODczZjAwYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmIxODllOWZkYjlkYTEzMTdkNDgzZGQzYjRlNmMzYzdmNmY4OTMwZDdhYjBjZjlkZmQ0MTQ2MDgyNDI5MDgyNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODZkODRjZTY0YTdjY2Q1YzJkMDIwYjcxNDM4ODhmNTg2MTQ3ZWE3MjlkNDA2MWI1ZTRlOWY0MDkwNDAyOGZiZiJ9"
+        },
+        {
+          "resource": "repo://rag.py#L17-L25",
+          "version": "repo-lines-v1:sha256:6abb9854d07df0eaafe3e66bd17bfc9bedb095b54d80d40185204c962599b890:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ1MzY2ODA1NzY5N2E4ZTQ4YjkyODlkY2E5NDFmMmZlYmM2ZWVkNjg0Yjc3ZWUwY2Q2MzZmZmMzNGRmNTY0MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjExM2ZlMDQ3MmYzOWRjMWU4ZTIyMjdiYmMyMjUwYjFlNGE1ZDgzNTYxNmI2NmIwNzZkZWM5YTUzMWU5ZDM0MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmEzY2Y1MTkyMzU0ZjcxNjE1YWM1MTAzNGIzZTk3YzIwZWRhOTk2NDNmY2FmNWJiZTZkNDFhZDU5YmQxMjE2NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_900de76e7c7745ba8798cff8210c295a",
+      "statement": "The frontend posts each chat message to http://localhost:8000/agent, and the backend enables CORS specifically for http://localhost:3000, so both servers must run simultaneously for the UI to work.",
+      "evidence": [
+        {
+          "resource": "repo://greek_resilient_rag/app/page.tsx#L24-L28",
+          "version": "repo-lines-v1:sha256:86e28fc13c61df247a51ed7c6feedb936b1eb9bcae3d9a2d5485d7003cedc3d0:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTlkMzE2YzRmY2YyMjdhNzc2ZWIzOTcwZGNiYTAyODhiYzFhMjZiNmM1MGJiZjNkZmY5ZDg3YTQ3MTY1ZmE0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzE3YWYxMTAxYzk3YjdjMmY1MjU0MDc4MmU2MzRjYzQ0NDBmMGU5NzAzNDFlNTJmOTc1MjMxMWQ3OGI3ZDdkMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGZhMzg5MzAzZGRkYjY1NDNhMDQ2OGY5MzdhZmQxOTBmYjFhYzVmMWZjNDE4N2U2YjdiNDYzMmExZjUwMjJlNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIyYWNkZWI2NjliMmM2ODIzZTJkNjYxMWNhZDk3N2E4MDc5MDc2MDA5NmYxNDcyNDZkNDRjNmY5MGQzYWMwMSJ9"
+        },
+        {
+          "resource": "repo://main.py#L22-L27",
+          "version": "repo-lines-v1:sha256:4ea157d0b84a813257785b97e48de3de4f3ae28ecd5bea24c719c1af5c0db94c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzJmOTA3ZGVjNmZiMjUxZmU5N2RhYjhhNWViYmIyYmViMjc5N2FmNDAxNmVmOGY1NWU0NDQ2MmRkYjg2YjE0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzY4ZGEwNDhmODkzOTljMWU4MjA0MWI4MzJmZDM4Y2VhZmUxZDVjODdiNDI2ZTY2NDkwZGE4MjkxMTk2MDY0MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjllYmU1NTA4YTEwZjMxN2YxMDgyMWU2ZTQ3YWEzMmE0OGRkYmM2ZmEyMDIwMjI5MDhhMzllNzg2ZTViMjcxYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2c6f91743b314de09d22430246f1812b",
+      "statement": "The backend is started with uvicorn main:app (e.g. uvicorn main:app --reload); the Dockerfile builds a Python 3.11-slim image whose CMD runs uvicorn main:app --host 0.0.0.0 --port 8000.",
+      "evidence": [
+        {
+          "resource": "repo://Dockerfile#L1-L12",
+          "version": "repo-lines-v1:sha256:539a6b22cdfd035690c5cf04bcabef686160e6fb2835fe1e29cef2f2d7497c5f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliYmE0NzU1Y2U3OWVjZGQ0NmYyNmM4N2Y2MTMyNTg2NWM5MDUxZThkOTliZjhiYjA5NWJhOGVkY2I1Y2E3YjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkMzA1NTI1NTNiOThlZGQwNWEzZWEzOTJjNDRmYWNmN2VmZWE5MDQ3Y2VkZDdhYTgyN2JjZTFhZjI4N2E3Y2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5efb14865dee4c8da1a1e7aee0161daa",
+      "statement": "The frontend is run from greek_resilient_rag/ with npm run dev (Next.js dev server on http://localhost:3000); package.json also provides build, start, and lint scripts.",
+      "evidence": [
+        {
+          "resource": "repo://greek_resilient_rag/package.json#L5-L10",
+          "version": "repo-lines-v1:sha256:3a3892b07b08568972148ebd35ee98c8cbfde1e0316d4134feaf64ff70d109ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ4MzNkNTk0OWMwM2E0MGNhOTUyNDkxNjEwYTY2NTk2NDRiM2FhNDY2MzYyZjc5OTAyMGRiZjE5ODE1NDdkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGY2YjRkN2M4YjVhZGVlOTIyNWU1Y2FmNzM1YTU5YjQ4OTVjZGQzOGMwMDM1YTgzNWE1MzE3YTZmYzdhZTM5NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWRjZjIyY2QxNDdiZTVhZWNhOGY4YjNlMzJjMjJhYmVlYjVhMmNiNDc5NWFiOGE4MDA1OGZiM2E3NjY3NTJjNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8b55eda1b8b04578a914f95462d8b400",
+      "statement": "There are no tracked tests in the repository: test_loader.py is gitignored, the former tests.yml CI workflow was removed, and the only remaining GitHub Actions workflow is the scheduled OpenWiki update.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L1-L6",
+          "version": "repo-lines-v1:sha256:3074bfc46223bbf57dd50f128b8d901a82435c5402c3c8c89cc489568361600b:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDYwMjc4N2FmNmRjYzA4MzRkZTEyMWNiYjFjYjk1Zjk0NTliNzIxZWFiMDM0OWYxMDUwMWI5OTZjMWM3N2ZmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmUwNDcwYjEwZWM5NzM3OWY5MGI2Njg3NDk1NGNhOTNiNTE2NmE0NjdkNmU0MGE0YWM3MzYxMzNiNzJhZjMxZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzk0NjJkNWYyYzIwN2U2YjRmODI4NDNkOTE1NGZmMGJiYWQwMzQzOTI0YjJjM2M0YmFiZDk5Yjg3Y2NkNGI4MiJ9"
+        },
+        {
+          "resource": "repo://.gitignore#L13-L13",
+          "version": "repo-lines-v1:sha256:2a9abb330554261333f76d1c67ce1ace5b7c6a5a9279c7a0901c5b5f5cb861ff:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmE5YWJiMzMwNTU0MjYxMzMzZjc2ZDFjNjdjZTFhY2U1YjdjNmE1YTkyNzljN2EwOTAxYzViNWY1Y2I4NjFmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmE5YWJiMzMwNTU0MjYxMzMzZjc2ZDFjNjdjZTFhY2U1YjdjNmE1YTkyNzljN2EwOTAxYzViNWY1Y2I4NjFmZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWMwYjA5ZGY4MTE0NzAxYmFlNjFkMDUxNjAyMWI0NzQ0NzBjNzk0MGEyOThhYzc0MjY5MTlkOGE1ZDg1YjkwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0551d283c5934d5aa7cd97c4d91107ee",
+      "statement": "The agent follows a mandatory research protocol defined in its system prompt: an exploratory phase (search_regions, calculate_rti_score, calculate_crisis_comparison), a diagnostic phase (calculate_recovery_speed, calculate_structural_shift, calculate_vulnerability_index), and a synthesis phase (analyze_socioeconomic_coupling, calculate_rtix_score), ending by archiving the result via save_finding.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L410-L441",
+          "version": "repo-lines-v1:sha256:4442d0d7700430fd24777fbbb1bfa61ff246e1df0b13c18f9e7f78fc10db60fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3NTIxYzNhYmM1YmFiMzFkZmJmYzRiMzgyNWEyYjVlNmQ4MDI0MDNhMGM0YTE4NjFhZTMxMjI5NTkyYzliZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyOTlmMWQ5YTJjNjUzMDFlNWI2ZGQxZjgwZWI5ODczNDQ1MzIwYjBmMGU1ZTMzOTE5Njg3NjMzNDRiOTQ0MWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZhNzQ0ODI1ZDg2Zjg0NTFiZjEwMDNiNDY4OWJiMDY4NjZiMTE5MzM5ZjUzNTgyMTkyNTViYzJiYWUwMWEyNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.4.3",
+    "at": "2026-09-01T11:19:44.752Z"
+  }
+}
