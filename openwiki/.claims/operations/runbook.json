@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1c9c609df8a95bbe6512455f5876b18bf09fb83fc9262742c83a6667fdf0a834",
+  "claims": [
+    {
+      "id": "claim_3ab22376d1cb4d3ea9c072f93f3dee17",
+      "statement": "Local backend setup is: create a venv, install requirements.txt, add a .env with GEMMA_API_KEY, place the workbook at data/stats.xlsx or set FILE_PATH, run `python rag.py` to build ./chroma_db, then start the API with `uvicorn main:app --reload` on port 8000.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L20-L28",
+          "version": "repo-lines-v1:sha256:f8b4ba1af8eb28e1295fbc48f72b82aac56b58d3b5eb65a852c9a3eda49033d5:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTE3ZmRkMWFhMzBjYzRkYWM0OTYzNzBmZDU2ZWJlYjIxMjkxYTZmOTgwZmMwNTczMWJhODYxMzcxYjI1YzY0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFlMjczZGM0NTc3MTRhZTZjYTJhM2EzNWFjOGQ1ZDY0ZjNhNzE3YjkzNmRiNTZiN2RkMGU4MmI1NjAwZWFmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGNjMmY4NzQyNTc0MTRlZjkxZGJjZGJkNDQ4YzQ1Yzk5MzA0YzViZTIzMzZjNjZiYTNkNmY0MWI0MGM5ZWU2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTIzODQxM2U3M2QwNzBhM2U3MDhmOTUyZTkzZDU5MTY4MTcyNTQ4ODIyYTNhZTkxZDQwYzY0NmY4ZDUyN2UwMyJ9"
+        },
+        {
+          "resource": "repo://main.py#L1-L28",
+          "version": "repo-lines-v1:sha256:c05f9d2851b520fa503facc85e0ad5f52f840a20517ccdcad7a345512234aa2b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2NDk0Mzg1Mzc2YjExNDVmMTExOGNjZmJlZTdkYjE4YzM4MzkzNTcyMGQwYWZmOWI4OTcxODEyY2ViYWU5NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiZGNkZGRhZjBlOGY3OWZiNGZmZDljMDk2NDdlNTllNjEwOWNiYzg4OWFmMWY2ZWM0NGRlMGIwZTViNzllZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzNzczOTVjNmI3NmZlYmQ0ZDkxNzY0MTA4N2RmNjllZmRmZGRjNWY3MWYwYmFlY2ZhNWNlNGMwNzM5NjBkOTEifQ"
+        },
+        {
+          "resource": "repo://rag.py#L6-L25",
+          "version": "repo-lines-v1:sha256:e687524c503f081d385de856cae8a51e00b8f617d8c95123129877173fc2d6d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzZWFiMDEwMTM5YjcwOTEyMjc0ZGViMmNlODlhNTg3NTI0ZTg3MWExYjQxNDA1MjQzZjNkMjYzNTc1ODA0ZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiZjJiYTdhYjBjZWEwZWNjMjI1ZDAyZmYyMjllYzYwMTJiNWM0NDA0MDE4OTk0MDk4MThmZGFiMzg4MWYzODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_535855cdfb7245d7accfbf44ed7c4d7b",
+      "statement": "The frontend lives in greek_resilient_rag/ as a Next.js app; setup is `cd greek_resilient_rag`, `npm install`, then `npm run dev` which runs `next dev` on port 3000.",
+      "evidence": [
+        {
+          "resource": "repo://greek_resilient_rag/README.md#L5-L19",
+          "version": "repo-lines-v1:sha256:5ed08a3a1063d7cb6dd41bc9f62e38dd290c973053e1072eb4323e084a49d470:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyMzBhNDhkZjBjMzlkYTY2YTQwMzNkNzk2YWFlMGNlZDFlYjI1YjNmMjZhMjljMDY1NzNmNmJmZDVhOWYxMzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwMDEyMzA3ZmI4YWFmZWUxNjQ2YmFkZjNkYzNhMmI0ZTc4ZjIwOWY0YmZkMjY2ZmJjODBhNTdmNmE1OTQ2ZTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiNGQxMzcyZWMxZjBlYjdjMzkxOWIzZGQ4N2M4Y2MwZjc5YzIxMGI1NTRiMjdiNjViNjZkZjE0MjE4NzUzNmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2Y2YwOTk1MDA3YWQ1NDM3NTcyZDcxNTQzOTMxZWY5MzI0MmFjNzVjZTRiNWVmNTYxOGEwZTJjMzhjMWY1ZjkifQ"
+        },
+        {
+          "resource": "repo://greek_resilient_rag/package.json#L1-L26",
+          "version": "repo-lines-v1:sha256:cef8ce85bdd487113a6f507e28010011182aeb8a671406943b81edf0e350e678:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_538372d179bc438a98931394daf36298",
+      "statement": "The frontend chat page posts user input as JSON { question } to http://localhost:8000/agent and renders the returned answer; a connection error surfaces as 'Error connecting to server.'",
+      "evidence": [
+        {
+          "resource": "repo://greek_resilient_rag/app/page.tsx#L15-L36",
+          "version": "repo-lines-v1:sha256:09658aeb0c977f1c97e8ca81278ee954c4267f393a23f8abf0137fe0e0ae091f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmNDE4OTQ1MDI3ZWQwNDAyMDAzMmE2OTZmMGY3OTBkMzUzODY2YjljMzdlMWZiOTViZGMzODA4NTNiN2NkMWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhZTdjOGRhYzE3OTZkM2UwNDAzNTY5YjdiYTU1ZDgxMjEzNDljNjc2OWQzZDgxY2IzYzE4ODQ1Nzc1Y2ZlZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwOTc3YWJkZDE0OTQyNWU2ODk4NzQ0OTgxYmJhZmNjZmJiYjE1NzYxZWVmODI2YTFlZmY1YTU3ZTgxODE1MDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c7dedf29e13c43aa91545b148d449132",
+      "statement": "main.py adds CORSMiddleware that only allows origin http://localhost:3000, so the frontend must run on port 3000 or browser requests will be blocked by CORS.",
+      "evidence": [
+        {
+          "resource": "repo://main.py#L22-L27",
+          "version": "repo-lines-v1:sha256:4ea157d0b84a813257785b97e48de3de4f3ae28ecd5bea24c719c1af5c0db94c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzJmOTA3ZGVjNmZiMjUxZmU5N2RhYjhhNWViYmIyYmViMjc5N2FmNDAxNmVmOGY1NWU0NDQ2MmRkYjg2YjE0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzY4ZGEwNDhmODkzOTljMWU4MjA0MWI4MzJmZDM4Y2VhZmUxZDVjODdiNDI2ZTY2NDkwZGE4MjkxMTk2MDY0MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjllYmU1NTA4YTEwZjMxN2YxMDgyMWU2ZTQ3YWEzMmE0OGRkYmM2ZmEyMDIwMjI5MDhhMzllNzg2ZTViMjcxYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_659cca6d7cf847aeb20c558963c34295",
+      "statement": "GEMMA_API_KEY is the Google Gemini API key, loaded from .env via load_dotenv() in both main.py (for the gemini-2.5-flash /ask chain) and agent.py (for the gemini-2.5-pro agent); there is no fallback, so LLM calls fail without it.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L12-L16",
+          "version": "repo-lines-v1:sha256:580ec3efc08906e879a0f8baf4f7e8e854e1322fcc1e8c2fd5cf567b813f4a5e:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEwNGNjNTE4YjhjZTc3NzlhOWRjODU5N2UyY2Q4NTNiM2NmMmRiMzg3NjQ3MTA0YTNjN2Y1NmRiNjA5ZDZlOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDFhNmJjMTk1YWQ0YzQ3OTk4ZjI0ZmQyMmUxNmZlZDY2MGU0ODYyOGU5MTMyMjMxOGM1ZmRmNDkzOTg4NTY2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWZiMWZhZmExZDBhNzA5MTIyZWViZmI0OWRhNzc5MjM3OGIyMGEwYWFkZmY2OGZhYjAwZGJmOTJhYWI0ZjZjZiJ9"
+        },
+        {
+          "resource": "repo://main.py#L13-L20",
+          "version": "repo-lines-v1:sha256:b646aaf3b1558518947ab671f2d7e9acb238eb99f0ccf9b43d9ca084f8243504:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFiMzk2MGU4OGM1MGM2N2YyM2RjYTBkZDMxMGNlMmIxNTQwMGRmN2JmMTY2MzMwZGIzMTJkYTQ5MjBiZTY0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDA5Mjg4OWZhZWZkZDAyM2E3MGNkMGZlZDM5NjQwNGRiMGJiMmIzMWRiZWRlMzE1NTI4YzFhZTg3OTEwZjk4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjQ3ZTk0NDRkNTM3ODI2OTA1ODg5MTI5ZmM5NDM3NjYwZDQwMWZjNmNlNzc2NzNhMmIyYjk1ZDNjODEwOTQ2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2M5YjA3YzlkOGY0NWU2NDgxYzc5OGE5ODIyMDg4ZDRkNzQ4MDgzM2Y5MzgxNWU2ZTc4NDdhYzU0YjFmNDQzZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d44a8a01795e4d38be60c19facb44fdf",
+      "statement": "FILE_PATH overrides the workbook location and defaults to data/stats.xlsx; it is read in rag.py and agent.py, while loader.py receives the path as an argument from its callers.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L15-L15",
+          "version": "repo-lines-v1:sha256:63eab010139b70912274deb2ce89a587524e871a1b41405243f3d263575804d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNlYWIwMTAxMzliNzA5MTIyNzRkZWIyY2U4OWE1ODc1MjRlODcxYTFiNDE0MDUyNDNmM2QyNjM1NzU4MDRkNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNlYWIwMTAxMzliNzA5MTIyNzRkZWIyY2U4OWE1ODc1MjRlODcxYTFiNDE0MDUyNDNmM2QyNjM1NzU4MDRkNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODk0NGFhODA3OTNjNjg5YWVjZmNlYTMwNDA4ZmFhMTBmMWY1OTE4OTNhYWZjZGQ1MzQyOGEyNDlkMjU4NTQ2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjc1OGRmM2JhMjg1YjRjNzA1MGQyN2NjYzZiYTFjMGE0NzVmMTNkNzQzMDI2YzQxNzY3MDM1YmMwYTIxNjU4YyJ9"
+        },
+        {
+          "resource": "repo://loader.py#L7-L8",
+          "version": "repo-lines-v1:sha256:2b45f54ad94887f29f82aa2be6231de156f96cd2e258d5bbc193d0e11f5e0426:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGUzYmU3ZTIxM2Q2MzFmZTBiNDM5ZGM0MjIzNTQ5MjVlOTNjYzIyY2E5Y2VkZGZhODI3ZDI4YjRlNmNjNmExOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzcwOGEwZjdkOTZiOTVlOGUwMTA2NGEzYjY3YmQ0MzI2MzExYmE2MTA5NDk5ZjllMDQ2NGM2NTUwZjVjZGFjYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmEzY2Y1MTkyMzU0ZjcxNjE1YWM1MTAzNGIzZTk3YzIwZWRhOTk2NDNmY2FmNWJiZTZkNDFhZDU5YmQxMjE2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDExZWQxZWI0ZDY2MGVjMjJlM2EyZjhmMjY2NjZlYjNkZDU5MWM4Yzk3N2NjMjdkZTAyZjQyNjRlNDU3MzEyZSJ9"
+        },
+        {
+          "resource": "repo://rag.py#L6-L6",
+          "version": "repo-lines-v1:sha256:63eab010139b70912274deb2ce89a587524e871a1b41405243f3d263575804d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNlYWIwMTAxMzliNzA5MTIyNzRkZWIyY2U4OWE1ODc1MjRlODcxYTFiNDE0MDUyNDNmM2QyNjM1NzU4MDRkNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNlYWIwMTAxMzliNzA5MTIyNzRkZWIyY2U4OWE1ODc1MjRlODcxYTFiNDE0MDUyNDNmM2QyNjM1NzU4MDRkNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmJmMmJhN2FiMGNlYTBlY2MyMjVkMDJmZjIyOWVjNjAxMmI1YzQ0MDQwMTg5OTQwOTgxOGZkYWIzODgxZjM4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWQxNjBlNjJiMzY4NTJiMDUzYTlmMjUzZWM1MDZhMmEwNzEyOGIzMmQ0ODgxMDFiY2ZjYTY3ODhiZGZkZWIwMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ccc693b26a1347bf83cc59ab9e6cc04c",
+      "statement": "The Dockerfile installs requirements.txt, copies the app, exposes 8000, and runs `uvicorn main:app --host 0.0.0.0 --port 8000` without --reload.",
+      "evidence": [
+        {
+          "resource": "repo://Dockerfile#L5-L12",
+          "version": "repo-lines-v1:sha256:efad8b2082639e4b89feedf6b68fa478ca5c95aba83072a8c4ca386d89f9023e:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDIyODUxOWQ3NGQyZTNhNTFiNjc4NGFiZjRhMjBkMDZiZjM4YTZhMGMxNmU0ODJiNGQwZjk3ZGExOGUzNDRmNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQzMDU1MjU1M2I5OGVkZDA1YTNlYTM5MmM0NGZhY2Y3ZWZlYTkwNDdjZWRkN2FhODI3YmNlMWFmMjg3YTdjZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2E4MmY5ZGM3ZTE3NGYyMDQ0MzZjM2RmYWM1ZGVmYjg1MDI2YzcxNjg1YWYzNzY5NTZlY2VkYWVmOTI4ODgwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_029df68c750d451094393f5b62c42267",
+      "statement": "The Docker image does not run rag.py and .dockerignore excludes both chroma_db and .env, so the ChromaDB index must be rebuilt/volume-mounted and GEMMA_API_KEY supplied at runtime rather than baked into the image.",
+      "evidence": [
+        {
+          "resource": "repo://.dockerignore#L1-L6",
+          "version": "repo-lines-v1:sha256:e9c931968d5536c6cef873d4f36e7861befc710fbac22acde3286f60553ce974:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2MyMGQ3YmM0MzY1YWNjOTk4OTVlYjkwNTBiNzZlMDYyYzNjOGE5NWU2MTNmODk4MjZkMGE2Nzk5NTZlY2Y1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzc1ODYzNTBlNzVkNGYxNmRiNDJlODE1M2Q4NzQ2ZDQxY2RhNzdkNjM5NjQ4MzZhNTA1NDliNDdiYjk4YTg0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://Dockerfile#L5-L12",
+          "version": "repo-lines-v1:sha256:efad8b2082639e4b89feedf6b68fa478ca5c95aba83072a8c4ca386d89f9023e:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDIyODUxOWQ3NGQyZTNhNTFiNjc4NGFiZjRhMjBkMDZiZjM4YTZhMGMxNmU0ODJiNGQwZjk3ZGExOGUzNDRmNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQzMDU1MjU1M2I5OGVkZDA1YTNlYTM5MmM0NGZhY2Y3ZWZlYTkwNDdjZWRkN2FhODI3YmNlMWFmMjg3YTdjZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2E4MmY5ZGM3ZTE3NGYyMDQ0MzZjM2RmYWM1ZGVmYjg1MDI2YzcxNjg1YWYzNzY5NTZlY2VkYWVmOTI4ODgwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7d8817f06951449a9134058d0d8db2cc",
+      "statement": "The ./chroma_db index is a build-time artifact: rag.py enumerates six sheet labels, chunks each via load_excel_data, and persists all documents to ./chroma_db; it must be rerun whenever the workbook changes, and the backend restarted to reopen the fresh store.",
+      "evidence": [
+        {
+          "resource": "repo://main.py#L28-L31",
+          "version": "repo-lines-v1:sha256:f0752ea598dc56ff058391d3f386732e93c64569fec66ddd3950fea2adcb9662:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWJkY2RkZGFmMGU4Zjc5ZmI0ZmZkOWMwOTY0N2U1OWU2MTA5Y2JjODg5YWYxZjZlYzQ0ZGUwYjBlNWI3OWVmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg3ZjVmMjQ2YzFkNDgyZDVmNDM3YThlODMwMDZiMWE5ODBiZmJhZjc5OGZhZDZjYmJlOTY0ZjhlN2EwNTUzOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmU2NTE0NTM5ZDliNmM3MmE4YjIxOGZiYzg1NGEzZGE3MDU3YzYxNWVkMWNjODg4ZmNjN2EzZDQ5MzVjY2QzMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGE4MzIxYTVkNmY4YWYzY2IxMzI0YTdjNDQ3YzEyYTIzY2IyMThkNjE0ZjAwOWRmOTFjYTk3ZWFlYzA3NTEyNCJ9"
+        },
+        {
+          "resource": "repo://rag.py#L6-L25",
+          "version": "repo-lines-v1:sha256:e687524c503f081d385de856cae8a51e00b8f617d8c95123129877173fc2d6d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzZWFiMDEwMTM5YjcwOTEyMjc0ZGViMmNlODlhNTg3NTI0ZTg3MWExYjQxNDA1MjQzZjNkMjYzNTc1ODA0ZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiZjJiYTdhYjBjZWEwZWNjMjI1ZDAyZmYyMjllYzYwMTJiNWM0NDA0MDE4OTk0MDk4MThmZGFiMzg4MWYzODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_31cf20aae7c04b8d99f08b21c60e1804",
+      "statement": "If the workbook at data/stats.xlsx or FILE_PATH is missing, pandas.read_excel in loader.py and the agent tools (and rag.py) will raise, because there is no fallback path.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L60-L62",
+          "version": "repo-lines-v1:sha256:9ff722b04df68589a8029dd31ccc67918947fda0bb24f1586b24f65b60245c37:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTU5MDEyOGYzYTYzM2EyOTY2NWI4ZWQ1NzEyN2UyOTRjYTQ1MThkN2U1YjllZjhlZTE1MWZlOTAxYWViYTM5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzdmM2Q0MGFhNTJmNDljYWUwZTY2OTkyYjI3MGIxZjEyMjViNmQzODg1YzJkYmVkYmFhNTQ3OGViMmQ5MDFjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjM1YTNjM2IwN2U4ODI2NDIzMjBiOGM1ZjJmNGM3MjIzNjIwMTQwMDhjMjNjMzc3YzhlN2JiMWI0MzYyYTI2NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM2MmIxNGFlMzBiYjJkOTU0ZGVlZGUzMTU2ZDEzYWE5NGYyZmVkNjY4MjQzMDgzMWQzYjM0ZjJlN2ZiM2ZhNyJ9"
+        },
+        {
+          "resource": "repo://loader.py#L7-L8",
+          "version": "repo-lines-v1:sha256:2b45f54ad94887f29f82aa2be6231de156f96cd2e258d5bbc193d0e11f5e0426:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGUzYmU3ZTIxM2Q2MzFmZTBiNDM5ZGM0MjIzNTQ5MjVlOTNjYzIyY2E5Y2VkZGZhODI3ZDI4YjRlNmNjNmExOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzcwOGEwZjdkOTZiOTVlOGUwMTA2NGEzYjY3YmQ0MzI2MzExYmE2MTA5NDk5ZjllMDQ2NGM2NTUwZjVjZGFjYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmEzY2Y1MTkyMzU0ZjcxNjE1YWM1MTAzNGIzZTk3YzIwZWRhOTk2NDNmY2FmNWJiZTZkNDFhZDU5YmQxMjE2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDExZWQxZWI0ZDY2MGVjMjJlM2EyZjhmMjY2NjZlYjNkZDU5MWM4Yzk3N2NjMjdkZTAyZjQyNjRlNDU3MzEyZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e50c259a5624ac39b9f0a88940f7c36",
+      "statement": "main.py and agent.py open ./chroma_db at startup/tool time; a missing or stale store causes /ask retrieval and the search_regions/compare_regions tools to fail or return outdated data.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L17-L17",
+          "version": "repo-lines-v1:sha256:1bdcdddaf0e8f79fb4ffd9c09647e59e6109cbc889af1f6ec44de0b0e5b79efb:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWJkY2RkZGFmMGU4Zjc5ZmI0ZmZkOWMwOTY0N2U1OWU2MTA5Y2JjODg5YWYxZjZlYzQ0ZGUwYjBlNWI3OWVmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWJkY2RkZGFmMGU4Zjc5ZmI0ZmZkOWMwOTY0N2U1OWU2MTA5Y2JjODg5YWYxZjZlYzQ0ZGUwYjBlNWI3OWVmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWIzZWJhYWY5YjAwOGQ3MTdkMzZjN2NlMmJhNGJkZDMyZjNhN2FlZDg0ZGJjMDk3OGY5YjAxZWZkN2VlNzExNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGMxOGI2NGExZTUzMGI4MTgwMTM2MjU0MDY2ZWRkNDkxMDE4NGVhMTBlODJhNmY3NjE1MmI5Njg5NmIzYTI0YSJ9"
+        },
+        {
+          "resource": "repo://agent.py#L39-L46",
+          "version": "repo-lines-v1:sha256:1001e6d646e105cf06fdfe1089162c86cb851878fd701325b6b01949e58c1bb3:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmMzN2Y4NmIxOTM2NjA1ZDZhNDc3MGY5MTg0ZmQwNWM5NTdmODU2MGFjYTAwZTg3MWU5NjQwOGIyNGM2YTU5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWNkNmQ3ZmY5OWQ2Nzc2OWI4N2IxZTJlNjEzY2NiYmM1YTMyYTY3YmJhYzU0ZTFlZTI2ZjgwNTVjMDE4MzcyMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTZhZmNlYWY1MWNhOGZiZTRlZjZmOTRmM2FhZDNlY2M0YWNkYjY2YzAwZGMxNmM1YmI2Njg4OTM4NDViY2JhNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjc5MTJlYjJkZTk0ZWQ5NTNhMjEwZWVhZWExY2YwMTc2YmZhYTQ4YzA3YTI2ZjQwZThmZjhkYjdjNGI1MjkzNyJ9"
+        },
+        {
+          "resource": "repo://main.py#L28-L31",
+          "version": "repo-lines-v1:sha256:f0752ea598dc56ff058391d3f386732e93c64569fec66ddd3950fea2adcb9662:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWJkY2RkZGFmMGU4Zjc5ZmI0ZmZkOWMwOTY0N2U1OWU2MTA5Y2JjODg5YWYxZjZlYzQ0ZGUwYjBlNWI3OWVmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg3ZjVmMjQ2YzFkNDgyZDVmNDM3YThlODMwMDZiMWE5ODBiZmJhZjc5OGZhZDZjYmJlOTY0ZjhlN2EwNTUzOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmU2NTE0NTM5ZDliNmM3MmE4YjIxOGZiYzg1NGEzZGE3MDU3YzYxNWVkMWNjODg4ZmNjN2EzZDQ5MzVjY2QzMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGE4MzIxYTVkNmY4YWYzY2IxMzI0YTdjNDQ3YzEyYTIzY2IyMThkNjE0ZjAwOWRmOTFjYTk3ZWFlYzA3NTEyNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_41ba912ec6b742bf8fd27f3474a60e2c",
+      "statement": "loader.py and the agent tools assume fixed sheet names and exact column labels (e.g. Resistance (2008-2013), Recovery (2013-2019)); column or sheet drift breaks indexing and tools with KeyError or a fuzzy mismatch, so loader.py, rag.py, and agent.py tools must be verified together after any workbook schema change.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L78-L116",
+          "version": "repo-lines-v1:sha256:70b5679841f12538256ec1808946f82b91f4f76d0fbb415a56e4cdaff12b184a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1N2VhNzQ2N2Q5MjM2YzdhZjRmNzRlMTM1ZTFhMjhhMjg3MjFlZGI3MTI3Zjg3OTU3ZjczMzE0MDBjMWI0ZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkMDU2ZmY5ODQzZmIxMGY0MzA2M2YzOWQ4MTE5MTQzMGFmMjM5MjIxMzRhNDU2NjhjM2ZmMzYxODBmYjY0NGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2MGJlMmNjYjE2YjU3NzZlMGFlNDk5YmYxNzIyMGMzOGM0MjgzNDA2NWI4YzY3YmRlYTUxOGVjOGNlMmZmYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4ZTY0OTVlZDk4ZTRkZDczMzg5MzEwN2I0NDUwZjllMjJlZTVjMTU5NGVkODg1ZTQzYmIxNjc5NzRhMGZlNmEifQ"
+        },
+        {
+          "resource": "repo://loader.py#L11-L58",
+          "version": "repo-lines-v1:sha256:44553c30c64d73f820d2d61c7daf44764a3a5c15ac017bc4a048ec467ddd47cb:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0OTQ3NzI2YzYxYTJlYTQ3OTdkZGUzMTlhMjAwNzI1ZDJkOGYzOTU3NTI1MzAxMjU4ZmQxYTA4YmE4Nzk0NWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3YTVmZmEzZTA5NWRmMDViNmIzMzMzODcxYWJhMWMxYjNlMjVhYjNkYmYxZDQ5MmYxNTRjMmNjMmIxMjJmNTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3ZDExYTY4OWQ1NDUxOGQxMzBhMjRjM2I0NDRmNDVjZGE4MzQwZTllMjlhZTE0MzQwNjZlZTVmNzNlZjUwYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1ODY3YzgyMDE3OTdiNDJhMGUwZTdiNGE3ZTdjNzBiZWZkMzc5NGExOGIxMzhiYTAyZjg1MzRlYzAwYmUxNGUifQ"
+        },
+        {
+          "resource": "repo://rag.py#L8-L20",
+          "version": "repo-lines-v1:sha256:593678594daab9c79eda1171ca19eaa4b9d2ebccd55db6fc82f824b0f220606d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1Y2I1Y2Q3Y2UxMTJiMjFiZjYzOGUxZDIxOGI5Njc0YTk5NTIwMjMwNjViZGQyYWIxYjQxMmQ5NDE1ZGE1NjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlOTU5YTc5MzM5NjgyYjAyOGZmOWI0YmIyNjdlMTAxZDMxM2Q1MGQ2OTkyNDBiZGU1ZTRlMGZjYzJkMzFhMGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgwODIxZjFlZWM0NzhmM2FjOWQyYjU2YWVkODBjMWY3NTA3YmJhNGMxODhkZWQ3YmE5YmJkNjRhZmRmMzYyN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiYWQxZTUzY2NjNzliNGQxNGIxZDgxNzhlOTI4MDkyOTFhNTgzYmMxOTQ1Y2ExN2M0YWRiYzViZTJmZTQxNGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_73e484bda7334c15a277bb1f161029db",
+      "statement": "main.py uses fuzz.partial_ratio (threshold >80) to detect Greek regions in a question, and agent.py tools use process.extractOne (threshold >70) to map user phrasing to workbook regions/indicators; this can silently pick the wrong region when labels are similar or drift.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L63-L70",
+          "version": "repo-lines-v1:sha256:bdc32a50b3435407c5155d9e24fe718c9e2b1db9c3f4539bb3239ace6657196f:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2UxM2JiMTVmYTUwN2M5MTU3ZjA1NzU2MTcyMDJlNDBmZjZiYmQxMjg4OGU5YjJkM2Y0ZDdjZjlhZGUwMWQ4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTJlNWQ4ZmM5ZGQxMDRkMDAxZDhjNzI5YjY2MWIxM2FjOTgyNDQ5MzJjMWY2OTAzZDQ0ZGY1MGM3MWNlZmM1ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWZmNzIyYjA0ZGY2ODU4OWE4MDI5ZGQzMWNjYzY3OTE4OTQ3ZmRhMGJiMjRmMTU4NmIyNGY2NWI2MDI0NWMzNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmZmM2FiYWJjMGY2Y2EwNDAwZjVjNTJmZTg1MjU3YmJiM2Y2YWZhNDBjNjg0MDdiMjA1YmM4YjE1YWRlNDdkZSJ9"
+        },
+        {
+          "resource": "repo://main.py#L34-L46",
+          "version": "repo-lines-v1:sha256:936e46b48f3577497f22ae09926a7711b030d139c73fc7794c40e6ea96a6f517:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2ODg3NGVmZGM0ZWI2YTQ4OWUwOWI2YzE1N2ZiNWYxMDM3YmU0NmE5MTQyYWE5YjZlZmEyYzc4ZjcwMTRlNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwNjFmYWUyZDM4NGJkNWYwODI2Yjc2ODg1MGE5ODViN2Y4NjNjY2UxZGNkMDQ2ZDZhNThlZjkzNjliYTcwMTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5ZmQyMDZkMWRlYmZjYTg0OWNiZDA4NGY4OTFjOTA0ODc1Y2QwYzVlYjRkNTNiOGZlYjk4NzMwNDkwODg1Y2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlZjFiZWEzYWM0Zjc2YTI5NTE0NWNkODQ1ODhiMGU3YmM3M2E0NDlhNTQwZjFmZDVlYmNhNTI3ZDA0YWRmYTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a65445bb5c244d3e8f411786e9ae59e2",
+      "statement": "The only committed CI workflow is .github/workflows/openwiki-update.yml, which refreshes the OpenWiki docs on a monthly cron (0 6 1 * *) and on workflow_dispatch using the OpenRouter provider (model z-ai/glm-5.2), then opens a docs update pull request; the old tests.yml CI that ran pytest test_loader.py has been removed.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L1-L54",
+          "version": "repo-lines-v1:sha256:3588dcd6fb1236c1f6b66040375003aaea8419e9af851f1008f89acf212d8208:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MDI3ODdhZjZkY2MwODM0ZGUxMjFjYmIxY2I5NWY5NDU5YjcyMWVhYjAzNDlmMTA1MDFiOTk2YzFjNzdmZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0Nzc5NmQzMTczMmZiY2U4OTk4YTJmN2U3YjFiYjk3NTVjMjNlNTg1MDMyMGI5MDkzN2Q4MmMzZmQwZTYyYTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_76bb88946c1a444786df580c2f80791c",
+      "statement": "The root .gitignore keeps local-only artifacts out of version control: venv/.venv, .env, data/, chroma_db/, __pycache__, findings.md, literature_synthesis.md, cluster_radar.png, cluster_scatter.png, deepresearch.py, and test_loader.py; these must be regenerated or supplied per machine.",
+      "evidence": [
+        {
+          "resource": "repo://.gitignore#L1-L13",
+          "version": "repo-lines-v1:sha256:0b926f9bc43e818f8bea4fcf71dcb3f7af14f212dcb1038caf729f8cd76e7617:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4NzFiMmNiZmUxNzQzZGMxYWVhN2ViMzE3NDMyM2MwYWFjZjIwYjRmNGI4NzIyYjNjMTlmY2EwZmYxYjJjOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhOWFiYjMzMDU1NDI2MTMzM2Y3NmQxYzY3Y2UxYWNlNWI3YzZhNWE5Mjc5YzdhMDkwMWM1YjVmNWNiODYxZmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_73a211608ea74603bbc93d471e256085",
+      "statement": "The agent's save_finding tool appends timestamped research findings to findings.md in the current working directory, which is a gitignored local artifact.",
+      "evidence": [
+        {
+          "resource": "repo://.gitignore#L8-L8",
+          "version": "repo-lines-v1:sha256:7609dca0d7c03a7b7ccb816faabcbba77f91bfd1ddff737110284b57e8b24eca:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzYwOWRjYTBkN2MwM2E3YjdjY2I4MTZmYWFiY2JiYTc3ZjkxYmZkMWRkZmY3MzcxMTAyODRiNTdlOGIyNGVjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzYwOWRjYTBkN2MwM2E3YjdjY2I4MTZmYWFiY2JiYTc3ZjkxYmZkMWRkZmY3MzcxMTAyODRiNTdlOGIyNGVjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjg2YjBiMWJhZDg4MGJhODM1ZTA2NmZjYmQ4ZDMyNGIzODVhYWFhMGVmZTdlNWQ5ZGYyZTlkZGFhMGMyNDM2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTkyZDEyZWUwZjIyODFhYTljMGJlMjIxZjU4YWFkZTNjMTI5YzQ4OTYwODExN2RmZWQzNTY5M2FiMzhkYmRhMSJ9"
+        },
+        {
+          "resource": "repo://agent.py#L276-L293",
+          "version": "repo-lines-v1:sha256:6ddbf16f31f7b7cf40f176575bd841f94944aa54b85787448ddc960b0f8ad66b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNGU1OWQ3ZWFkY2E4YTkyOWEyNWZhNjBiYjU0ZmY2YjhhZmIwZmFkOTQwOTljZDFjODg5OGRjZDViZTk2OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiOWE1ZjdmMzMzMDYwODZiODg2OTNlODYzMWQzZmViNzM1NjgwZDdkM2Y1MTc0MDIyN2JlNDY0MWU3NzNlM2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxMmM4NGM1M2I3M2ZiODg1NTUxZjUwYTRhOTUzODk0MzQ1MmI2MGNmMDJmNjBmMGNkOWNjMzUzMjUwOTFlYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkZDk0YWUzY2MyZjlhMDY2OTAyM2JkNGUyMjg5MWQyYTZlZDI0ZmY3NWM4Mjc0ZmQ5YzA5NmU3ODY0OWVmNzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6667a9a53fd247c2bd445510f444c35a",
+      "statement": "main.py constructs the Chroma vectorstore with persist_directory ./chroma_db at import time, so the store must already exist before the server starts or retrieval will fail at startup.",
+      "evidence": [
+        {
+          "resource": "repo://main.py#L28-L28",
+          "version": "repo-lines-v1:sha256:1bdcdddaf0e8f79fb4ffd9c09647e59e6109cbc889af1f6ec44de0b0e5b79efb:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWJkY2RkZGFmMGU4Zjc5ZmI0ZmZkOWMwOTY0N2U1OWU2MTA5Y2JjODg5YWYxZjZlYzQ0ZGUwYjBlNWI3OWVmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWJkY2RkZGFmMGU4Zjc5ZmI0ZmZkOWMwOTY0N2U1OWU2MTA5Y2JjODg5YWYxZjZlYzQ0ZGUwYjBlNWI3OWVmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmU2NTE0NTM5ZDliNmM3MmE4YjIxOGZiYzg1NGEzZGE3MDU3YzYxNWVkMWNjODg4ZmNjN2EzZDQ5MzVjY2QzMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTM3NzM5NWM2Yjc2ZmViZDRkOTE3NjQxMDg3ZGY2OWVmZGZkZGM1ZjcxZjBiYWVjZmE1Y2U0YzA3Mzk2MGQ5MSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.4.3",
+    "at": "2026-09-01T11:19:44.752Z"
+  }
+}

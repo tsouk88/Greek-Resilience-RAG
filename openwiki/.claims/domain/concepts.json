@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:efa9dd8c5d95da018abd6e11e520e2dbb6a71bf467c8cba082860a6d4f03b0be",
+  "claims": [
+    {
+      "id": "claim_51093fc2778541f298658080e9027f7e",
+      "statement": "The /ask path hard-codes a list of 13 Greek regions (Αττική, Κεντρική Μακεδονία, Δυτική Μακεδονία, Ανατολική Μακεδονία και Θράκη, Ήπειρος, Θεσσαλία, Ιόνια Νησιά, Δυτική Ελλάδα, Στερεά Ελλάδα, Πελοπόννησος, Βόρειο Αιγαίο, Νότιο Αιγαίο, Κρήτη) and enriches results by running thefuzz.fuzz.partial_ratio above 80 against the question for any region not already retrieved.",
+      "evidence": [
+        {
+          "resource": "repo://main.py#L34-L41",
+          "version": "repo-lines-v1:sha256:979a43b8e0c4bf556c6a5a807baf1a048d6a6ef319697a9b0040660de16ff3c7:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODY4ODc0ZWZkYzRlYjZhNDg5ZTA5YjZjMTU3ZmI1ZjEwMzdiZTQ2YTkxNDJhYTliNmVmYTJjNzhmNzAxNGU1NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmNlMjM2YmY3ZTliNDU2YWRjOTNmZWQ2YmU2NjgyMDU3NTQzZmRkZDc5ZmYyZjUzZDMxZDFlM2Q3MzJkOTliNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjlmZDIwNmQxZGViZmNhODQ5Y2JkMDg0Zjg5MWM5MDQ4NzVjZDBjNWViNGQ1M2I4ZmViOTg3MzA0OTA4ODVjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTY5ODFhYjNkOWI0YzNlZDY2YzU5YTcwOTEwNGFjYTY2NWJhZDg0ZmNkNWZlYjg2MTJhMGMyODQyNjMzZjliYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_647f92c5f1bc427fb954378fa987dbf6",
+      "statement": "The Ελλάδα row is the national baseline: loader.py locates it and skips it when emitting per-region documents, and the scoring tools either exclude it from regional medians (calculate_rti_score, calculate_rtix_score) or use it as the comparison anchor for divergence D and national-change comparisons.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L102-L109",
+          "version": "repo-lines-v1:sha256:353fa28ddf457358afd8c5acc62c091e4eac742fd2be87c9cf0a101e865a1719:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ5NDc3MjZjNjFhMmVhNDc5N2RkZTMxOWEyMDA3MjVkMmQ4ZjM5NTc1MjUzMDEyNThmZDFhMDhiYTg3OTQ1ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWY1Y2MzZDg0OWZmODYyMWMxMTM3NmJmMjM3NGQyMDhlZjAyMzE3YjQxODRiMGYzMzIyYzQ0NjQ2NDU0MmI4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWJiMDY5YjZkZGIwM2U0NTY4M2VlZDc4MWQ0MjczZDEzNWZkYmVhY2Q3MDRhZTdlZTkzMzBhMzkwMDQ5ZTAxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWYyMGI1NzU5MGZlN2RhYTNjNjQ0YWEyNzY2MGZiMWMxYWQ5ZjBhZDdjYzQ2MDg0ZTM0MTBiZTBiODJlOWZmYyJ9"
+        },
+        {
+          "resource": "repo://agent.py#L135-L145",
+          "version": "repo-lines-v1:sha256:ff273e7afe32f3c4bbb61284620270547747dcd684a7ff41478b149827d041df:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4MTJkOWJkOTM1NDlhNTNhYWY2NThkMjZlY2Q2NDg2MjdhN2RjODk4OTllYjljYmRhZjA5MjNjMmQyZTI0ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4NzcxODhlN2YxMjZiNGRiZjE5YTc4M2M5NDgwYjhiMGFkZmJmODI4MzMzM2Q3OTg4ODdlYmQ4YTkyNGQ1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliYjA2OWI2ZGRiMDNlNDU2ODNlZWQ3ODFkNDI3M2QxMzVmZGJlYWNkNzA0YWU3ZWU5MzMwYTM5MDA0OWUwMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkY2EyNjJiMjhiZTcxNjEzZTQ4OTNhNDUyYjZmYjIyZWYwNTM3MmIxNWM3NzE4NWUzZDE5NjY5NmMwN2M2YTgifQ"
+        },
+        {
+          "resource": "repo://agent.py#L320-L329",
+          "version": "repo-lines-v1:sha256:e3ef185ec38e7d3d1675d0ae088673c34f644d010937f71136cad1432350b241:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4MTJkOWJkOTM1NDlhNTNhYWY2NThkMjZlY2Q2NDg2MjdhN2RjODk4OTllYjljYmRhZjA5MjNjMmQyZTI0ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxNWRkZDllMmE5MmYzM2E3YjcxNjY3YmNmNDgzNjM2YTUzNTY5OTAzYTE3OTU3MTljMGYzODU2N2ViNjM5M2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliYjA2OWI2ZGRiMDNlNDU2ODNlZWQ3ODFkNDI3M2QxMzVmZGJlYWNkNzA0YWU3ZWU5MzMwYTM5MDA0OWUwMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkMDY2MWQ2NmI5YTMxMDBmNmI1ZjQwODMzY2JjNjE2YjYwZTQyY2ZhNzA4NDhjZjk2ZWU5MzA4OGRkNmRjYzAifQ"
+        },
+        {
+          "resource": "repo://loader.py#L11-L26",
+          "version": "repo-lines-v1:sha256:b5c223409848ab7db7a8de66647fa471dd582f8ccfb94bf15f9138970eb41543:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0OTQ3NzI2YzYxYTJlYTQ3OTdkZGUzMTlhMjAwNzI1ZDJkOGYzOTU3NTI1MzAxMjU4ZmQxYTA4YmE4Nzk0NWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2YWQwNTJjNDRiOTUzZjBkODMyODZhMmRkZGVjMjE4NWU3ZjE4OWRiMGU0ZjUwMmM2ZjA2ZjM0NzU4NDU0YTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3ZDExYTY4OWQ1NDUxOGQxMzBhMjRjM2I0NDRmNDVjZGE4MzQwZTllMjlhZTE0MzQwNjZlZTVmNzNlZjUwYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhNzk1NDEzZDJmMjRlZDgwNDNiZGFjMjEyYjBkZjFhOGEyZGRkZTRjYTUwYzVmMWI2YjNhNWQ5MjI1ZWQ5MjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0adaa75dd38d48c8b70c4e338ad90ba1",
+      "statement": "Agent tools map user-entered region names to exact workbook rows via thefuzz.process.extractOne and accept the match only when its score exceeds 70.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L131-L134",
+          "version": "repo-lines-v1:sha256:91dc18a81dfb4e8a3fe18ae84a3311d5fe4d0a7ec8ed99e1bb3540d59f965016:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2UxM2JiMTVmYTUwN2M5MTU3ZjA1NzU2MTcyMDJlNDBmZjZiYmQxMjg4OGU5YjJkM2Y0ZDdjZjlhZGUwMWQ4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcwNGFkYzlhNWMxODcwM2ZjN2YxOTNjODgzNTdkODk4OGE1MzJiODQ0NzJlMGFkMzFmZTI5YWVhZGI2YzAyOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzUyZDY2OTY4ZGQ1NWVhMzk2YTcyYzgwNTJiMGU3OGU5MjM4MjAxNWE0ZDBlZjI1Yjk3Y2I4MjRkZDk5NmFhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWZjNTk0MjY3MzdiMWRiNDc5MjIyNGQ0MjMyZGZhZTg3Y2ExMWFkNGRiNzIxMTA5YWFjODMxNjkzZDhkOTVhZiJ9"
+        },
+        {
+          "resource": "repo://agent.py#L63-L66",
+          "version": "repo-lines-v1:sha256:91dc18a81dfb4e8a3fe18ae84a3311d5fe4d0a7ec8ed99e1bb3540d59f965016:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2UxM2JiMTVmYTUwN2M5MTU3ZjA1NzU2MTcyMDJlNDBmZjZiYmQxMjg4OGU5YjJkM2Y0ZDdjZjlhZGUwMWQ4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcwNGFkYzlhNWMxODcwM2ZjN2YxOTNjODgzNTdkODk4OGE1MzJiODQ0NzJlMGFkMzFmZTI5YWVhZGI2YzAyOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWZmNzIyYjA0ZGY2ODU4OWE4MDI5ZGQzMWNjYzY3OTE4OTQ3ZmRhMGJiMjRmMTU4NmIyNGY2NWI2MDI0NWMzNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTU0ODM1YzA1NmE5M2VmMGZiMDZlNzZjZTM3YWVhOTM4OGY3ZmY3NmVmZTIxZjcxYzBjMzlkOGY2ZjVhOWRhZiJ9"
+        },
+        {
+          "resource": "repo://agent.py#L99-L101",
+          "version": "repo-lines-v1:sha256:9bb069b6ddb03e45683eed781d4273d135fdbeacd704ae7ee9330a390049e015:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjQ5YzU2M2NhNzRkZDdmYTJmNDkzMWI1MThiMDEyMTAyNjAyNWM1YjJlZDZhOTE2NWJkODRhZjllZTk3YjA2NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcwNGFkYzlhNWMxODcwM2ZjN2YxOTNjODgzNTdkODk4OGE1MzJiODQ0NzJlMGFkMzFmZTI5YWVhZGI2YzAyOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmNmMjIxNGNhNmYzYzAzY2VjMWVlMDA0ZjM5YzMwYzA1Y2Y5MGFiOTZhOThlMTY5YjYxNTJjNTIzZWFlZGRhYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjNmNDFmNjkzM2ExZjYzOTYxMGExMWE3NGQyN2ZlM2Y5Y2I2ODM3ZWZlODAzMjA0MGVhMDA4MTk4MDBjMmVkMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_646ef64e1a7241df9028d7a7abcf5dd0",
+      "statement": "loader.py slices the workbook into three eras with fixed year ranges: Expansion (Προ Κρίσης) 2005-2008, Crisis (Κρίση) 2009-2013, and Recovery (Ανάκαμψη) 2014-2023; each Document carries region/indicator/era/source metadata.",
+      "evidence": [
+        {
+          "resource": "repo://loader.py#L15-L59",
+          "version": "repo-lines-v1:sha256:887bd0103f052862a7a19367dcea251243089c3e14366346f860c5c82049cd78:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzYjg4ZDdjMTE2OWExZDVkYzllNDAzMmNjODI4YTY1YjI4MTNlOWNhYzc2OTdiOTc4NzkzMDZiYzQxNTRhOGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZGMzNjA0ZjkyYzU3MDQ5MTBiZGJmNGRiNjBlYzViN2RiNjg5NjE1Yzg2MmFmZDJjMmFjY2NiNWRkMGZiOGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmMjBhZWMyY2NjZjJhNjU5MjQ5ZmMwNmU2MGE1MmNiZTExMWE5YTA5ZGExNjM4OTBmNTdlOGI2MWJiNDRmZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkNjIxYTc5YjU5Yzg3YWI3NGU1NmI2ZGZhMWI4ZDg5ZmM2ZTQ3NDU2ZTZlMmFiYjFmZWVmYjBhOTA3ZGQwOTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_20e79f28131141c7b0925cf3dd3e8e4c",
+      "statement": "search_regions maps user era terms (English crisis/expansion/recovery and Greek κρίση/ανάκαμψη) to the canonical era labels, then runs a Chroma similarity_search with a $and metadata filter on region/indicator/era.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L30-L45",
+          "version": "repo-lines-v1:sha256:cf50b0e8faff53f5141d39ed3e0e1ae99adc6a84060bfe04188bfe2b0358ac65:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5YzE5YTIwNzM5M2FhNDEwNzg2NDFkM2Q4NDdhM2M5YzkzMGIxOThhMmY3ZmI4NWIwMGJiMTUzYTkyODRhNDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0NzVlOTRhOTA0YWM0OWIzMTU0ZDQ2NzJhNjZlODYyOWI4NmRhYzc0ZTNlMjkzN2JlNjkyN2FlM2RhMTFjNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmYWExNDhmNzhkYjMzODM4MTg3MDZmZTMyYjM3ODk0N2FkZjI4NjY2MGNlNTgyYTRjNTVkNTQxODAzZTM2NWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwNTllMGQwMjA1OTY5MDYxZTExMDYxYmYyMjljMzE1ZTBlMTI5YjNjZjk1NTZiYjA0NjNlNGE3ZWNhYTIwZTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_831960cc292a4da199ef5824c088f496",
+      "statement": "normalize_indicator maps economical/econ/economy/gdp to 'economic' and societal/soc/society/'social welfare' to 'social', returning any other input unchanged; this pass-through is what lets calculate_rtix_score's 'composite' branch reach its index_map entry.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L19-L25",
+          "version": "repo-lines-v1:sha256:6e9498f1cc256ef1eb719a9c45e295fdd7fafd848934cc35c011a4c35bb60218:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTlmNTc0OGE3MTI3NzlhZDk0NTg1YTg4NmQ3YmViYmIyMjMxZmU2YzBiNTEwYjU5YTJhODdiNjY4NGU1NjU2MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODczNmNlNWRjZTUyNWMzYmRkMDUwNzliZWM0YjdlYzZkYWYxNzYwMGE5MTM1MWVhZmQ2MGUwNDM0YmExZTljNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjc1OGRmM2JhMjg1YjRjNzA1MGQyN2NjYzZiYTFjMGE0NzVmMTNkNzQzMDI2YzQxNzY3MDM1YmMwYTIxNjU4YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGNiYzQzNTM4NWE3OTgxZjZhYjU0ODFhYWQwZWNiMDY3ZDA0YjlmY2ZkZmRiNmU5MmE3YjJhMDBiODFmN2UzYSJ9"
+        },
+        {
+          "resource": "repo://agent.py#L307-L313",
+          "version": "repo-lines-v1:sha256:7712e97cb770febbec287acae97d8e0109c9a4df067f20e3e178e4833f00326a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODcwMjI0N2VmMWFhYzc2OTMyNWM3Mzc4Y2UzZTliMTNmMWI5OTY4MzcyM2QyYmNkYzJjNzMyMjFmNjVmZWQ5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODNjNGI5NDdjNjkzMDFmOTZiMmZhZTA2NWFmYWIwYmUzN2JmNDA2ODc0MTE0OGM0MjYwNTBkMTY2YmY3YzQ0YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjU0ZTRkZGExMmFlOTJhMzUxNDZkMGY4NjNlNGE0YTcwOTExNjE0ZTFhM2NmZGE2NTRjODk0MTBlZTI1ZjBkNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmNmMjIxNGNhNmYzYzAzY2VjMWVlMDA0ZjM5YzMwYzA1Y2Y5MGFiOTZhOThlMTY5YjYxNTJjNTIzZWFlZGRhYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7c80961771dd4c328ee1b9ae8bc74949",
+      "statement": "rag.py indexes six workbook sheets: the economic and social base sheets plus their - Crisis and - COVID variants, persisting all region×indicator×era documents into ./chroma_db via Chroma.from_documents.",
+      "evidence": [
+        {
+          "resource": "repo://rag.py#L8-L25",
+          "version": "repo-lines-v1:sha256:37283d0303f1d9e7598dc0b1e7e7da930a0f01741ad8746369478357163ada5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1Y2I1Y2Q3Y2UxMTJiMjFiZjYzOGUxZDIxOGI5Njc0YTk5NTIwMjMwNjViZGQyYWIxYjQxMmQ5NDE1ZGE1NjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgwODIxZjFlZWM0NzhmM2FjOWQyYjU2YWVkODBjMWY3NTA3YmJhNGMxODhkZWQ3YmE5YmJkNjRhZmRmMzYyN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cae3a7b8d1424e53935838733485f332",
+      "statement": "The resilience primitives are computed from a per-family composite indicator column: Rs = composite[2013] − composite[2008], Rc = composite[2019] − composite[2013], and D = (composite[2022] − composite[2005])_region − (composite[2022] − composite[2005])_national; calculate_rti_score and calculate_rtix_score compute them identically.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L138-L142",
+          "version": "repo-lines-v1:sha256:a400e62d063c3df77dadfc847b71b265456cc7e66e79ccd05fb2691171d5160c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTFlNzEzNmMxY2EyMTMyZmM3N2M1ODRmOTc2MjkyODgyNDdmOWJhMTRlZGUzM2M4NjJjZDRhYTNiZjU3ODNhMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWVhODAwN2NkMDdjODcyOGNmNjRlMGE5NGUyMDBlYWM4Y2E5MmE5M2UzZmU0MmZhYjg1NDhmMzA1NjFhMDJjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWZjNTk0MjY3MzdiMWRiNDc5MjIyNGQ0MjMyZGZhZTg3Y2ExMWFkNGRiNzIxMTA5YWFjODMxNjkzZDhkOTVhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGZhMDZjNjM4YzA2NTBjYWZmODhlOWZjMWQ2NzdlOGNmZWY1MTI0MjFhZGU4NWFkZWJiZTE5ODdiNjFlNGJmZCJ9"
+        },
+        {
+          "resource": "repo://agent.py#L323-L327",
+          "version": "repo-lines-v1:sha256:a400e62d063c3df77dadfc847b71b265456cc7e66e79ccd05fb2691171d5160c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTFlNzEzNmMxY2EyMTMyZmM3N2M1ODRmOTc2MjkyODgyNDdmOWJhMTRlZGUzM2M4NjJjZDRhYTNiZjU3ODNhMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWVhODAwN2NkMDdjODcyOGNmNjRlMGE5NGUyMDBlYWM4Y2E5MmE5M2UzZmU0MmZhYjg1NDhmMzA1NjFhMDJjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWZjNTk0MjY3MzdiMWRiNDc5MjIyNGQ0MjMyZGZhZTg3Y2ExMWFkNGRiNzIxMTA5YWFjODMxNjkzZDhkOTVhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTRmNWFjYmI1OTQxMjVjYWM2NWY0ODA4YTExMjEyOWNiYTE4NTM2NTRhMzFjM2M0N2IyNDdhMWFlNWIyZTU3MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6f2c66780e7458f812b33aa7c05633d",
+      "statement": "The RTIx composite score is RTIx = 0.50*D + 0.30*Rc + 0.20*Rs.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L328-L328",
+          "version": "repo-lines-v1:sha256:9f16574421c83c53045cddeb5ec9e6b44a616ffbf0373af5391f0af9c2a2ca8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWYxNjU3NDQyMWM4M2M1MzA0NWNkZGViNWVjOWU2YjQ0YTYxNmZmYmYwMzczYWY1MzkxZjBhZjljMmEyY2E4YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWYxNjU3NDQyMWM4M2M1MzA0NWNkZGViNWVjOWU2YjQ0YTYxNmZmYmYwMzczYWY1MzkxZjBhZjljMmEyY2E4YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGU4NDg2OTZmZmJkMGRkMmVhYWU4YzQxNGNmM2YyMDFhNzIyMzgyNzUzM2FiNzk5YmY0NWZmNzcxYTdlNzhiYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzMyZDNlZTY1MzNiM2JlNmI0NzliY2VmYjFjYjJjYjM2MDIwNzQ1ZTc5YzMwNmE0OWY3MzdiZDc0OTNlYjllNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dde9761109004f3fbe4c0fc5e75af801",
+      "statement": "RTIx is vulnerability-adjusted as RTIx_adjusted = RTIx * (1 − v_norm), where cvs = 0.5*fin_vuln + 0.5*cov_vuln (each the absolute value of negative resistance across the 2008-2013 and 2019-2020 shocks, else 0), and v_norm = cvs / max(cvs over all regions), or 0 when the max is 0.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L330-L341",
+          "version": "repo-lines-v1:sha256:b92db816581158c8c324d5f930d38d9b569de21d63d6b5317fc87bcd4c5ad3d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiMzA2ZjM2ODExOTI5NDYyNDEzZDg5ZjdiNDdmMWU3ZmE5MjVjMGJkYWNjZTM4YjEzZTJhZDVmZjRhZGNiMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjZjgzM2JhMTkyZjQyM2ZlZjNlNDc5Y2U4ZGY1ODM1NGE1MTNkYmY3NGU1NTRlMzFjN2NkYjE1NGY1M2MwNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjMWJiMDkwYWM1MTJkOTdiN2Q1ZjFkZGU3OGQ3YTI5NDI1YmU3ZGJkZTUxMTAxOGNiYzRhODYyNjJhMTRlZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyODM5ZGJmOGFkMjc0MjYyZGQ4NDJmNjZiMzAxYTljNjJiM2E2MzNlYzI5Yzc3YjJkM2I1MzljYjJlOGIxNmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9a36aa644aa34250a4c86860eeee820e",
+      "statement": "calculate_rtix_score classifies the vulnerability-adjusted score: > 2 Strongly Transformative, > 0 Moderately Transformative, > -2 Stagnant, otherwise Declining Trajectory.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L342-L354",
+          "version": "repo-lines-v1:sha256:1055040efc8a254a821e1fc698aff73493d78d6860a352ddb40d51ee8e7d7880:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1NDA1NDk2NTc3MmZiZmM2ZDAwNDkzMjIwMWIwNzRiYTE2MzRhMDBiOWZlMzBkZmRlNGQzMzQxYTQ4NDA4NzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3ZjlmNDBmMjQ1MjFlZTQ4ZGRjODE1N2NkOTlhMGViN2Q1ZmQyNTU5NWQyNThjOTI5YThhZmFkODkyNzU2NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhODk4Mjc2MzJhZDA0ZjNlNDgyMmJmYjgxYTNhNTI5MTBjYTc5MjQyZGU3OWU1Zjg5NDJiYTRjYTY1ZDY1ODEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8e50ab7f023d4b7fb7d3ed1910b48211",
+      "statement": "calculate_rtix_score supports an indicator_type of 'composite', which reads the RTI_Composite column from the economic base sheet instead of either family's Σύνθετος δείκτης column.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L307-L313",
+          "version": "repo-lines-v1:sha256:7712e97cb770febbec287acae97d8e0109c9a4df067f20e3e178e4833f00326a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODcwMjI0N2VmMWFhYzc2OTMyNWM3Mzc4Y2UzZTliMTNmMWI5OTY4MzcyM2QyYmNkYzJjNzMyMjFmNjVmZWQ5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODNjNGI5NDdjNjkzMDFmOTZiMmZhZTA2NWFmYWIwYmUzN2JmNDA2ODc0MTE0OGM0MjYwNTBkMTY2YmY3YzQ0YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjU0ZTRkZGExMmFlOTJhMzUxNDZkMGY4NjNlNGE0YTcwOTExNjE0ZTFhM2NmZGE2NTRjODk0MTBlZTI1ZjBkNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmNmMjIxNGNhNmYzYzAzY2VjMWVlMDA0ZjM5YzMwYzA1Y2Y5MGFiOTZhOThlMTY5YjYxNTJjNTIzZWFlZGRhYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6c90c89ac7f4c9da6acbc0758c24797",
+      "statement": "calculate_rti_score classifies against the regional medians of Rc and D (excluding Ελλάδα): both above median → Transformative; Rc above median only → Adaptive; D above median only → Emerging Transformative; neither → Vulnerable.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L143-L156",
+          "version": "repo-lines-v1:sha256:de51208adc13e0087e39c90d0e034de4533bb93805f86009133555bbb85bfa88:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3YjMyNzU5Y2NkM2Q3NDQwMTY2NGFiMDRiN2UxMDFkZTdjYTM2YTMwZDNlMGM5OTQzZDY4OWQzNDAyMGQ1NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhNGQzZjMwMDEzMmM2OTljMmE1NjkzYTVkY2M5YzljMjg3YjEyOGU0MTRmMzNmNzIwMDc3NjdkYzhhZDcyZGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlODQ4Njk2ZmZiZDBkZDJlYWFlOGM0MTRjZjNmMjAxYTcyMjM4Mjc1MzNhYjc5OWJmNDVmZjc3MWE3ZTc4YmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3MmRlMzg3YTc5Y2IxZjRkYjUwOTNjZmM1NWEwNzgwMzdiYjNkNDA4MmZiYWVjMjAyZTI5N2NhNTFhNmUyNzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a7b6fdf3eef3428a93f7f115d71e655e",
+      "statement": "calculate_resilience_score selects sheet and columns via a (indicator_type, crisis_type) map: financial and crisis collapse onto the same - Crisis sheets while covid uses - COVID sheets, for both economic and social families; it validates indicator_type to economic/social (via normalize_indicator) and crisis_type to crisis/covid/financial, returning an error string on invalid input rather than raising.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L78-L95",
+          "version": "repo-lines-v1:sha256:8e3d157c6eec6f4c274e86314519581bd56d24c86907f35110d8974881c182f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1N2VhNzQ2N2Q5MjM2YzdhZjRmNzRlMTM1ZTFhMjhhMjg3MjFlZGI3MTI3Zjg3OTU3ZjczMzE0MDBjMWI0ZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyMzUxMTZlNDY0OTczZDQ1NWY5YTRjY2UzMWY2MGUxNzgxNGJlNDZlZDhhZjA0ODQyZDViYjg5NzQ4YmJlYzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2MGJlMmNjYjE2YjU3NzZlMGFlNDk5YmYxNzIyMGMzOGM0MjgzNDA2NWI4YzY3YmRlYTUxOGVjOGNlMmZmYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjZjIyMTRjYTZmM2MwM2NlYzFlZTAwNGYzOWMzMGMwNWNmOTBhYjk2YTk4ZTE2OWI2MTUyYzUyM2VhZWRkYWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2eca30a1ad0e4a2ca7e1c7c74b2d922a",
+      "statement": "calculate_resilience_score classifies a region as Transformative when both its resistance and recovery exceed the national values, Adaptive when either exceeds, and Vulnerable when neither exceeds, comparing against the Ελλάδα row's % National Change columns.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L102-L116",
+          "version": "repo-lines-v1:sha256:2af3bf0570f7ecddd6540a6649ac26d14e24b3df7430cc4af8516745df35e1d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0OTQ3NzI2YzYxYTJlYTQ3OTdkZGUzMTlhMjAwNzI1ZDJkOGYzOTU3NTI1MzAxMjU4ZmQxYTA4YmE4Nzk0NWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkMDU2ZmY5ODQzZmIxMGY0MzA2M2YzOWQ4MTE5MTQzMGFmMjM5MjIxMzRhNDU2NjhjM2ZmMzYxODBmYjY0NGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliYjA2OWI2ZGRiMDNlNDU2ODNlZWQ3ODFkNDI3M2QxMzVmZGJlYWNkNzA0YWU3ZWU5MzMwYTM5MDA0OWUwMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4ZTY0OTVlZDk4ZTRkZDczMzg5MzEwN2I0NDUwZjllMjJlZTVjMTU5NGVkODg1ZTQzYmIxNjc5NzRhMGZlNmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2361ddc1f0ac4ccba55cb587b1b102b0",
+      "statement": "calculate_recovery_speed labels a region Strong Recovery when regional % change exceeds both national and the regional median, Solid Recovery when above national only, Partial Recovery when above median only, and Critical State when below both.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L172-L186",
+          "version": "repo-lines-v1:sha256:20b2e1bf4529e5496bae8335ffa0cf59b77ac10368d328929698a49a542f21e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlZTY2NjM0MDRlMWVmOTg2NTcwZTZkZDQyMDMxZDFmODcxYmRlNjA1ZTg5ZmNjODBhYjdkY2FlMDg1MTY4ODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxYjdmYTVlYzE1MTc1YTI0NjcyZGZkYTE2YTZkYzIwYjRlMjc1YWQ1NDljNDQzOTFiYzUyNmU1ZDc4NjliMTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliYjA2OWI2ZGRiMDNlNDU2ODNlZWQ3ODFkNDI3M2QxMzVmZGJlYWNkNzA0YWU3ZWU5MzMwYTM5MDA0OWUwMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzNDU1ZjNmYWQ5ODgzNWZmZTZmYWFiYWVmMmM3MWM1YjQzZTMzZjkyNTQ2MTE0MTFjMDhiODI2YTJjYzJmMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2399f57537e846728a7c1cb37ac3f638",
+      "statement": "calculate_vulnerability_index computes cvs = 0.5*fin_vuln + 0.5*cov_vuln from negative resistance across both shocks and labels High Vulnerability (Systemic Fragility) when cvs > 15, Moderate Vulnerability (Sensitive to Shocks) when cvs > 5, else Low Vulnerability (Robust Structure).",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L383-L408",
+          "version": "repo-lines-v1:sha256:2e292ef2a7fa305b10398ce17bc47a27a185bd69be0f3162f36a6c23cbfbb01a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4NWE1N2Q2NWVjMmE1YmYwOWM3ODQyOTY0ZDE0YzgyNTI1MjcxZTY2MjI5MGMzNzQ1YzQxMzRjYmUyMjMzMjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjMTliNDBmNzBjNDM2MmE0MmJmMDIwMDdjNGIxNjI3YjE3OTEwMjE2NmMwNzA2ZTAyM2E1ODIzNjQ5NmZhYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkMDJkNmE0ZWVlZDZjMjBiYTJiNzhkY2NjYWRjYzkwMzkwODA0YWQ4N2E0ZThiZDI5YjZlYTg1NGY5ZTcwMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhODBmZWQ5NmQzYmE3ZTAyNTlkOWNlMDEwNjAxZTNhY2VjNjZmOWM4ZDM3ZmYzZGU4NmRmNjE1ZDZhMWUwYjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_17ae06c881c942329cbf10f29ef024d7",
+      "statement": "calculate_crisis_comparison defines Learning Delta = Resistance (2019-2020) − Resistance (2008-2013) and returns Strong Learning Effect when > 5, Moderate Improvement when > 0, otherwise Structural Vulnerability.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L357-L380",
+          "version": "repo-lines-v1:sha256:9f0ea0679e6db375e66940c46afb3e51dfd4fa6d6d8d7dfe00d342875db40145:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3ZTM2NmNlOTY0ZTRlMGY4Y2Y4Nzg3YjgxMDAyNGNmYTI3MTdiZWIzOTE2ZjQwZWRhOWZiZmNmZDExOGQwM2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjMTliNDBmNzBjNDM2MmE0MmJmMDIwMDdjNGIxNjI3YjE3OTEwMjE2NmMwNzA2ZTAyM2E1ODIzNjQ5NmZhYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmYTUzNjE2MGFiYWViMGJiODBiYWY3Y2FkNmM1YTliMDRiZDA4ODE4Y2YyMDM5NjI5NjQ3ZWQxOTI1NzkyNjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmMmJmOWMxMTY4YzhkOWY4YTE1OGMwZDI2NzQ1NTI3YzliZjM1MzI2MDliMWVhNjY5YjVmM2U1YWQ2NzhmMDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_04480701b9b14747a7b2e8d1288cb86c",
+      "statement": "analyze_socioeconomic_coupling compares regional economic vs social % Regional Change 2013-2019 against their national counterparts, labeling Balanced Recovery, Social Lag, Economic Lag, or Double Decline.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L194-L223",
+          "version": "repo-lines-v1:sha256:8721b0afab1467adfc90b15662c238b97b6b07dc81fdff06899ae7eb3a18ab8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3NDFiNTkwMDIzMmQ0NDAyMmNiYjBjYzJhY2E2ZDUyNmEwMWEyMDY5ZTU4ZjBkYjFiNzFlNDRhYzFlM2ExMzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmYTUzNjE2MGFiYWViMGJiODBiYWY3Y2FkNmM1YTliMDRiZDA4ODE4Y2YyMDM5NjI5NjQ3ZWQxOTI1NzkyNjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkMjEzZTdmMmRiYzg4NzE2N2E5NzEzM2MyODliNDk0M2E0ZGY2MDhmZTdkZmUwN2IyZTFiMTBiNWVhZjk5ZTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a046bcb1df245bd96d21c99f98e360d",
+      "statement": "calculate_structural_shift compares pre-crisis/resistance/recovery phase values across the financial and COVID windows for both economic and social series, emitting adaptive-cycle traits such as More Robust, Faster Recovery, Structural Shift, and Competitive (or No Structural Shift when none apply).",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L226-L274",
+          "version": "repo-lines-v1:sha256:c8bb5316d7de6144eb408f3a7be060c911428d91fe65b14c635ab891b4a4efee:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjODNlY2JiZTZhYzQ1NWQ2ZjNiZmVjMGJhZmU5MGVkMDUwZjZiMjVkZWQyNmFiMWZhNjEyNmRlZjU3NDFlM2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjMTliNDBmNzBjNDM2MmE0MmJmMDIwMDdjNGIxNjI3YjE3OTEwMjE2NmMwNzA2ZTAyM2E1ODIzNjQ5NmZhYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmYTUzNjE2MGFiYWViMGJiODBiYWY3Y2FkNmM1YTliMDRiZDA4ODE4Y2YyMDM5NjI5NjQ3ZWQxOTI1NzkyNjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2Yjk0OTMwNzZiOWJiODgzNjgxYzE5MTQwNDIzNWRlOThhZWQ1M2JlZjZhNDYxZjUwNzM4MzBjYWNjNGJkMGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8482b2753d994ed38ebba63138d8dddb",
+      "statement": "The agent system_prompt mandates an Adaptive Cycle Theory interpretation (Release Ω, Reorganization α, Exploitation r, Conservation K), a three-phase exploratory/diagnostic/synthesis protocol, Greek region names, and a final verdict of Transformative Resilience or Adaptive Recovery archived via save_finding.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L277-L293",
+          "version": "repo-lines-v1:sha256:30d3019718b07e5edde9564c9a83800e1c7fb8e1f2ab4e57a6c554b2434821fd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5Y2I0MTg2YjUwOGQ2YjViYWI4MmU5MTE1OTc3NzMzMzlmN2VmOWNjZWQ3NDZhMGM4MWM5MTNkOTY1OTM0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiOWE1ZjdmMzMzMDYwODZiODg2OTNlODYzMWQzZmViNzM1NjgwZDdkM2Y1MTc0MDIyN2JlNDY0MWU3NzNlM2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkMDJkNmE0ZWVlZDZjMjBiYTJiNzhkY2NjYWRjYzkwMzkwODA0YWQ4N2E0ZThiZDI5YjZlYTg1NGY5ZTcwMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkZDk0YWUzY2MyZjlhMDY2OTAyM2JkNGUyMjg5MWQyYTZlZDI0ZmY3NWM4Mjc0ZmQ5YzA5NmU3ODY0OWVmNzkifQ"
+        },
+        {
+          "resource": "repo://agent.py#L410-L438",
+          "version": "repo-lines-v1:sha256:29b9171ea2ba83987528a4a185d234a98f52aba088423eb5015c8fd22d5cb9c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3NTIxYzNhYmM1YmFiMzFkZmJmYzRiMzgyNWEyYjVlNmQ4MDI0MDNhMGM0YTE4NjFhZTMxMjI5NTkyYzliZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiNzcwZmI0NWE0MjVlZTM0MjE2M2M3ZTM3MzI4MDM1NTdlNTc3ODVjYTliNWExZTMwZWY4ZWRkNTNiZWEwZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZhNzQ0ODI1ZDg2Zjg0NTFiZjEwMDNiNDY4OWJiMDY4NjZiMTE5MzM5ZjUzNTgyMTkyNTViYzJiYWUwMWEyNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjNWI5OTYyMjIzOWRjYjUyYWYwZjI4ZDJmMmIzODJiYzkxNWYwMmM3ZWRiMTVkYWQ0MDU1NWRiNzIxYzg2N2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c700a37fd0744b59b1bc9b5b57578ea1",
+      "statement": "cluster_analysis.py hard-codes the 13 regions' economic and social Rs/Rc/D values and KMeans-clusters them into four named archetypes: Δομική Στασιμότητα, Τουριστικός Μετασχηματισμός, Αναδυόμενη Προσαρμογή, and Μητροπολιτικό Παράδοξο.",
+      "evidence": [
+        {
+          "resource": "repo://cluster_analysis.py#L12-L26",
+          "version": "repo-lines-v1:sha256:786b18b074da3b63abf10067f37660d72d705a191bb80de56d92f837f3c1364c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2ZDNhNzI0ZjRlOGFjYWIxZjhlYzYzNGQ2YzdiZGUyNDhjNWU1NDdhZTIxMTA0YjhhMTA0MzU2ZDNjN2QwYTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1NzBlNzhmMGVjZmQ1MzYzNTUzYmQ4MjVmNGVjZmQ1ZjE5MjU4ZDMwYzY5ZTA3YzRkNWUzOTRhM2Q1NGQ0NjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyNDNmZDAyYmFiMzJjMGM5NDJlMDEyNWMxODllNjk1YzMzZDQ0MDg0MGYyZTY5NWY4Y2IxNjUzNDc0YzZkZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkZDQzZjc3OTZmNGZlMmIxNmFkMDlmNDJkNjAwNTVjOGUzZDIwNGRkMWVkMzUwN2EyNzgwNzVmY2ZhMmVlY2YifQ"
+        },
+        {
+          "resource": "repo://cluster_analysis.py#L60-L76",
+          "version": "repo-lines-v1:sha256:34ee5d54f245c38af2a7c586016de802b1187222d81f19e0e5ddbd98dbae1b76:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyOTAwZjc0YWQwNjE1ZTQ3MGFlNTYwYzc2NjdhZmM4ZGY1MmM1MDUwNTczZjRjODkwYzY2OTU5Yzg3YTNmODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxZjM4OThkZDQ5ZGY3NmI0ZDg4ZmUxN2FlNzYxOGFkYTFhNWJkNTUxN2JiNGU2MDIxNmEzOTk5YTY0MzE0ZDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwNmYyYjAwMmFhNzE1N2M2MGFmYmQ3ZjI2NmU4M2FhY2VmMDc4YzQ3NzIzYzUwYTAxYzAwZTllYmIxYzYzNWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmMTcxMTcwZTI3NzQwMTc4Nzk3YjI5YWRhY2U2ZjI1NTI5YTcwZjdkZTQxMTMzYTc0NTZjMmJhYjhjODQ1NWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_04ccd4645b284073aad91c8ef51f7227",
+      "statement": "findings.md, literature_synthesis.md, and deepresearch.py are gitignored generated artifacts (not tracked source): findings.md is appended by the agent's save_finding tool, and these files must not be treated as authoritative evidence of system behavior.",
+      "evidence": [
+        {
+          "resource": "repo://.gitignore#L8-L12",
+          "version": "repo-lines-v1:sha256:8716a130f2ddd751f8c7f291820abce1aac55d90871466e9e08b63fbe10f86d4:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzYwOWRjYTBkN2MwM2E3YjdjY2I4MTZmYWFiY2JiYTc3ZjkxYmZkMWRkZmY3MzcxMTAyODRiNTdlOGIyNGVjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODE5ZDg4NTdmODc0ZGZhNzY3NjczNDJjZmJjMTExMWFhMjAwMDE1MmRiMWJjYjE5ZGRjYTdhOWFjNDc3NTU4OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjg2YjBiMWJhZDg4MGJhODM1ZTA2NmZjYmQ4ZDMyNGIzODVhYWFhMGVmZTdlNWQ5ZGYyZTlkZGFhMGMyNDM2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmE5YWJiMzMwNTU0MjYxMzMzZjc2ZDFjNjdjZTFhY2U1YjdjNmE1YTkyNzljN2EwOTAxYzViNWY1Y2I4NjFmZiJ9"
+        },
+        {
+          "resource": "repo://agent.py#L277-L293",
+          "version": "repo-lines-v1:sha256:30d3019718b07e5edde9564c9a83800e1c7fb8e1f2ab4e57a6c554b2434821fd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5Y2I0MTg2YjUwOGQ2YjViYWI4MmU5MTE1OTc3NzMzMzlmN2VmOWNjZWQ3NDZhMGM4MWM5MTNkOTY1OTM0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiOWE1ZjdmMzMzMDYwODZiODg2OTNlODYzMWQzZmViNzM1NjgwZDdkM2Y1MTc0MDIyN2JlNDY0MWU3NzNlM2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkMDJkNmE0ZWVlZDZjMjBiYTJiNzhkY2NjYWRjYzkwMzkwODA0YWQ4N2E0ZThiZDI5YjZlYTg1NGY5ZTcwMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkZDk0YWUzY2MyZjlhMDY2OTAyM2JkNGUyMjg5MWQyYTZlZDI0ZmY3NWM4Mjc0ZmQ5YzA5NmU3ODY0OWVmNzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7326158162494266b141d1b0ebff5396",
+      "statement": "cluster_analysis.py is tracked source, but its PNG outputs (cluster_scatter.png, cluster_radar.png) are gitignored, so the script documents the narrative rather than re-deriving it from the workbook at build time.",
+      "evidence": [
+        {
+          "resource": "repo://.gitignore#L10-L11",
+          "version": "repo-lines-v1:sha256:6d17f058170ee7df2ea34d0147ae931d51dcd9fc24303b964fc3502b45f07eef:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTJmYzhiZWI3YzUyMDE0OWYyOGQ5Y2VjZGQwZjUzMWEwNTY0ZTA1MjFmMzA0OTk4MmUwZGQyNDY5NTk0MTg2MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDM3ZjA4NTJiMWRjMjg3YzFjYmZkNmQ2MjRiYTQ5OTYxZWIxZTU2MTRkNDRjMzdhZmY4ZGRlNzM3ZDZiN2M1OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODZkODRjZTY0YTdjY2Q1YzJkMDIwYjcxNDM4ODhmNTg2MTQ3ZWE3MjlkNDA2MWI1ZTRlOWY0MDkwNDAyOGZiZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2I3ZmNmOGFhMDQ2NTMzZjE2N2ZmNWMyZjQ5YzZmNjgxZjRkOWZiMDY3MjhjYWM5NDZkMTc4MDZhNjM3ZTJkOCJ9"
+        },
+        {
+          "resource": "repo://cluster_analysis.py#L128-L131",
+          "version": "repo-lines-v1:sha256:036dc31f98b227790c93d59fe1f6b54fa66b70531451e61d2d5464963b569d11:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjIwYzcxMzcyMzU3MTM1ZTBlNzkwMzcxNzFkMWVjYmNmMjYxMTk3ZDU3ZmEyNGJlOGJiYTgyNzYxNDNkYzQ3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFhYzA0ZTVjYjVkYmM5NDEwZDIwMzAyN2RjMzQwNzhiZjIwYzQ1MWVmNDAyZDdmMDgxNGNlZTcyMDc2MzYzMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjc1ZWJmZmFiNjkxZmIzZDgzYjc3NDAzYzBkMzQ2NWZiMWQ2ZjViMzY5NDg1Y2E5MWFiMTE1YmEzY2VlMTc0YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTFiNzNjNWY1ODk0MDY0N2RkYzBjYzQ1ODQwZDVhNjE1MjY1YjgxNTU4YjBhYTkzZGJlZTQ2YTE3NjlkMDBmNCJ9"
+        },
+        {
+          "resource": "repo://cluster_analysis.py#L186-L191",
+          "version": "repo-lines-v1:sha256:f5f67a1a4722ee8d08b3753f7b2cc0ce984037db336ae6dc11854aab4ab6abd7:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGJmZGM2MTk1OGEzYzgzMDI1ZGMyMjcyZTdiZDZmNjg3NjBhYmU1ODJiZTNlYTIxNGYxOTMzMGQzMmM5ZWJkNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGIzY2ZlZTQ2ZDM4Mzc2ODg1YzM5MDI0NjcwNmEyNjg4N2NmYmFhMjEzZjZhM2JkMTliNWRhNmY5NDEzM2U2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjk5N2FhODYwZjFjNGUzMTZlMTAxN2U3NGJjN2VjZmJhNjdlMzJlNTliZGY4YTk0ZjA4ZDQ2NWYxYTYwMzk0YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjJiMWEyZGYxNTczODdkZGM2ZDE5OGIxNzhhOTA0MTc0YmZkZWYwMDMyMWZjYzM1MjcyNzdmZjViYjgzNjZmMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ecd8c3bd4d454721940f39f3c67625cc",
+      "statement": "Workbook-reading tools assume exact Greek sheet and column labels (e.g. Normal Οικον Βάση, Resistance (2008-2013), % Regional Change 2013-2019, Σύνθετος Οικονομικός Δείκτης) after whitespace-normalizing headers; column or sheet drift breaks both Chroma indexing and the agent tools.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L240-L255",
+          "version": "repo-lines-v1:sha256:a600bca2648801e8949ecb7d836c9b0a17efb8e1d2586227cfcc32d9a1a7c451:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3MzY2MDhlMDViNzM1NzNlMDk4ZDQ5Zjc2NWM2NjcyMDVmOWUwZDk5YTI4ZjQ1MzU1YzY4ODk2ZTgyMTMyM2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzMTFlNTkwYjM4YjRjNjY0MGU0OTAxOTBiYWFkZTg5NTdmZTcwMzIxMDYyNDY2NjcxNDMyMzMwZDkzOWI3OTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkYjYyZGY4MWJlNjNjNjFhNWYxODc3ZTEzMWQ1OTgwNjcwN2QzOWUxNTAyYWRjOWUzMmJjY2Y0YzFmOGRhY2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmZGZhMjMzMDA2YTRkODZhMjg1N2I5N2IxNmM2YTI1ZDM4MDBmYzVhZjdlYjViNmJjMDgyYzJmYjFjODc4ZDIifQ"
+        },
+        {
+          "resource": "repo://agent.py#L315-L316",
+          "version": "repo-lines-v1:sha256:42d8c23e4a0a1a5ae1162c22b1ded665fe4d3d3f5ce43360fc00e28f1cef597c:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzdmM2Q0MGFhNTJmNDljYWUwZTY2OTkyYjI3MGIxZjEyMjViNmQzODg1YzJkYmVkYmFhNTQ3OGViMmQ5MDFjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2UxM2JiMTVmYTUwN2M5MTU3ZjA1NzU2MTcyMDJlNDBmZjZiYmQxMjg4OGU5YjJkM2Y0ZDdjZjlhZGUwMWQ4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmRhZWEyODZmYWVmZDI1YmQyYWZjZDdiY2Y3Yjg5NzI5ZjYyYTUxZTYwZjU5YjVlYWJhOTkzMmYwOTAwODNmMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWJiMDY5YjZkZGIwM2U0NTY4M2VlZDc4MWQ0MjczZDEzNWZkYmVhY2Q3MDRhZTdlZTkzMzBhMzkwMDQ5ZTAxNSJ9"
+        },
+        {
+          "resource": "repo://agent.py#L96-L97",
+          "version": "repo-lines-v1:sha256:8888da1c88d244cadec1afb8c8226ee6826d8eb580ce36010a96edf93d7230d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWY4NWFkNjFmYzkxMGMzYzg3NTE4ZTA2MzA3OTU3ZmE0ZTA5YTIwNWIzMDYwNTkzYzJlMmViNDkwY2JjMzJiNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzdmM2Q0MGFhNTJmNDljYWUwZTY2OTkyYjI3MGIxZjEyMjViNmQzODg1YzJkYmVkYmFhNTQ3OGViMmQ5MDFjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTNhMjQ0NWFjYjVhOWYzYzQzNGM0ODhhOWRiYmQyMDQ5MTJjMWFjYWNkZTY0YmVlZTUxNDg2MDEyNjgzNGU3MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM2MmIxNGFlMzBiYjJkOTU0ZGVlZGUzMTU2ZDEzYWE5NGYyZmVkNjY4MjQzMDgzMWQzYjM0ZjJlN2ZiM2ZhNyJ9"
+        },
+        {
+          "resource": "repo://loader.py#L7-L10",
+          "version": "repo-lines-v1:sha256:488a786e2370bacafb7ce6dff867fd7f432528224116891f13c32695a1f0c4f6:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGUzYmU3ZTIxM2Q2MzFmZTBiNDM5ZGM0MjIzNTQ5MjVlOTNjYzIyY2E5Y2VkZGZhODI3ZDI4YjRlNmNjNmExOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzdmM2Q0MGFhNTJmNDljYWUwZTY2OTkyYjI3MGIxZjEyMjViNmQzODg1YzJkYmVkYmFhNTQ3OGViMmQ5MDFjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmEzY2Y1MTkyMzU0ZjcxNjE1YWM1MTAzNGIzZTk3YzIwZWRhOTk2NDNmY2FmNWJiZTZkNDFhZDU5YmQxMjE2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDBhNjk0MjgyYmE2Y2RhM2M0MGM5YzFjMjg1ZjUxMDdiMzdjMjM4NjFkOTA2ZmZjZDA2NzZlYTkzZjVmMTNjNCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.4.3",
+    "at": "2026-09-01T11:19:44.752Z"
+  }
+}

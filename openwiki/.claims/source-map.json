@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:bbada53f7cb17cd7c4f9a6255e3614ffe3a115a3d74cefbd85b63b5029b0b18c",
+  "claims": [
+    {
+      "id": "claim_f4ce22ecb5c143f9987929c7ad448e8c",
+      "statement": "main.py is the FastAPI application exposing POST /ask (retrieval-augmented chat over the shared Chroma store, with fuzz-based Greek region boosting) and POST /agent (delegating to the LangGraph agent from agent.py with a fixed thread_id), using gemini-2.5-flash and CORS for http://localhost:3000.",
+      "evidence": [
+        {
+          "resource": "repo://main.py#L1-L65",
+          "version": "repo-lines-v1:sha256:e54877ec03d0818d2c0cec5b252cb15e4bca325b836c4412a8c84034b2ae3ace:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2NDk0Mzg1Mzc2YjExNDVmMTExOGNjZmJlZTdkYjE4YzM4MzkzNTcyMGQwYWZmOWI4OTcxODEyY2ViYWU5NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhNjk4NTU2MWE0M2FkMzRmODM0NjRlOTNiMDJjMjYyNGIyOTJmNjk3N2Y4NGNjMmJjMDMzMTBhMzcwYjEzNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e193711adc084818a0c6c95f155717a0",
+      "statement": "rag.py is the offline ingestion script that loads six named workbook sheets via loader.load_excel_data and builds the persistent Chroma vectorstore at ./chroma_db used by main.py and agent.py.",
+      "evidence": [
+        {
+          "resource": "repo://rag.py#L1-L30",
+          "version": "repo-lines-v1:sha256:ca1c39388b027bf82e8532197f76d404ae91ee0407e032cdf1f79003fe2d8c97:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4d8ed4caaa804fa4b98732f75b5996f0",
+      "statement": "loader.load_excel_data converts a workbook sheet into LangChain Documents, one per (region, indicator, era), skipping the national Ελλάδα row (used as reference) and attaching region/indicator/era/source metadata that downstream retrieval filters on.",
+      "evidence": [
+        {
+          "resource": "repo://loader.py#L7-L62",
+          "version": "repo-lines-v1:sha256:d7caeb0941076209b38387edd656eaf887f1bc5fc8367cd510edb11781ffab35:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlM2JlN2UyMTNkNjMxZmUwYjQzOWRjNDIyMzU0OTI1ZTkzY2MyMmNhOWNlZGRmYTgyN2QyOGI0ZTZjYzZhMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzMmQ5ZTBhZjBhMGRhNjA4ZTE3MjJhZWYwYjQ3NjRiMjhkNGQ4MThlZDU4Yjg5Njc1N2I0NzJkNzJhZDdkNmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_949ed39e880743af861c7663791a60de",
+      "statement": "agent.py builds a LangChain/LangGraph agent over gemini-2.5-pro with a MemorySaver checkpointer and a system_prompt orchestrating an Exploratory/Diagnostic/Synthesis research protocol, exporting the agent object imported by main.py.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L1-L18",
+          "version": "repo-lines-v1:sha256:5b6af9d3a4f835f8293ab319aa846047d4d74d7f2ea2cbd8d82ce77f8151eb1a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OGIwNjExMDc1ZmM0NTJjNDUxYWQ1NDRkZWUxNGI4YWQ4ZDVkMjFmYjNjODFmODJhODBhYThhZDQyOTljZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJkYTE1YWQxNzI2M2QwZmFiN2RkYzhkOWE5NmE3OWNiNzgxYTNiNjc0N2VjNGQ0YjE1ZDhlMDUyNGMyMzI3MmIifQ"
+        },
+        {
+          "resource": "repo://agent.py#L410-L442",
+          "version": "repo-lines-v1:sha256:ffb13a47d20394ee116c0a5625d7a3eec38fe856bf4f9e0ba9c6107b65ae1c79:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3NTIxYzNhYmM1YmFiMzFkZmJmYzRiMzgyNWEyYjVlNmQ4MDI0MDNhMGM0YTE4NjFhZTMxMjI5NTkyYzliZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZhNzQ0ODI1ZDg2Zjg0NTFiZjEwMDNiNDY4OWJiMDY4NjZiMTE5MzM5ZjUzNTgyMTkyNTViYzJiYWUwMWEyNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d768b6b61c84407fa224a2b330570583",
+      "statement": "agent.py exposes scoring/classification tools (calculate_resilience_score, calculate_rti_score, calculate_rtix_score, calculate_recovery_speed, analyze_socioeconomic_coupling, calculate_structural_shift, calculate_crisis_comparison, calculate_vulnerability_index, calculate_percent_change, search_regions, compare_regions, save_finding, read_findings) that read the workbook at FILE_PATH, fuzzy-match region names via thefuzz (score > 70), and return numeric results plus classification labels.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L27-L156",
+          "version": "repo-lines-v1:sha256:c36c10abc868abb96dfc84696f526e75f072818552747ef19f82e2bed48b59c7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxMzRlNTlkN2VhZGNhOGE5MjlhMjVmYTYwYmI1NGZmNmI4YWZiMGZhZDk0MDk5Y2QxYzg4OThkY2Q1YmU5NjhjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0YTRkM2YzMDAxMzJjNjk5YzJhNTY5M2E1ZGNjOWM5YzI4N2IxMjhlNDE0ZjMzZjcyMDA3NzY3ZGM4YWQ3MmRiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI5MTYzOTA1YWNjYTM4NzgzNzRlOTEwNDlkMjNlNGRkNWY4ZTRhZTQ2ZDlmNWYxYmUwY2M2NGVjNDA2ZDE0NWFiIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0NzJkZTM4N2E3OWNiMWY0ZGI1MDkzY2ZjNTVhMDc4MDM3YmIzZDQwODJmYmFlYzIwMmUyOTdjYTUxYTZlMjc0In0"
+        },
+        {
+          "resource": "repo://agent.py#L305-L408",
+          "version": "repo-lines-v1:sha256:b9031fe65301ee71697a47a694026f74ff01ae497711b53992ce9444d46dd56f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIyMjJiNzA5YTJjYjQ0NTA0Mjc4ZWMzNDc3OWYzNWIwOWViYThiYjkwNzQ3NDI1ZjAyZjJmZGE1YjE2Y2VjNWExIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiYzE5YjQwZjcwYzQzNjJhNDJiZjAyMDA3YzRiMTYyN2IxNzkxMDIxNjZjMDcwNmUwMjNhNTgyMzY0OTZmYWI0IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJjNTBhYmRlMTgyYTAzZDQxNDcyMjkzNjQwNTQ4N2M4NDVkZjgwYmFjZmNiNjdmNDlkZTllNTYwMWRjZGRkZGIyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2YTgwZmVkOTZkM2JhN2UwMjU5ZDljZTAxMDYwMWUzYWNlYzY2ZjljOGQzN2ZmM2RlODZkZjYxNWQ2YTFlMGIyIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_5584da9a1a394b44ae8f4a25d102e65e",
+      "statement": "calculate_rtix_score computes RTIx = 0.50·D + 0.30·Rc + 0.20·Rs, applies a vulnerability normalization derived from crisis/covid resistance, and classifies the region as Strongly Transformative, Moderately Transformative, Stagnant, or Declining Trajectory.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L305-L354",
+          "version": "repo-lines-v1:sha256:3aa430b0a7f564dfc4a4fda10ad3af002171015769f25e395f63235e54452fad:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMmI3MDlhMmNiNDQ1MDQyNzhlYzM0Nzc5ZjM1YjA5ZWJhOGJiOTA3NDc0MjVmMDJmMmZkYTViMTZjZWM1YTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1MGFiZGUxODJhMDNkNDE0NzIyOTM2NDA1NDg3Yzg0NWRmODBiYWNmY2I2N2Y0OWRlOWU1NjAxZGNkZGRkYjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhODk4Mjc2MzJhZDA0ZjNlNDgyMmJmYjgxYTNhNTI5MTBjYTc5MjQyZGU3OWU1Zjg5NDJiYTRjYTY1ZDY1ODEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ad99aac4bca465ebebde0150f39f10b",
+      "statement": "search_regions filters Chroma by an $and of region/indicator/era metadata, normalizing the era argument through an era_map before querying.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L27-L47",
+          "version": "repo-lines-v1:sha256:9879298f31714d38971ff15c0d60f409a1166256ce7f8151c185d8623febefaa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNGU1OWQ3ZWFkY2E4YTkyOWEyNWZhNjBiYjU0ZmY2YjhhZmIwZmFkOTQwOTljZDFjODg5OGRjZDViZTk2OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkZmJiNDQ3MWIwNTI5ZmRiZDFlOWQ3ZGMzYTYyNDA3ZDVhN2M5YzBkNWFhNjhkZjA5OGNmZTlkMzJiN2Q4OTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxNjM5MDVhY2NhMzg3ODM3NGU5MTA0OWQyM2U0ZGQ1ZjhlNGFlNDZkOWY1ZjFiZTBjYzY0ZWM0MDZkMTQ1YWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0MGE1NjViNzNhNTk2N2VlNjYyMTM3MGMyOWYzNWI4NjkyN2M1MWUxMDJhZWYxNGRmNTYzMjA1NmY2YThiYzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d24329403ccb4157b7d0db886bf64eef",
+      "statement": "save_finding appends to and read_finding reads the local findings.md notebook, which is a gitignored generated artifact rather than tracked source.",
+      "evidence": [
+        {
+          "resource": "repo://.gitignore#L8-L8",
+          "version": "repo-lines-v1:sha256:7609dca0d7c03a7b7ccb816faabcbba77f91bfd1ddff737110284b57e8b24eca:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzYwOWRjYTBkN2MwM2E3YjdjY2I4MTZmYWFiY2JiYTc3ZjkxYmZkMWRkZmY3MzcxMTAyODRiNTdlOGIyNGVjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzYwOWRjYTBkN2MwM2E3YjdjY2I4MTZmYWFiY2JiYTc3ZjkxYmZkMWRkZmY3MzcxMTAyODRiNTdlOGIyNGVjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjg2YjBiMWJhZDg4MGJhODM1ZTA2NmZjYmQ4ZDMyNGIzODVhYWFhMGVmZTdlNWQ5ZGYyZTlkZGFhMGMyNDM2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTkyZDEyZWUwZjIyODFhYTljMGJlMjIxZjU4YWFkZTNjMTI5YzQ4OTYwODExN2RmZWQzNTY5M2FiMzhkYmRhMSJ9"
+        },
+        {
+          "resource": "repo://agent.py#L276-L302",
+          "version": "repo-lines-v1:sha256:f716ebfbb3b286e4df0f54cad632c3ca46bcac6c153b73e4a762477cd458e235:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNGU1OWQ3ZWFkY2E4YTkyOWEyNWZhNjBiYjU0ZmY2YjhhZmIwZmFkOTQwOTljZDFjODg5OGRjZDViZTk2OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3ZTliYzMwYzE2MTM2NTQ5NjcxYTA1YmM5NmQ0NmViOTZmZjE0NDQ2NTRkNDc3ZTM3YTY4ZWM0ZmI1YTAxMWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxMmM4NGM1M2I3M2ZiODg1NTUxZjUwYTRhOTUzODk0MzQ1MmI2MGNmMDJmNjBmMGNkOWNjMzUzMjUwOTFlYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4OTdiZjg3MmY2YzcyNGU4N2UzNjA1YjYzYjAzNDM2Njk4MDRjZmIxMWQyMDcyYjM2N2UyMjVhYzkyYTk4MjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d505d51c53a459a86d1ca3b4da97564",
+      "statement": "cluster_analysis.py is a tracked standalone KMeans script embedding a hardcoded RTIx dataset for the 13 Greek regions, selecting k via silhouette (hard-set to 4), naming clusters in Greek, and writing gitignored PNG outputs cluster_scatter.png and cluster_radar.png.",
+      "evidence": [
+        {
+          "resource": "repo://.gitignore#L10-L11",
+          "version": "repo-lines-v1:sha256:6d17f058170ee7df2ea34d0147ae931d51dcd9fc24303b964fc3502b45f07eef:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTJmYzhiZWI3YzUyMDE0OWYyOGQ5Y2VjZGQwZjUzMWEwNTY0ZTA1MjFmMzA0OTk4MmUwZGQyNDY5NTk0MTg2MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDM3ZjA4NTJiMWRjMjg3YzFjYmZkNmQ2MjRiYTQ5OTYxZWIxZTU2MTRkNDRjMzdhZmY4ZGRlNzM3ZDZiN2M1OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODZkODRjZTY0YTdjY2Q1YzJkMDIwYjcxNDM4ODhmNTg2MTQ3ZWE3MjlkNDA2MWI1ZTRlOWY0MDkwNDAyOGZiZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2I3ZmNmOGFhMDQ2NTMzZjE2N2ZmNWMyZjQ5YzZmNjgxZjRkOWZiMDY3MjhjYWM5NDZkMTc4MDZhNjM3ZTJkOCJ9"
+        },
+        {
+          "resource": "repo://cluster_analysis.py#L1-L49",
+          "version": "repo-lines-v1:sha256:b40bb14f5e5ac08bad5799d85b127281758ad19b228f3e702908ca1bfbf9040c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3YTExZDVlZGMwZjA2MjhiNGE4ZDY2NWE3OGRiNmRkMTA2MmQ4ODA2NWQzMTZiNDI5M2M0NTBlZGY3NjAzMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlYmY2N2Y1MzVkZjlmODc3YTE0YjIyYzg4MDFkMGU4NzQ4MGVmYTM0YmZhNzYwN2VjZjNjZTNkODlkYjg1ZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwNDJhNzIzNjAxMmMyODNmMDM4NWZjMWVmY2FkODQ0ZTg0ZTk5MGQxNGY1MTQ3MzhmZDdjMWU5MzA3OWE3NzgifQ"
+        },
+        {
+          "resource": "repo://cluster_analysis.py#L126-L191",
+          "version": "repo-lines-v1:sha256:8249c3e9760bdacfafe23b1133a98fb6a5335998c7448298e95667d886a98ea1:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlOTc5MmZiZDE5NjdiY2E2ZjBjZGQ4M2Y0YWRiNzQ0N2ViNWY4OTJlOGVhMTVlMjg0MTlhMzQ3YzU1NjBjYzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiM2NmZWU0NmQzODM3Njg4NWMzOTAyNDY3MDZhMjY4ODdjZmJhYTIxM2Y2YTNiZDE5YjVkYTZmOTQxMzNlNmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyNTM0Zjk5NDFiOGFiMWMxYjllYmMyZGU0ODk5MWZhOGZkMTY5MTUxMjc4ZjhjZjg5YzU3YmYwOThhYmJiNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyYjFhMmRmMTU3Mzg3ZGRjNmQxOThiMTc4YTkwNDE3NGJmZGVmMDAzMjFmY2MzNTI3Mjc3ZmY1YmI4MzY2ZjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_32e0ace1bf044005a5a41af3aea6bfe7",
+      "statement": "The Next.js frontend under greek_resilient_rag is a Next 16 / React 19 app (Tailwind v4 via PostCSS) whose sole screen, app/page.tsx, posts user input to the backend /agent endpoint and renders the conversation with Greek UI labels.",
+      "evidence": [
+        {
+          "resource": "repo://greek_resilient_rag/app/page.tsx#L1-L71",
+          "version": "repo-lines-v1:sha256:4e00e71c3c0117538d05c5fe52e7fb141b70abde50a840d8ccab582d11d05b6e:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmMzdkYjFiOGRiM2ZiZWEzNmE1ZDJhNmZmZDVmMzM5M2E1M2VmMDUwNDdlMGI1ZTZlMTRhNDM0ZTQwNmZkZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMGIzNmFhNzRhNTliY2Y0YTg4MTg1ODM3ZjY1OGFmYWYzNjQ2ZWZmMmJiMTZjMzkyOGQwZTkzMzVlOTQ1ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://greek_resilient_rag/package.json#L1-L26",
+          "version": "repo-lines-v1:sha256:cef8ce85bdd487113a6f507e28010011182aeb8a671406943b81edf0e350e678:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e77cc4429b04507887a12221725b124",
+      "statement": "The frontend tree's tracked config files are app/layout.tsx, app/globals.css, package.json, next.config.ts, tsconfig.json, eslint.config.mjs, and postcss.config.mjs, with app/page.tsx as the primary UI change hotspot.",
+      "evidence": [
+        {
+          "resource": "repo://greek_resilient_rag/app/globals.css#L1-L26",
+          "version": "repo-lines-v1:sha256:769edf77bd0d101a2d26e6c5656defba8cd885ff37d92279fa293a2756fe5651:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyMDcwZTBiNDViYjIwMWIyYjgzOGE1MmFhYWE2ZTk2NWY5NjRlMGI1NDJkOTdmMWZlNTE3ZmU1OWM0Yjc1YTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://greek_resilient_rag/app/layout.tsx#L1-L33",
+          "version": "repo-lines-v1:sha256:b98a24027c5c78385b127baf3c2f4f29b18c2c8c19c0beed8c74bb57bd98e4ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlZDAzOWNiMWM0MzA0OTlkYzkyNDZiZTdhNDIyMWYwMDM4NTU4ODhjMjk5YzMzMTk2MmQ1MDAxMWNjZjczM2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://greek_resilient_rag/eslint.config.mjs#L1-L17",
+          "version": "repo-lines-v1:sha256:68975a20ae983fe0de5be6a74b85b5d84bd906714d21230473a3467d36565bdf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0NDI0NWM3ZDdiOTg2OTE1NWIwMWE4NzI4ODA0Yjg5YjQ0YTRmNDI1N2U0YjhhYWZkZGRlMzZiN2Y1NjEyNDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5NDQ1YmE2NmI5MjU5MDExYzZlNzNlZWM3YjlhOWE5NWNhZmFhOTgyMjYxNjMzNGU2MGNhMzk1NzkwODYxMTIifQ"
+        },
+        {
+          "resource": "repo://greek_resilient_rag/next.config.ts#L1-L7",
+          "version": "repo-lines-v1:sha256:614bce25b089c3f19b1e17a6346c74b858034040154c6621e7d35303004767cc:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWY2NzkyNzBhYWJkODI3ZDg3OTQ1YzlmYmJjNDc4YjE4Mzk0ZDJlMWZkNTcxNmMzNjVlMmI1ZTJiMTFiZWRkNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWNiYzE3Y2E4ZjczNTk0NzY3ODMwYTM2ZWVlYWM0Y2U1ZmVhNWRkMzg3ODU1ZWE3NGY0NTE5MTkxOTVkNWMxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://greek_resilient_rag/postcss.config.mjs#L1-L7",
+          "version": "repo-lines-v1:sha256:dfac7ac2d86d326a0e5adb024e7943c181393ed17a5fcb8f0315b24c7da6ddde:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTZkMmRlNmRiZjcyNGMyZDQ1ODRjZGVkM2IzY2I4M2NiM2E5YmJmNzIwZTBiYjM3NDZkYmFkY2I5MDA2NWQ1MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2JmOTNmZmE0ODg2YTk3ZjJmYjUwOTMxOTI0Y2FkNjU1MjZkZGMzYWMwMDg2Yzk4NGQ3YTQxZmQwZTBkMjUzYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://greek_resilient_rag/tsconfig.json#L1-L34",
+          "version": "repo-lines-v1:sha256:be18523b23b78b6e1a876ddd107d330f0168bddf09d751b57e0b5edce69c66f3:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2487faf655e5451b84fabaacd147536a",
+      "statement": "Dockerfile builds a python:3.11-slim image that installs requirements.txt, copies the app, exposes 8000, and runs uvicorn main:app.",
+      "evidence": [
+        {
+          "resource": "repo://Dockerfile#L1-L12",
+          "version": "repo-lines-v1:sha256:539a6b22cdfd035690c5cf04bcabef686160e6fb2835fe1e29cef2f2d7497c5f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliYmE0NzU1Y2U3OWVjZGQ0NmYyNmM4N2Y2MTMyNTg2NWM5MDUxZThkOTliZjhiYjA5NWJhOGVkY2I1Y2E3YjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkMzA1NTI1NTNiOThlZGQwNWEzZWEzOTJjNDRmYWNmN2VmZWE5MDQ3Y2VkZDdhYTgyN2JjZTFhZjI4N2E3Y2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4811755f7fb341728416ba1fb990353b",
+      "statement": "The only tracked CI workflow is .github/workflows/openwiki-update.yml, scheduled monthly (cron '0 6 1 * *' plus workflow_dispatch), which runs openwiki code --update --print and opens a pull request scoped to openwiki, AGENTS.md, CLAUDE.md, and the workflow itself.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L1-L54",
+          "version": "repo-lines-v1:sha256:3588dcd6fb1236c1f6b66040375003aaea8419e9af851f1008f89acf212d8208:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MDI3ODdhZjZkY2MwODM0ZGUxMjFjYmIxY2I5NWY5NDU5YjcyMWVhYjAzNDlmMTA1MDFiOTk2YzFjNzdmZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0Nzc5NmQzMTczMmZiY2U4OTk4YTJmN2U3YjFiYjk3NTVjMjNlNTg1MDMyMGI5MDkzN2Q4MmMzZmQwZTYyYTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f2f5ab9315964218bddf42045fa2d692",
+      "statement": "requirements.txt pins the Python dependency set including FastAPI, Uvicorn, LangChain (langchain, langchain-chroma, langchain-google-genai, langgraph and checkpointer/prebuilt), ChromaDB, pandas, NumPy, scikit-learn, matplotlib, adjustText, thefuzz/RapidFuzz, and pytest.",
+      "evidence": [
+        {
+          "resource": "repo://requirements.txt#L1-L114",
+          "version": "repo-lines-v1:sha256:c18936c743a9614103bf6e87c9720624855770d1e815085a305cd7a3248d2259:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI3YTBiMjFlNzZlZWFkNTVhMjU1YTlmNmU2ZTMzZjk5ZWJhZmUzZDA1ZjY0NWVhYWU4MTkyNjllMzhkMDFhZjE3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI2ZTM0MGI5Y2ZmYjM3YTk4OWNhNTQ0ZTZiYjc4MGEyYzc4OTAxZDNmYjMzNzM4NzY4NTExYTMwNjE3YWZhMDFkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_f0a9f96685a743ca8df3ef85ab6e2755",
+      "statement": "Several analysis-related paths — chroma_db/, data/, findings.md, literature_synthesis.md, deepresearch.py, test_loader.py, cluster_scatter.png, cluster_radar.png, venv/, .env, __pycache__/ — are gitignored generated/local artifacts, not tracked source.",
+      "evidence": [
+        {
+          "resource": "repo://.gitignore#L1-L13",
+          "version": "repo-lines-v1:sha256:0b926f9bc43e818f8bea4fcf71dcb3f7af14f212dcb1038caf729f8cd76e7617:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4NzFiMmNiZmUxNzQzZGMxYWVhN2ViMzE3NDMyM2MwYWFjZjIwYjRmNGI4NzIyYjNjMTlmY2EwZmYxYjJjOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhOWFiYjMzMDU1NDI2MTMzM2Y3NmQxYzY3Y2UxYWNlNWI3YzZhNWE5Mjc5YzdhMDkwMWM1YjVmNWNiODYxZmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_17ac9e33ca3b4155b873ddd9acb67e8d",
+      "statement": "Change hotspots map as follows: workbook schema/location to loader.py, rag.py, agent.py, and test validation; request/response to main.py; scoring/classification to agent.py and cluster_analysis.py; frontend UI to greek_resilient_rag/app/page.tsx.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L96-L156",
+          "version": "repo-lines-v1:sha256:59536f27c24f780738010071742ed5c60f7d5d7ef075bf95c58a0ab5bafc9b52:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmODVhZDYxZmM5MTBjM2M4NzUxOGUwNjMwNzk1N2ZhNGUwOWEyMDViMzA2MDU5M2MyZTJlYjQ5MGNiYzMyYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhNGQzZjMwMDEzMmM2OTljMmE1NjkzYTVkY2M5YzljMjg3YjEyOGU0MTRmMzNmNzIwMDc3NjdkYzhhZDcyZGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzYTI0NDVhY2I1YTlmM2M0MzRjNDg4YTlkYmJkMjA0OTEyYzFhY2FjZGU2NGJlZWU1MTQ4NjAxMjY4MzRlNzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3MmRlMzg3YTc5Y2IxZjRkYjUwOTNjZmM1NWEwNzgwMzdiYjNkNDA4MmZiYWVjMjAyZTI5N2NhNTFhNmUyNzQifQ"
+        },
+        {
+          "resource": "repo://cluster_analysis.py#L48-L77",
+          "version": "repo-lines-v1:sha256:36957bdccfda37077bcc3130c3f23494921bedf183a32c12819b83e3ceaf0252:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4YzZmOGRjZTcwMjc0Mzk4MjVhYTRmY2U0OTM5NGY3MzAxZTdkYzNlYjA1NzA1ZjViYzU5NjgxNjMzMGQ5MTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwODdhMDViMWU0ODFiMTAxOGZhMTNmNWRkYTEyMTQzZmU3MjNkZjU3ZjczZmJjZDA3ZTA2YjE3MjEwNTY2ZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5MWIyMTM2MjYyNmZmZGExNGVlN2QzY2I2ZmEyNzIzMDgyOTk4MDczZjAyMDg1Mzg5YjVjYjY2OTdlODc1ZjUifQ"
+        },
+        {
+          "resource": "repo://greek_resilient_rag/app/page.tsx#L15-L36",
+          "version": "repo-lines-v1:sha256:09658aeb0c977f1c97e8ca81278ee954c4267f393a23f8abf0137fe0e0ae091f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmNDE4OTQ1MDI3ZWQwNDAyMDAzMmE2OTZmMGY3OTBkMzUzODY2YjljMzdlMWZiOTViZGMzODA4NTNiN2NkMWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhZTdjOGRhYzE3OTZkM2UwNDAzNTY5YjdiYTU1ZDgxMjEzNDljNjc2OWQzZDgxY2IzYzE4ODQ1Nzc1Y2ZlZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwOTc3YWJkZDE0OTQyNWU2ODk4NzQ0OTgxYmJhZmNjZmJiYjE1NzYxZWVmODI2YTFlZmY1YTU3ZTgxODE1MDYifQ"
+        },
+        {
+          "resource": "repo://loader.py#L7-L62",
+          "version": "repo-lines-v1:sha256:d7caeb0941076209b38387edd656eaf887f1bc5fc8367cd510edb11781ffab35:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlM2JlN2UyMTNkNjMxZmUwYjQzOWRjNDIyMzU0OTI1ZTkzY2MyMmNhOWNlZGRmYTgyN2QyOGI0ZTZjYzZhMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzMmQ5ZTBhZjBhMGRhNjA4ZTE3MjJhZWYwYjQ3NjRiMjhkNGQ4MThlZDU4Yjg5Njc1N2I0NzJkNzJhZDdkNmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://main.py#L29-L65",
+          "version": "repo-lines-v1:sha256:e5a8a7baf084449e0b5c5768cc0af7421b6f7d6c93fabf017820efb9e35c1200:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlYmEyNTRkZmY0YTAyMmJlY2M1NjEzNzk3Yjk4OWEwNTRkNWMxYzIyZGUzMTFhNWEwMTFlMTIwMTBlZjkyZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhNjk4NTU2MWE0M2FkMzRmODM0NjRlOTNiMDJjMjYyNGIyOTJmNjk3N2Y4NGNjMmJjMDMzMTBhMzcwYjEzNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwYjZmMGI3OGY2MTYzZWM1YmQ5NmVhYTQwNmZkZTllNWVjZGU5N2VjMzAwNGFjMDdiN2Y1OTc0YmIxMTk1NWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://rag.py#L8-L20",
+          "version": "repo-lines-v1:sha256:593678594daab9c79eda1171ca19eaa4b9d2ebccd55db6fc82f824b0f220606d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1Y2I1Y2Q3Y2UxMTJiMjFiZjYzOGUxZDIxOGI5Njc0YTk5NTIwMjMwNjViZGQyYWIxYjQxMmQ5NDE1ZGE1NjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlOTU5YTc5MzM5NjgyYjAyOGZmOWI0YmIyNjdlMTAxZDMxM2Q1MGQ2OTkyNDBiZGU1ZTRlMGZjYzJkMzFhMGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgwODIxZjFlZWM0NzhmM2FjOWQyYjU2YWVkODBjMWY3NTA3YmJhNGMxODhkZWQ3YmE5YmJkNjRhZmRmMzYyN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiYWQxZTUzY2NjNzliNGQxNGIxZDgxNzhlOTI4MDkyOTFhNTgzYmMxOTQ1Y2ExN2M0YWRiYzViZTJmZTQxNGYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.4.3",
+    "at": "2026-09-01T11:19:44.752Z"
+  }
+}

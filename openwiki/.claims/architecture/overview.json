@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c43fe47b979ec061ed2a23315a3fc69210f5d4531cfb50c21fa55d87c18cd49e",
+  "claims": [
+    {
+      "id": "claim_d9ef3571f10c41f288a874aba7d2bb6f",
+      "statement": "The backend is a single-process FastAPI application backed by a local ChromaDB vector store and an Excel workbook, exposing two user-facing API paths: POST /ask for retrieval-augmented answers and POST /agent for tool-driven agent analysis.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py",
+          "version": "repo-file-v1:sha256:999eebb3b0986752025b5eed97bd5605b0a18e7ff24e787f20a7af231ce775d5"
+        },
+        {
+          "resource": "repo://main.py",
+          "version": "repo-file-v1:sha256:e54877ec03d0818d2c0cec5b252cb15e4bca325b836c4412a8c84034b2ae3ace"
+        }
+      ]
+    },
+    {
+      "id": "claim_d928e62756ed439c8303f4948839a8d8",
+      "statement": "POST /ask reads ChromaDB and answers with gemini-2.5-flash, whereas POST /agent runs a LangChain/LangGraph agent backed by gemini-2.5-pro; the central distinction is that /ask reads the prebuilt ChromaDB index while /agent tools mostly read the Excel workbook directly with pandas.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L16-L17",
+          "version": "repo-lines-v1:sha256:2c72444e5825584fb24122b250998ff31533c6c14e941ac7d55246086534c3fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEwNGNjNTE4YjhjZTc3NzlhOWRjODU5N2UyY2Q4NTNiM2NmMmRiMzg3NjQ3MTA0YTNjN2Y1NmRiNjA5ZDZlOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWJkY2RkZGFmMGU4Zjc5ZmI0ZmZkOWMwOTY0N2U1OWU2MTA5Y2JjODg5YWYxZjZlYzQ0ZGUwYjBlNWI3OWVmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjNjMmQ3YTZkNzQwMWEwMzcwODc0MTY1ZGQwYTc4NGFiN2QyZGFkMGMwMTgxMzZkOWVkMzU3N2Y1ZjE1ZTAzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGMxOGI2NGExZTUzMGI4MTgwMTM2MjU0MDY2ZWRkNDkxMDE4NGVhMTBlODJhNmY3NjE1MmI5Njg5NmIzYTI0YSJ9"
+        },
+        {
+          "resource": "repo://agent.py#L56-L75",
+          "version": "repo-lines-v1:sha256:4dd9bd31eca7f0163197cd979d85bb0a0c011d6f23467a3da7f58cfc08d34f9b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjMmEzNmJlODc3NTBkMWFkYTU5ZDFhMmRmNTQ4M2RhOGM3ZTRmMGMzOWM2ZGQ0MjliYjllODc1M2E4NWJjNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwMzAwYThlNzc3YzcyYmJkODlkNmM1ZDMwOTUyMzViODY4ZDVhZGYwMDViYjY0MmY2MmM3YjJiOGJkNjk5ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhNzAwNjhkNmU0NjE2NWYyODQyYzkwYzFmNGRkODI0YjljNDk5MGE2NmFlY2U1NzEzYzRmM2M2YmU1OTEyODAifQ"
+        },
+        {
+          "resource": "repo://main.py#L18-L20",
+          "version": "repo-lines-v1:sha256:9b2d0caecf1ab43195b9666e033d59ee2f68e72f72aec468c2426d5e92a042fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYzMWRiZmJkZmFiZWRmMjk4NDFhY2VlMmY1ODkxOWFmZGIzNWZjN2I0ZTMxM2E3MzE4YmFmNTNhMmEyZDEyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDA5Mjg4OWZhZWZkZDAyM2E3MGNkMGZlZDM5NjQwNGRiMGJiMmIzMWRiZWRlMzE1NTI4YzFhZTg3OTEwZjk4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDhlYTBhMzU1OGI5ZTNjMjg2MjQ2ZTk4ZDM4YTJkZDk4ZWRlNjM0NDYxNWVmYTAxMjhmZmFmOThkYzNmNzE5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2M5YjA3YzlkOGY0NWU2NDgxYzc5OGE5ODIyMDg4ZDRkNzQ4MDgzM2Y5MzgxNWU2ZTc4NDdhYzU0YjFmNDQzZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c1e420c4f64f42b2a6b9b2819eb18c28",
+      "statement": "rag.py is the offline indexing script: it reads the workbook from FILE_PATH (default data/stats.xlsx), iterates six Greek sheet labels through loader.load_excel_data, and persists all chunks to ./chroma_db via Chroma.from_documents(documents=all_docs, persist_directory='./chroma_db').",
+      "evidence": [
+        {
+          "resource": "repo://rag.py#L6-L25",
+          "version": "repo-lines-v1:sha256:e687524c503f081d385de856cae8a51e00b8f617d8c95123129877173fc2d6d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzZWFiMDEwMTM5YjcwOTEyMjc0ZGViMmNlODlhNTg3NTI0ZTg3MWExYjQxNDA1MjQzZjNkMjYzNTc1ODA0ZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiZjJiYTdhYjBjZWEwZWNjMjI1ZDAyZmYyMjllYzYwMTJiNWM0NDA0MDE4OTk0MDk4MThmZGFiMzg4MWYzODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_01b921ef592e44d5897f620918ec0d78",
+      "statement": "loader.load_excel_data converts one workbook sheet into langchain_core.documents.Document objects, normalizing headers, skipping the national row (Ελλάδα), and emitting one document per region × indicator × era with region/indicator/era/source metadata that pairs regional values with national values.",
+      "evidence": [
+        {
+          "resource": "repo://loader.py#L7-L62",
+          "version": "repo-lines-v1:sha256:d7caeb0941076209b38387edd656eaf887f1bc5fc8367cd510edb11781ffab35:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlM2JlN2UyMTNkNjMxZmUwYjQzOWRjNDIyMzU0OTI1ZTkzY2MyMmNhOWNlZGRmYTgyN2QyOGI0ZTZjYzZhMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzMmQ5ZTBhZjBhMGRhNjA4ZTE3MjJhZWYwYjQ3NjRiMjhkNGQ4MThlZDU4Yjg5Njc1N2I0NzJkNzJhZDdkNmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d698f0ed5fcc45859b20c0034c221dfa",
+      "statement": "The Excel workbook is the source of truth and ChromaDB is a local rebuilt artifact: at startup main.py loads the existing index with Chroma(persist_directory='./chroma_db'), and if the workbook changes python rag.py must be rerun because there is no runtime embedding step.",
+      "evidence": [
+        {
+          "resource": "repo://main.py#L28-L28",
+          "version": "repo-lines-v1:sha256:1bdcdddaf0e8f79fb4ffd9c09647e59e6109cbc889af1f6ec44de0b0e5b79efb:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWJkY2RkZGFmMGU4Zjc5ZmI0ZmZkOWMwOTY0N2U1OWU2MTA5Y2JjODg5YWYxZjZlYzQ0ZGUwYjBlNWI3OWVmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWJkY2RkZGFmMGU4Zjc5ZmI0ZmZkOWMwOTY0N2U1OWU2MTA5Y2JjODg5YWYxZjZlYzQ0ZGUwYjBlNWI3OWVmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmU2NTE0NTM5ZDliNmM3MmE4YjIxOGZiYzg1NGEzZGE3MDU3YzYxNWVkMWNjODg4ZmNjN2EzZDQ5MzVjY2QzMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTM3NzM5NWM2Yjc2ZmViZDRkOTE3NjQxMDg3ZGY2OWVmZGZkZGM1ZjcxZjBiYWVjZmE1Y2U0YzA3Mzk2MGQ5MSJ9"
+        },
+        {
+          "resource": "repo://rag.py#L22-L25",
+          "version": "repo-lines-v1:sha256:5425f66e3b55da90c5bf9ef5a678d5fceec5197cde715c356fb019ede3633176:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGMxY2NjZDVhYmYxNzZiNTFhMWM0MzlhMzE3MjBmYzY1MGU4MDFlMWYzMmQ4MmI5MzFlYzc2Y2FhNjQzZDY2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTQ5ZDIwZTZmZTlmNWViYjgzNWJkMjlkMmE0OTBkNDgzZDg5OWZhYWQ4OWMyMTUwYzdjMTFjNjEzYzQxM2I0MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmEzY2Y1MTkyMzU0ZjcxNjE1YWM1MTAzNGIzZTk3YzIwZWRhOTk2NDNmY2FmNWJiZTZkNDFhZDU5YmQxMjE2NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6ef32166059a442fa03e39f7f9520fed",
+      "statement": "POST /ask performs vectorstore.similarity_search with k=10, then enriches the result set by running an additional filtered similarity_search(k=5, filter={'region': region}) for each of 13 hardcoded Greek regions where thefuzz.fuzz.partial_ratio exceeds 80 and the region is not already present, then feeds the combined context to the Gemini Flash chain.",
+      "evidence": [
+        {
+          "resource": "repo://main.py#L29-L54",
+          "version": "repo-lines-v1:sha256:f278a8343c0706ea29854fcf9ecba840742da03b349e38e4b4aedf7e104e3a2d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlYmEyNTRkZmY0YTAyMmJlY2M1NjEzNzk3Yjk4OWEwNTRkNWMxYzIyZGUzMTFhNWEwMTFlMTIwMTBlZjkyZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjMTM5ZjUyNzIzZmI1MDY0MDhmYzdmY2Q1MTY2YmI3ODgwMWFhM2MwYmM0ZmFhOTM3YTAzMDY0NDMwNjY2OTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwYjZmMGI3OGY2MTYzZWM1YmQ5NmVhYTQwNmZkZTllNWVjZGU5N2VjMzAwNGFjMDdiN2Y1OTc0YmIxMTk1NWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJmODc1YjdjODNlYzA0NTgzYzU2MjU2NDcyNWM5NmI1ZjQ1ODdiOGExZDAwYWI5MmZlYTVlMzFlYjEyMThlYTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0552b6109cf542789aa463c5c809f9d3",
+      "statement": "POST /agent invokes the LangChain agent with {'messages': [{'role':'user','content': question}]} and config {'configurable': {'thread_id': 'research-session-3'}}, then returns the last message content as the answer (unwrapping a list content into text[0]).",
+      "evidence": [
+        {
+          "resource": "repo://main.py#L56-L65",
+          "version": "repo-lines-v1:sha256:e70e001491a4e99bc306bacc5b1835793f6ead9f73879bafa7d63c7a0a050989:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNGM2NWQxMmFkYmZkOGY4MmJjYTk5NzU4OWNmMzU3MDk1N2ZhODA4NTg4OWY1M2EyMWY0ZWVkNDFjYTJiMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhNjk4NTU2MWE0M2FkMzRmODM0NjRlOTNiMDJjMjYyNGIyOTJmNjk3N2Y4NGNjMmJjMDMzMTBhMzcwYjEzNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5MGYxMGYxMDg3NDg1MjZmYjg5NjBiZGFiZjEwNjFiZjMxZDQ5ZTkzMmJhNjkxYjdlYjllYmNmOGRkMDE5OTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_098ae6a43f7a49bb933fb8432af26312",
+      "statement": "The agent is built with create_agent(llm, tools=available_tools, system_prompt=system_prompt, checkpointer=memory), where llm is gemini-2.5-pro and memory is a LangGraph MemorySaver providing in-process conversational continuity keyed by thread_id.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L14-L17",
+          "version": "repo-lines-v1:sha256:123424c843ab0db2801aee8d5ec7c89ebf6feb5499f50bc683e65a6d24ef0947:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTU4ZTY0ZThiY2Y4ZWI0MDg0ZTVkODQzMWI3MDI3ZDcwZjcwM2JjOWJjMWEyMzAwNjM2ZmI5YjdhYjQ2ODQ5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWJkY2RkZGFmMGU4Zjc5ZmI0ZmZkOWMwOTY0N2U1OWU2MTA5Y2JjODg5YWYxZjZlYzQ0ZGUwYjBlNWI3OWVmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzgxN2UzMzc3ZGY5YjllZjBjZmU5ODZiZTQzYTc2ODM5YzI3NzlkN2FjYmFhYWQ4ZjRjMDBkNDUwZThkYmRhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGMxOGI2NGExZTUzMGI4MTgwMTM2MjU0MDY2ZWRkNDkxMDE4NGVhMTBlODJhNmY3NjE1MmI5Njg5NmIzYTI0YSJ9"
+        },
+        {
+          "resource": "repo://agent.py#L440-L441",
+          "version": "repo-lines-v1:sha256:db0fecebfafe1328a57f4d4213b5e21d196c53f49a276b9f4108f898a815e245:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzUzZTAwZmJlNjM0NWU4ZjhlYWM1YzE1ZTY4NDJhMDNmYmMyM2RkNDYwMzdkOTQ1MWI4YTBlOGIyYTY0MTRlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTI5OWYxZDlhMmM2NTMwMWU1YjZkZDFmODBlYjk4NzM0NDUzMjBiMGYwZTVlMzM5MTk2ODc2MzM0NGI5NDQxYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWM4MmNjMjVhYTM3NmRhMDAyMzBmYzMzNzFhY2I3YjkwZDg2ZThhZWU5ZmYxMTYzY2E0YTU3ZjEwNDJhZTA1YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_086f1f67dcb44bb8a3624473d72eb5be",
+      "statement": "The agent's tools split by data source: search_regions and compare_regions read ChromaDB via similarity_search with a $and metadata filter on region/indicator/era (after mapping user era terms to canonical era names), while calculate_percent_change, calculate_resilience_score, calculate_rti_score, calculate_recovery_speed, analyze_socioeconomic_coupling, calculate_structural_shift, calculate_rtix_score, calculate_crisis_comparison, and calculate_vulnerability_index read the workbook directly with pd.read_excel.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L120-L156",
+          "version": "repo-lines-v1:sha256:f8f4b02a940bf155e057d9ec3635f74242453f9bb9d5bde8b92f10b63d73514c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNGU1OWQ3ZWFkY2E4YTkyOWEyNWZhNjBiYjU0ZmY2YjhhZmIwZmFkOTQwOTljZDFjODg5OGRjZDViZTk2OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhNGQzZjMwMDEzMmM2OTljMmE1NjkzYTVkY2M5YzljMjg3YjEyOGU0MTRmMzNmNzIwMDc3NjdkYzhhZDcyZGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4ZTY0OTVlZDk4ZTRkZDczMzg5MzEwN2I0NDUwZjllMjJlZTVjMTU5NGVkODg1ZTQzYmIxNjc5NzRhMGZlNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3MmRlMzg3YTc5Y2IxZjRkYjUwOTNjZmM1NWEwNzgwMzdiYjNkNDA4MmZiYWVjMjAyZTI5N2NhNTFhNmUyNzQifQ"
+        },
+        {
+          "resource": "repo://agent.py#L158-L191",
+          "version": "repo-lines-v1:sha256:8208583072e483eaf647aed654ec7d04581cdc1467bf3af014c26f7a97d0225a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNGU1OWQ3ZWFkY2E4YTkyOWEyNWZhNjBiYjU0ZmY2YjhhZmIwZmFkOTQwOTljZDFjODg5OGRjZDViZTk2OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzNWZmYTBlZTM3ZDU1N2M5YmNkZjdmOTVhMGU3OTFlOWFjMjYzYmZiMGJkNGU0MDRkMzk0OWI1MmUzNTYxNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmNDBkOTY1NzExNzM1ZTdhMTc3MDU2ZWEzYjljODM4YjEzMmJhNmUxZmQxMjQ3NzYxMzY1NThmZWQ0MDc1MDEifQ"
+        },
+        {
+          "resource": "repo://agent.py#L194-L223",
+          "version": "repo-lines-v1:sha256:8721b0afab1467adfc90b15662c238b97b6b07dc81fdff06899ae7eb3a18ab8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3NDFiNTkwMDIzMmQ0NDAyMmNiYjBjYzJhY2E2ZDUyNmEwMWEyMDY5ZTU4ZjBkYjFiNzFlNDRhYzFlM2ExMzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmYTUzNjE2MGFiYWViMGJiODBiYWY3Y2FkNmM1YTliMDRiZDA4ODE4Y2YyMDM5NjI5NjQ3ZWQxOTI1NzkyNjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkMjEzZTdmMmRiYzg4NzE2N2E5NzEzM2MyODliNDk0M2E0ZGY2MDhmZTdkZmUwN2IyZTFiMTBiNWVhZjk5ZTQifQ"
+        },
+        {
+          "resource": "repo://agent.py#L226-L274",
+          "version": "repo-lines-v1:sha256:c8bb5316d7de6144eb408f3a7be060c911428d91fe65b14c635ab891b4a4efee:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjODNlY2JiZTZhYzQ1NWQ2ZjNiZmVjMGJhZmU5MGVkMDUwZjZiMjVkZWQyNmFiMWZhNjEyNmRlZjU3NDFlM2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjMTliNDBmNzBjNDM2MmE0MmJmMDIwMDdjNGIxNjI3YjE3OTEwMjE2NmMwNzA2ZTAyM2E1ODIzNjQ5NmZhYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmYTUzNjE2MGFiYWViMGJiODBiYWY3Y2FkNmM1YTliMDRiZDA4ODE4Y2YyMDM5NjI5NjQ3ZWQxOTI1NzkyNjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2Yjk0OTMwNzZiOWJiODgzNjgxYzE5MTQwNDIzNWRlOThhZWQ1M2JlZjZhNDYxZjUwNzM4MzBjYWNjNGJkMGIifQ"
+        },
+        {
+          "resource": "repo://agent.py#L27-L54",
+          "version": "repo-lines-v1:sha256:529d73c150b8255373fa870df1c2ab900cf9e028897218d580a8ff4388097969:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNGU1OWQ3ZWFkY2E4YTkyOWEyNWZhNjBiYjU0ZmY2YjhhZmIwZmFkOTQwOTljZDFjODg5OGRjZDViZTk2OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhYzNjZjE1NTMxYjI3YmZjNDVhM2IzOTliYzIxZGJmYzc0MDNlMmZjZTgyNmMzZDMwMjAxZDMzYzg3MDA0ZGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxNjM5MDVhY2NhMzg3ODM3NGU5MTA0OWQyM2U0ZGQ1ZjhlNGFlNDZkOWY1ZjFiZTBjYzY0ZWM0MDZkMTQ1YWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkNmI5NWVlOTNiMDU3NDI0YmI4MjliODUxZmI4ZjkzZDlmZDdiNWI2MDEyMjdiNDI2MjVmODRkMWE0ODM3OTkifQ"
+        },
+        {
+          "resource": "repo://agent.py#L304-L354",
+          "version": "repo-lines-v1:sha256:d7f18a77e61b87de3a92dbe589287a536d724a1404afc9f79ca677b5c851e390:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNGU1OWQ3ZWFkY2E4YTkyOWEyNWZhNjBiYjU0ZmY2YjhhZmIwZmFkOTQwOTljZDFjODg5OGRjZDViZTk2OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwOGEzNTMwZDk3OWE5OTdjZjM0OTI0ZjQ5OTA4ZjMyN2JjMDgxYmNiNzUyM2MzNDUzODVlYWU2ZGJhZmUyM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhODk4Mjc2MzJhZDA0ZjNlNDgyMmJmYjgxYTNhNTI5MTBjYTc5MjQyZGU3OWU1Zjg5NDJiYTRjYTY1ZDY1ODEifQ"
+        },
+        {
+          "resource": "repo://agent.py#L356-L380",
+          "version": "repo-lines-v1:sha256:85740d03aea455ea564110404ec83c5298c61dce00a3de4ff3544f1221936b97:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNGU1OWQ3ZWFkY2E4YTkyOWEyNWZhNjBiYjU0ZmY2YjhhZmIwZmFkOTQwOTljZDFjODg5OGRjZDViZTk2OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjMTliNDBmNzBjNDM2MmE0MmJmMDIwMDdjNGIxNjI3YjE3OTEwMjE2NmMwNzA2ZTAyM2E1ODIzNjQ5NmZhYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5NjhjNmQ4NzQ2OGEzNTNhZTQ0NDRiNDE2NjZjZWRmMjQ0ZDVlMWE4MDJjOTAyOGFiNzhmNzEyZWE2ZGZkODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmMmJmOWMxMTY4YzhkOWY4YTE1OGMwZDI2NzQ1NTI3YzliZjM1MzI2MDliMWVhNjY5YjVmM2U1YWQ2NzhmMDAifQ"
+        },
+        {
+          "resource": "repo://agent.py#L382-L408",
+          "version": "repo-lines-v1:sha256:1007d17049c504ada3e7dab56bbbb9123865601be48cf4ba121794ce13d0fd2f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNGU1OWQ3ZWFkY2E4YTkyOWEyNWZhNjBiYjU0ZmY2YjhhZmIwZmFkOTQwOTljZDFjODg5OGRjZDViZTk2OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjMTliNDBmNzBjNDM2MmE0MmJmMDIwMDdjNGIxNjI3YjE3OTEwMjE2NmMwNzA2ZTAyM2E1ODIzNjQ5NmZhYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3YTI1OTA2YWIxNmE0MGE4MzBkZGIyNGM0MWNkNGI3ZWFlZjliZDc4ZTBmMzMwYjM1ZTM1MjE2ZDIwZjczNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhODBmZWQ5NmQzYmE3ZTAyNTlkOWNlMDEwNjAxZTNhY2VjNjZmOWM4ZDM3ZmYzZGU4NmRmNjE1ZDZhMWUwYjIifQ"
+        },
+        {
+          "resource": "repo://agent.py#L56-L75",
+          "version": "repo-lines-v1:sha256:4dd9bd31eca7f0163197cd979d85bb0a0c011d6f23467a3da7f58cfc08d34f9b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjMmEzNmJlODc3NTBkMWFkYTU5ZDFhMmRmNTQ4M2RhOGM3ZTRmMGMzOWM2ZGQ0MjliYjllODc1M2E4NWJjNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwMzAwYThlNzc3YzcyYmJkODlkNmM1ZDMwOTUyMzViODY4ZDVhZGYwMDViYjY0MmY2MmM3YjJiOGJkNjk5ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhNzAwNjhkNmU0NjE2NWYyODQyYzkwYzFmNGRkODI0YjljNDk5MGE2NmFlY2U1NzEzYzRmM2M2YmU1OTEyODAifQ"
+        },
+        {
+          "resource": "repo://agent.py#L77-L116",
+          "version": "repo-lines-v1:sha256:1da71da22c927e64cf705b904012bbf2ab61a6cdd033811610c4dc12ba61db10:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNGU1OWQ3ZWFkY2E4YTkyOWEyNWZhNjBiYjU0ZmY2YjhhZmIwZmFkOTQwOTljZDFjODg5OGRjZDViZTk2OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkMDU2ZmY5ODQzZmIxMGY0MzA2M2YzOWQ4MTE5MTQzMGFmMjM5MjIxMzRhNDU2NjhjM2ZmMzYxODBmYjY0NGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlZjU5ZWQyYWMwMDMwOGMzM2QxMjU2NzRiMjE1MGEwM2FhZTBjOWU2MGNjYWUzODY0OTNjNGVmMDYyNWFhOWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4ZTY0OTVlZDk4ZTRkZDczMzg5MzEwN2I0NDUwZjllMjJlZTVjMTU5NGVkODg1ZTQzYmIxNjc5NzRhMGZlNmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_06d4e64655c947cf8263b2ed60100795",
+      "statement": "The agent workbook-reading tools rely on fixed Greek sheet and column labels (e.g. Normal Οικον Βάση, Resistance (2008-2013), % Regional Change 2013-2019, Σύνθετος Οικονομικός Δείκτης), and apply thefuzz.process.extractOne with a score threshold of 70 to map user phrasing onto exact workbook region names.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L120-L156",
+          "version": "repo-lines-v1:sha256:f8f4b02a940bf155e057d9ec3635f74242453f9bb9d5bde8b92f10b63d73514c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNGU1OWQ3ZWFkY2E4YTkyOWEyNWZhNjBiYjU0ZmY2YjhhZmIwZmFkOTQwOTljZDFjODg5OGRjZDViZTk2OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhNGQzZjMwMDEzMmM2OTljMmE1NjkzYTVkY2M5YzljMjg3YjEyOGU0MTRmMzNmNzIwMDc3NjdkYzhhZDcyZGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4ZTY0OTVlZDk4ZTRkZDczMzg5MzEwN2I0NDUwZjllMjJlZTVjMTU5NGVkODg1ZTQzYmIxNjc5NzRhMGZlNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3MmRlMzg3YTc5Y2IxZjRkYjUwOTNjZmM1NWEwNzgwMzdiYjNkNDA4MmZiYWVjMjAyZTI5N2NhNTFhNmUyNzQifQ"
+        },
+        {
+          "resource": "repo://agent.py#L60-L75",
+          "version": "repo-lines-v1:sha256:b90547f187ba9f208a9c5871b1b439a8e344308b6da3cfbd36c560753c7c0030:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1OTAxMjhmM2E2MzNhMjk2NjViOGVkNTcxMjdlMjk0Y2E0NTE4ZDdlNWI5ZWY4ZWUxNTFmZTkwMWFlYmEzOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjMmEzNmJlODc3NTBkMWFkYTU5ZDFhMmRmNTQ4M2RhOGM3ZTRmMGMzOWM2ZGQ0MjliYjllODc1M2E4NWJjNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzNWEzYzNiMDdlODgyNjQyMzIwYjhjNWYyZjRjNzIyMzYyMDE0MDA4YzIzYzM3N2M4ZTdiYjFiNDM2MmEyNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhNzAwNjhkNmU0NjE2NWYyODQyYzkwYzFmNGRkODI0YjljNDk5MGE2NmFlY2U1NzEzYzRmM2M2YmU1OTEyODAifQ"
+        },
+        {
+          "resource": "repo://agent.py#L78-L116",
+          "version": "repo-lines-v1:sha256:70b5679841f12538256ec1808946f82b91f4f76d0fbb415a56e4cdaff12b184a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1N2VhNzQ2N2Q5MjM2YzdhZjRmNzRlMTM1ZTFhMjhhMjg3MjFlZGI3MTI3Zjg3OTU3ZjczMzE0MDBjMWI0ZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkMDU2ZmY5ODQzZmIxMGY0MzA2M2YzOWQ4MTE5MTQzMGFmMjM5MjIxMzRhNDU2NjhjM2ZmMzYxODBmYjY0NGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2MGJlMmNjYjE2YjU3NzZlMGFlNDk5YmYxNzIyMGMzOGM0MjgzNDA2NWI4YzY3YmRlYTUxOGVjOGNlMmZmYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4ZTY0OTVlZDk4ZTRkZDczMzg5MzEwN2I0NDUwZjllMjJlZTVjMTU5NGVkODg1ZTQzYmIxNjc5NzRhMGZlNmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_52b48b37fbd8456ca20572d72fdc190a",
+      "statement": "The agent system_prompt directs a multi-phase research protocol (exploratory, diagnostic, synthesis) using the tools, mandates Greek region names, and requires calling save_finding to archive the final verdict before finishing.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L410-L438",
+          "version": "repo-lines-v1:sha256:29b9171ea2ba83987528a4a185d234a98f52aba088423eb5015c8fd22d5cb9c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3NTIxYzNhYmM1YmFiMzFkZmJmYzRiMzgyNWEyYjVlNmQ4MDI0MDNhMGM0YTE4NjFhZTMxMjI5NTkyYzliZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiNzcwZmI0NWE0MjVlZTM0MjE2M2M3ZTM3MzI4MDM1NTdlNTc3ODVjYTliNWExZTMwZWY4ZWRkNTNiZWEwZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZhNzQ0ODI1ZDg2Zjg0NTFiZjEwMDNiNDY4OWJiMDY4NjZiMTE5MzM5ZjUzNTgyMTkyNTViYzJiYWUwMWEyNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjNWI5OTYyMjIzOWRjYjUyYWYwZjI4ZDJmMmIzODJiYzkxNWYwMmM3ZWRiMTVkYWQ0MDU1NWRiNzIxYzg2N2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f356d31f61b482c9249be5c1572e157",
+      "statement": "The Next.js frontend (greek_resilient_rag/app/page.tsx) is a client-component chat UI that posts only to the backend /agent endpoint at http://localhost:8000 with a JSON {question: input} body, renders data.answer, and holds no retrieval, LLM, or tool logic itself.",
+      "evidence": [
+        {
+          "resource": "repo://greek_resilient_rag/app/page.tsx#L23-L30",
+          "version": "repo-lines-v1:sha256:c093ffbc0d0dd7b1b62e5c1a4513910bd7632a6413dbc58c4b2ed56faf672791:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTFkZjg3YTQ3MzE2YzcwOGM1NTAyMDk4ZTlhZjZjNDQ1MzRlYjgwYmVhZGNmNjA2MzAyOGVmY2E4NTkzN2FiZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Y3MmQ0YWI2ZWVhNzUyZDlmMTlhYmY4ZWY3MTJiZjU3YzA5ZTY0ZWViMDQ4NmE1NWUwZjdkYjIzYjExNWU4NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGFjMjA3Y2M3NWFlYTNiM2Q3YTBmMGNkZjFjY2FjNGNjNjIzZDQzMGNkOTFiOTI5ZDllNGZiNWQ0MmIzMDhlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDk1NWY3MTYxYTcyN2Y4YjE4MDUwNjBhOTQzY2MwZWEwYjk1NmJjMTY2YjMwM2JhNjI5Y2ZkMDA0ZjE1YTk4ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f20c774664144ab1b8eb269434fec3f5",
+      "statement": "Cross-origin requests from the Next.js frontend on localhost:3000 to the FastAPI backend on localhost:8000 are enabled by CORSMiddleware in main.py, which allows the single origin http://localhost:3000 with all methods and all headers.",
+      "evidence": [
+        {
+          "resource": "repo://greek_resilient_rag/app/page.tsx#L24-L28",
+          "version": "repo-lines-v1:sha256:86e28fc13c61df247a51ed7c6feedb936b1eb9bcae3d9a2d5485d7003cedc3d0:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTlkMzE2YzRmY2YyMjdhNzc2ZWIzOTcwZGNiYTAyODhiYzFhMjZiNmM1MGJiZjNkZmY5ZDg3YTQ3MTY1ZmE0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzE3YWYxMTAxYzk3YjdjMmY1MjU0MDc4MmU2MzRjYzQ0NDBmMGU5NzAzNDFlNTJmOTc1MjMxMWQ3OGI3ZDdkMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGZhMzg5MzAzZGRkYjY1NDNhMDQ2OGY5MzdhZmQxOTBmYjFhYzVmMWZjNDE4N2U2YjdiNDYzMmExZjUwMjJlNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIyYWNkZWI2NjliMmM2ODIzZTJkNjYxMWNhZDk3N2E4MDc5MDc2MDA5NmYxNDcyNDZkNDRjNmY5MGQzYWMwMSJ9"
+        },
+        {
+          "resource": "repo://main.py#L22-L27",
+          "version": "repo-lines-v1:sha256:4ea157d0b84a813257785b97e48de3de4f3ae28ecd5bea24c719c1af5c0db94c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzJmOTA3ZGVjNmZiMjUxZmU5N2RhYjhhNWViYmIyYmViMjc5N2FmNDAxNmVmOGY1NWU0NDQ2MmRkYjg2YjE0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzY4ZGEwNDhmODkzOTljMWU4MjA0MWI4MzJmZDM4Y2VhZmUxZDVjODdiNDI2ZTY2NDkwZGE4MjkxMTk2MDY0MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjllYmU1NTA4YTEwZjMxN2YxMDgyMWU2ZTQ3YWEzMmE0OGRkYmM2ZmEyMDIwMjI5MDhhMzllNzg2ZTViMjcxYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ace7a4516ed547658c517900988ec47a",
+      "statement": "cluster_analysis.py is an offline analysis/plotting script that derives KMeans cluster visualizations from hardcoded region scores and is not part of the runtime API paths.",
+      "evidence": [
+        {
+          "resource": "repo://cluster_analysis.py#L1-L49",
+          "version": "repo-lines-v1:sha256:b40bb14f5e5ac08bad5799d85b127281758ad19b228f3e702908ca1bfbf9040c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3YTExZDVlZGMwZjA2MjhiNGE4ZDY2NWE3OGRiNmRkMTA2MmQ4ODA2NWQzMTZiNDI5M2M0NTBlZGY3NjAzMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlYmY2N2Y1MzVkZjlmODc3YTE0YjIyYzg4MDFkMGU4NzQ4MGVmYTM0YmZhNzYwN2VjZjNjZTNkODlkYjg1ZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwNDJhNzIzNjAxMmMyODNmMDM4NWZjMWVmY2FkODQ0ZTg0ZTk5MGQxNGY1MTQ3MzhmZDdjMWU5MzA3OWE3NzgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.4.3",
+    "at": "2026-09-01T11:19:44.752Z"
+  }
+}

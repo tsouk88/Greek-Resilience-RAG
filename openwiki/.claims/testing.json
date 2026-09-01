@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:04675804b7388ebd0103ad354ec5576e0eb6208a07906b5b0e5f63e7a46c3dfd",
+  "claims": [
+    {
+      "id": "claim_77b39336bfef46a599808e77a68aeb4d",
+      "statement": "There are no tracked tests in the repository: test_loader.py is listed in .gitignore (a local-only artifact absent from a fresh clone) and .github/workflows/tests.yml has been deleted from .github/workflows, so pytest does not run in CI.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml",
+          "version": "repo-file-v1:sha256:3588dcd6fb1236c1f6b66040375003aaea8419e9af851f1008f89acf212d8208"
+        },
+        {
+          "resource": "repo://.gitignore#L13-L13",
+          "version": "repo-lines-v1:sha256:2a9abb330554261333f76d1c67ce1ace5b7c6a5a9279c7a0901c5b5f5cb861ff:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmE5YWJiMzMwNTU0MjYxMzMzZjc2ZDFjNjdjZTFhY2U1YjdjNmE1YTkyNzljN2EwOTAxYzViNWY1Y2I4NjFmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmE5YWJiMzMwNTU0MjYxMzMzZjc2ZDFjNjdjZTFhY2U1YjdjNmE1YTkyNzljN2EwOTAxYzViNWY1Y2I4NjFmZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWMwYjA5ZGY4MTE0NzAxYmFlNjFkMDUxNjAyMWI0NzQ0NzBjNzk0MGEyOThhYzc0MjY5MTlkOGE1ZDg1YjkwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_93dac83ce89b42cbb232714bae9e223a",
+      "statement": "The only committed GitHub Actions workflow is .github/workflows/openwiki-update.yml, the OpenWiki documentation refresh; it runs on a monthly schedule (cron '0 6 1 * *') and workflow_dispatch, installs openwiki globally, runs 'openwiki code --update --print' with the OpenRouter provider (model z-ai/glm-5.2), and opens a 'docs: update OpenWiki' pull request — it runs no application code or tests.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L1-L53",
+          "version": "repo-lines-v1:sha256:81ac70388918f68cbc5f8b0916ca3a79356f6601994e0a78be68f0e62a16da79:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MDI3ODdhZjZkY2MwODM0ZGUxMjFjYmIxY2I5NWY5NDU5YjcyMWVhYjAzNDlmMTA1MDFiOTk2YzFjNzdmZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxNjE4YTI0ZmM2Y2MyYTBjNTU5ZjEyNzIxOTljZjI2ZGI2MDFiMWZmNDgxYmUyMDAwZTc5NTNhZjFlY2QwZGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0Nzc5NmQzMTczMmZiY2U4OTk4YTJmN2U3YjFiYjk3NTVjMjNlNTg1MDMyMGI5MDkzN2Q4MmMzZmQwZTYyYTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_722107d1f2954ad98f4e8a9d1bd587e1",
+      "statement": "rag.py enumerates exactly six sheet labels (Normal Οικον Βάση, Normal Οικον Βάση - Crisis, Normal Οικον Βάση - COVID, Normal Κοινων Βάση, Normal Κοινων Βάση - Crisis, Normal Κοινων Βάση - COVID), chunks each via load_excel_data, and prints 'Loaded {len(docs)} chunks from {sheet}' per sheet and 'Done! Stored {len(all_docs)} chunks.' — the output used to manually verify non-empty ingestion for all six sheets after loader/workbook changes.",
+      "evidence": [
+        {
+          "resource": "repo://rag.py#L6-L29",
+          "version": "repo-lines-v1:sha256:556653b86032f99e2fab38545850ee39b1c57082e8f5bb0c590996b68b57ccfe:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzZWFiMDEwMTM5YjcwOTEyMjc0ZGViMmNlODlhNTg3NTI0ZTg3MWExYjQxNDA1MjQzZjNkMjYzNTc1ODA0ZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2Yzg5ODIxOGRkOTAyYzY0YWU4NGFhNDdkM2ZlNWNjNGE2MTJjMTA3OWNhMzM4YjI4NzNjYmI5Mzk5NjQ4OWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiZjJiYTdhYjBjZWEwZWNjMjI1ZDAyZmYyMjllYzYwMTJiNWM0NDA0MDE4OTk0MDk4MThmZGFiMzg4MWYzODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c938325d5a544d27a6913bfcc74ff8fb",
+      "statement": "main.py exposes the two HTTP endpoints that must be exercised manually after API/agent changes: POST /ask and POST /agent.",
+      "evidence": [
+        {
+          "resource": "repo://main.py#L29-L29",
+          "version": "repo-lines-v1:sha256:4eba254dff4a022becc5613797b989a054d5c1c22de311a5a011e12010ef92d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGViYTI1NGRmZjRhMDIyYmVjYzU2MTM3OTdiOTg5YTA1NGQ1YzFjMjJkZTMxMWE1YTAxMWUxMjAxMGVmOTJkOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGViYTI1NGRmZjRhMDIyYmVjYzU2MTM3OTdiOTg5YTA1NGQ1YzFjMjJkZTMxMWE1YTAxMWUxMjAxMGVmOTJkOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTBiNmYwYjc4ZjYxNjNlYzViZDk2ZWFhNDA2ZmRlOWU1ZWNkZTk3ZWMzMDA0YWMwN2I3ZjU5NzRiYjExOTU1YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjUyMjIwNzc4NWI3M2NjMTkxZTc3M2MzYjhjMDM3NzkwNmFkZmRiMmQwMzJiMzQ1YjM4YTU4Y2E2ZDE3NDVjMCJ9"
+        },
+        {
+          "resource": "repo://main.py#L56-L56",
+          "version": "repo-lines-v1:sha256:7c4c65d12adbfd8f82bca997589cf3570957fa8085889f53a21f4eed41ca2b30:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2M0YzY1ZDEyYWRiZmQ4ZjgyYmNhOTk3NTg5Y2YzNTcwOTU3ZmE4MDg1ODg5ZjUzYTIxZjRlZWQ0MWNhMmIzMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2M0YzY1ZDEyYWRiZmQ4ZjgyYmNhOTk3NTg5Y2YzNTcwOTU3ZmE4MDg1ODg5ZjUzYTIxZjRlZWQ0MWNhMmIzMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTkwZjEwZjEwODc0ODUyNmZiODk2MGJkYWJmMTA2MWJmMzFkNDllOTMyYmE2OTFiN2ViOWViY2Y4ZGQwMTk5NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWI5NTgzZTgxNWE2MDc0NWQ0MTNmZTM1YWViYWE3NmRlOTM4ZTlhNmM4MmUzZDYxYmQ5YzBiNDllYTY5YzdiZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_248940d40a0045e28b2fe43a9503ceb7",
+      "statement": "The calculation tools in agent.py assume exact workbook column labels and sheet names: after each pd.read_excel they normalize headers and then index into specific fixed columns (e.g. Resistance (2008-2013), Recovery (2013-2019), % National Change 2013-2019), so workbook schema drift raises a KeyError or a fuzzy mismatch with no test to catch it.",
+      "evidence": [
+        {
+          "resource": "repo://agent.py#L198-L209",
+          "version": "repo-lines-v1:sha256:6e7a2b361eb6e239eefc9d84b280824e9f01b574d14c0bb93d2fad969151b675:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmYzA3MGI5MjYzZmRhODA1M2M0MTU5ZDNhYTY1NTVhN2VkNjIxZmY4M2QyYzM1ODM4NjNkZWY3NDE0ZTgzOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlYmYzODk1MGU1ZmY3ZDJjOGE5NjQ4OGM0NjZiZDk1YTVlNmRkODhkZDM3NzU2YzAyYzYzYzYyZTY0MmJmYzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4NDZiMzA1MWJhZDdiYzI2NmNiOGI1OWU2ZjZkMDdkZTczNjFhZjdhY2UxN2YyZmIxYjRmYWNlMGZmZGNhNGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyMjkwMGVjZGQ3OWI2NDBlMGVmMzc4ODM3OWRhZTc3YmYxMGMxYmQ4NzIxYWZjYjliM2E4Y2M5MmVjNjEwYzgifQ"
+        },
+        {
+          "resource": "repo://agent.py#L315-L321",
+          "version": "repo-lines-v1:sha256:e246a16f8103feb5a8854b4a01149bcf8c0d6452e842ba0b1ca86fe3e675c94d:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzdmM2Q0MGFhNTJmNDljYWUwZTY2OTkyYjI3MGIxZjEyMjViNmQzODg1YzJkYmVkYmFhNTQ3OGViMmQ5MDFjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzM3Y2RmODIyY2I0NmIxOTdkNDg2MjAzYWQ3MDdiNDdlMzdkMWZhOWViNDRmYjczYjEwNGU4YjNlOTQ0YTJlYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmRhZWEyODZmYWVmZDI1YmQyYWZjZDdiY2Y3Yjg5NzI5ZjYyYTUxZTYwZjU5YjVlYWJhOTkzMmYwOTAwODNmMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGNhYjIyYmY1YzU2NmJhZDVmZDlhNmMzODFkNzhjZWY0ZGRkNmU3ZjdhYWVlYjM5MTdmYzZmZWRjNDI2ODdlNCJ9"
+        },
+        {
+          "resource": "repo://agent.py#L97-L103",
+          "version": "repo-lines-v1:sha256:a414630802481ab0b9cebd056bcc387734488bbe10dce14787b31f462d75c956:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzdmM2Q0MGFhNTJmNDljYWUwZTY2OTkyYjI3MGIxZjEyMjViNmQzODg1YzJkYmVkYmFhNTQ3OGViMmQ5MDFjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmVlNjY2MzQwNGUxZWY5ODY1NzBlNmRkNDIwMzFkMWY4NzFiZGU2MDVlODlmY2M4MGFiN2RjYWUwODUxNjg4MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmIyZWZjOWIyODhlMmUzZWUwZTJmYmY5ZDRiODc5YmFlYzRlODgwOTBmOGUxZDI4ODU1OTg3OTA5ZGQzNTYyYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzVmNDAyNTExMTc2N2YxMjRjYjUzMDQxNjQyMGFmYjI3YTNmZDdlNmUyMTc5NjgwYjc3YmM0MTM2NzMwOTVkNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0dcc342acd4b41528d6a2f7129564cf8",
+      "statement": "Validation is manual because rag.py, main.py, and agent.py depend on the local workbook (FILE_PATH, default data/stats.xlsx) and GEMMA_API_KEY, which are gitignored local artifacts; if the workbook is absent ingestion and all tool reads fail.",
+      "evidence": [
+        {
+          "resource": "repo://.gitignore#L4-L6",
+          "version": "repo-lines-v1:sha256:e890f481157b5911495030a4e5bde8f791183035291386f77503b189d3dcb683:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjBhMGZiMTAwODA3NmRlNjU5YmM0NzE0YjRiOTBmOTkzYzE5NmYxOWRmNWJhM2U1ZDExMjRhNjQ3MWJmNTYwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJkYWUzMDUyZjMzMWVlMzRkNjI4ZWY1MzU3MDliMzAxMjU5YTQ1ZGY3Yzc1MjJjNGQzNWRjZjQ5ODczZjAwYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmIxODllOWZkYjlkYTEzMTdkNDgzZGQzYjRlNmMzYzdmNmY4OTMwZDdhYjBjZjlkZmQ0MTQ2MDgyNDI5MDgyNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODZkODRjZTY0YTdjY2Q1YzJkMDIwYjcxNDM4ODhmNTg2MTQ3ZWE3MjlkNDA2MWI1ZTRlOWY0MDkwNDAyOGZiZiJ9"
+        },
+        {
+          "resource": "repo://rag.py#L6-L6",
+          "version": "repo-lines-v1:sha256:63eab010139b70912274deb2ce89a587524e871a1b41405243f3d263575804d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNlYWIwMTAxMzliNzA5MTIyNzRkZWIyY2U4OWE1ODc1MjRlODcxYTFiNDE0MDUyNDNmM2QyNjM1NzU4MDRkNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNlYWIwMTAxMzliNzA5MTIyNzRkZWIyY2U4OWE1ODc1MjRlODcxYTFiNDE0MDUyNDNmM2QyNjM1NzU4MDRkNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmJmMmJhN2FiMGNlYTBlY2MyMjVkMDJmZjIyOWVjNjAxMmI1YzQ0MDQwMTg5OTQwOTgxOGZkYWIzODgxZjM4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWQxNjBlNjJiMzY4NTJiMDUzYTlmMjUzZWM1MDZhMmEwNzEyOGIzMmQ0ODgxMDFiY2ZjYTY3ODhiZGZkZWIwMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_945a4f419e904e51bb5d610d9b6e2903",
+      "statement": "If test_loader.py exists locally it can be run with 'pytest test_loader.py' for loader-level checks, but it is a gitignored local-only artifact (not part of CI, absent in a clean clone) and not relied upon for validation.",
+      "evidence": [
+        {
+          "resource": "repo://.gitignore#L13-L13",
+          "version": "repo-lines-v1:sha256:2a9abb330554261333f76d1c67ce1ace5b7c6a5a9279c7a0901c5b5f5cb861ff:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmE5YWJiMzMwNTU0MjYxMzMzZjc2ZDFjNjdjZTFhY2U1YjdjNmE1YTkyNzljN2EwOTAxYzViNWY1Y2I4NjFmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmE5YWJiMzMwNTU0MjYxMzMzZjc2ZDFjNjdjZTFhY2U1YjdjNmE1YTkyNzljN2EwOTAxYzViNWY1Y2I4NjFmZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWMwYjA5ZGY4MTE0NzAxYmFlNjFkMDUxNjAyMWI0NzQ0NzBjNzk0MGEyOThhYzc0MjY5MTlkOGE1ZDg1YjkwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.4.3",
+    "at": "2026-09-01T11:19:44.752Z"
+  }
+}
